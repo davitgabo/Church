@@ -1,5 +1,3 @@
-@vite(['resources/views/components/header-component/header-component.scss'])
-
 <div class="nav">
     @php
         $menu_items = ['ტაძრის შესახებ', 'გალერეა', 'კონტაქტი', 'შემოწირე'];
