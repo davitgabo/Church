@@ -19,8 +19,23 @@
     </head>
     <body>
         <x-header-component.header-component />
-        <x-home-component.home-component />
-
+        @switch ($component)
+            @case ('home')
+                <x-home-component.home-component />
+                @break;
+            @case ('about')
+                <x-about-info-component.about-info-component />
+                @break
+            @case ('contact')
+                <x-contact-component.contact-component />
+                @break
+            @case ('gallery')
+                <x-gallery-component.gallery-component />
+                @break
+            @case ('donate')
+                <x-donate-component.donate-component />
+                @break
+        @endswitch
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
 </html>
