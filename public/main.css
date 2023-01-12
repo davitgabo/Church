@@ -7,6 +7,15 @@ body {
     background-color: #E5E5E5;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: inherit;
+}
+
 @font-face {
     font-family: 'BPG Classic Medium';
     src: url('assets/fonts/bpg-classic/bpg-classic-medium-webfont.eot');

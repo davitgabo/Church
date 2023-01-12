@@ -11,6 +11,7 @@
     font-family: 'BPG Arial';
     font-feature-settings: normal;
     color: #000000;
+    font-weight: 600;
 }
 
 .nav__item-highlighted {
@@ -35,12 +36,42 @@
 }
 
 .nav__language {
-    width: 2rem;
+    width: 5rem;
     padding: 0 3rem;
 }
 
 .nav__language__select {
     font-family: 'BPG Arial Caps';
     font-size: 0.6875rem;
+    width: 3rem;
+}
+
+.nav__language__select:focus {
+    outline: none;
+}
+
+.nav__language__select option {
+    font-family: 'BPG Arial Caps';
+    font-size: 0.6875rem;
+}
+
+@media screen and (max-width: 1550px) {
+    .nav {
+        padding: 3rem 7rem;
+    }
+
+    .nav__logo {
+        max-width: 30rem;
+    }
+
+    .nav__logo__title {
+        font-size: 1.1rem;
+        line-height: 1.4rem;
+    }
+
+    .nav__item a {
+        font-size: 0.9rem;
+        width: 100%;
+    }
 }
 

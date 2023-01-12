@@ -7,11 +7,15 @@
     @for ($i = 0; $i < count($menu_items); $i++)
         @if($i === count($menu_items) - 1)
             <div class="nav__item nav__item-highlighted">
-                {{ $menu_items[$i] }}
+                <a href="">
+                    {{ $menu_items[$i] }}
+                </a>
             </div>
         @else
             <div class="nav__item">
-                {{ $menu_items[$i] }}
+                <a href="">
+                    {{ $menu_items[$i] }}
+                </a>
             </div>
         @endif
     @endfor
