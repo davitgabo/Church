@@ -13,4 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{page}', [\App\Http\Controllers\NavigationController::class,'render']);
+Route::get('/{lang}/{page}', [\App\Http\Controllers\NavigationController::class,'render']);
