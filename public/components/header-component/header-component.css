@@ -5,6 +5,7 @@
     padding: 3rem 10rem;
     background-color: #FFFFFF;
     gap: 2rem;
+    border-bottom: 1px solid #E1E1E1
 }
 
 .nav__item {
