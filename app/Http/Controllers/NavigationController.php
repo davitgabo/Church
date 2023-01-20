@@ -23,15 +23,18 @@ class NavigationController extends Controller
                 return redirect('/');
         }
 
-        if ( in_array($page,['home','about','contact','gallery','donate']) ) {
-
-                $contents['menu'] = EnglishContent::where('section','menu')->get();
+        if (in_array($page,['home','about','contact','gallery','donate'])) {
+                $tableData = EnglishContent::where('page',$page)->orwhere('page','all')->get();
+                foreach ($tableData as $row) {
+                    $key = $row->section;
+                    $contents[$key][] = ['text' => $row->$text, 'uri' => $row->uri, 'visibility' => $row->visibility];
+                }
 
                 return view('welcome',['component'=> $page,
                                             'contents' => $contents,
                                             'text' => $text,
                                             'lang' => $lang]);
-        } else{
+        } else {
                 return redirect('/');
         }
     }

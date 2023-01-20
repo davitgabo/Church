@@ -2,14 +2,14 @@
     @foreach ($contents['menu'] as $item)
         @if(!$loop->last)
             <div class="nav__item">
-                <a href="/{{$lang}}/{{$item->uri}}">
-                    {{$item->$text}}
+                <a href="/{{$lang}}/{{$item['uri']}}">
+                    {{$item['text']}}
                 </a>
             </div>
-        @elseif($item->visibility != 'hide')
+        @elseif($item['visibility'] != 'hide')
             <div class="nav__item nav__item-highlighted">
-                <a href="/{{$lang}}/{{$item->uri}}">
-                    {{$item->$text}}
+                <a href="/{{$lang}}/{{$item['uri']}}">
+                    {{$item['text']}}
                 </a>
             </div>
         @endif

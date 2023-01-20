@@ -19,22 +19,22 @@
 
     </head>
     <body>
-        <x-header-component.header-component :$contents :$text :$lang/>
+        <x-header-component.header-component :$contents :$lang/>
         @switch ($component)
             @case ('home')
-                <x-home-component.home-component />
+                <x-home-component.home-component :$contents :$lang/>
                 @break;
             @case ('about')
-                <x-about-info-component.about-info-component />
+                <x-about-info-component.about-info-component :$contents :$lang/>
                 @break
             @case ('contact')
-                <x-contact-component.contact-component />
+                <x-contact-component.contact-component :$contents :$lang/>
                 @break
             @case ('gallery')
-                <x-gallery-component.gallery-component />
+                <x-gallery-component.gallery-component :$contents :$lang/>
                 @break
             @case ('donate')
-                <x-donate-component.donate-component />
+                <x-donate-component.donate-component :$contents :$lang/>
                 @break
         @endswitch
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

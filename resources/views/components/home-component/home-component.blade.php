@@ -3,23 +3,20 @@
         <div class="col-xl-5">
             <div class="home__text-section">
                 <div class="home__text-section__title">
-                    ტაძრის მშენებლობა
-                    - სულიერი გადარჩენის საწინდარია
+                    {{$contents['title'][0]['text']}}
                 </div>
                 <div class="home__text-section__text-slider">
                     <div id="carouselText" class="carousel slide carousel-fade" data-pause="false" data-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="carousel-item home__text-section__text-slider__text active" data-bs-interval="5000">
-                                რომელიც განკუთვნილია
-                                დაფიქრდით პროექტის მიმდინარეობაზე და გააცანით იგი ფართო საზოგადოებას. სამეგრელოში პირველად შენდება ტაძარი, რომელიც ერთ-ერთი მათგანია
-                                ეს იქნება ყველაზე მასშტაბური პროექტი საქართველოში
-                            </div>
-                            <div class="carousel-item home__text-section__text-slider__text" data-bs-interval="5000">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi aut commodi earum est ex, expedita facilis fugit laudantium magni nesciunt numquam, quam quas quidem, repudiandae saepe sed ullam vero?
-                            </div>
-                            <div class="carousel-item home__text-section__text-slider__text" data-bs-interval="5000">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores assumenda aut delectus distinctio ducimus est ex excepturi exercitationem fuga ipsam, iure omnis ratione, reprehenderit repudiandae, similique soluta voluptas voluptate. Fugiat.
-                            </div>
+                            @foreach($contents['slider'] as $slider)
+                                @if ($loop->first)
+                                    <div class="carousel-item home__text-section__text-slider__text active" data-bs-interval="5000">
+                                @else
+                                    <div class="carousel-item home__text-section__text-slider__text" data-bs-interval="5000">
+                                @endif
+                                        {{$slider['text']}}
+                                    </div>
+                            @endforeach
                         </div>
                     </div>
                     <div class="home__slider-indicators">
@@ -31,10 +28,10 @@
                 <div class="home__text-section__donate">
                     <a href="">
                         <div class="home__text-section__donate__part-one">
-                            გააკეთეთ <img src="{{ URL::asset('/assets/icons/arrow_long_right.png')}}" alt="Arrow pointing right">
+                            {{$contents['Make donation'][0]['text']}} <img src="{{ URL::asset('/assets/icons/arrow_long_right.png')}}" alt="Arrow pointing right">
                         </div>
                         <div class="home__text-section__donate__part-two">
-                            შემოწირვა
+                            {{$contents['Make donation'][1]['text']}}
                         </div>
                     </a>
                 </div>
