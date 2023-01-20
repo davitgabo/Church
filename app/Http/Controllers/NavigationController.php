@@ -23,9 +23,10 @@ class NavigationController extends Controller
                 return redirect('/');
         }
 
-        $contents['menu'] = EnglishContent::where('section','menu')->get();
-
         if ( in_array($page,['home','about','contact','gallery','donate']) ) {
+
+                $contents['menu'] = EnglishContent::where('section','menu')->get();
+
                 return view('welcome',['component'=> $page,
                                             'contents' => $contents,
                                             'text' => $text,
