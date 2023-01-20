@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\App;
 
 class NavigationController extends Controller
 {
-    public function render($lang, $page)
+    public function render($lang=null, $page=null)
     {
         switch ($lang) {
             case 'en':
@@ -20,7 +20,7 @@ class NavigationController extends Controller
                 $contents['nav_logo_title']='ზუგდიდის ივერიის ყოვლაწმინდა ღვთისმშობლის სახელობის საკათედრო ტაძარი';
                 break;
             default:
-                return redirect('/');
+                return redirect('/ge/home');
         }
 
         if (in_array($page,['home','about','contact','gallery','donate'])) {
@@ -35,7 +35,9 @@ class NavigationController extends Controller
                                             'text' => $text,
                                             'lang' => $lang]);
         } else {
-                return redirect('/');
+                return redirect("/$lang/home");
         }
     }
+
+
 }
