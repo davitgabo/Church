@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="home__text-section__donate">
-                    <a href="">
+                    <a href="/{{$lang}}/{{$contents['Make donation'][0]['uri']}}">
                         <div class="home__text-section__donate__part-one">
                             {{$contents['Make donation'][0]['text']}} <img src="{{ URL::asset('/assets/icons/arrow_long_right.png')}}" alt="Arrow pointing right">
                         </div>
