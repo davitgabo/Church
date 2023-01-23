@@ -7,7 +7,8 @@
                 </div>
 
                 <div class="contact__form-section__form">
-                    <form action="">
+                    <form action="/send" method="post">
+                        @csrf
                         <div class="row">
                             <div class="col-6">
                                 <input class="contact__form-section__form__input" placeholder="სახელი" type="text" name="name">
