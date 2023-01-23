@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\EmailController;
+use App\Http\Controllers\NavigationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,5 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{lang}/{page}', [\App\Http\Controllers\NavigationController::class,'render']);
-Route::get('/', [\App\Http\Controllers\NavigationController::class,'render']);
+Route::post('/send', [EmailController::class,'send']);
+Route::get('/{lang}/{page}', [NavigationController::class,'render']);
+Route::get('/', [NavigationController::class,'render']);

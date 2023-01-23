@@ -1,5 +1,6 @@
 <div>
-    <form action="">
+    <form action="/send" method="post">
+        @csrf
         <input style="border: 1px solid black" type="text" name="name">
         <input style="border: 1px solid black" type="text" name="surname">
         <input style="border: 1px solid black" type="text" name="email">
