@@ -1,0 +1,94 @@
+.contact__form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.contact__form-section__title {
+    font-family: BPG Arial Caps;
+    font-size: 2.25rem;
+    line-height: 2.5625rem;
+    width: 50%;
+    margin-bottom: 8rem;
+    margin-top: 5rem;
+}
+
+.contact__form-section__form {
+    width: 50%;
+}
+
+.contact__form-section__form__input {
+    border: 1px solid #000000;
+    border-radius: 0.875rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    padding: 0.3rem 0.5rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.contact__form-section__form input::-webkit-input-placeholder,
+.contact__form-section__form textarea::-webkit-input-placeholder{
+    font-family: BPG Classic Medium;
+}
+
+.contact__form-section__form input:-ms-input-placeholder,
+.contact__form-section__form textarea:-ms-input-placeholder {
+    font-family: BPG Classic Medium;
+}
+
+.contact__form-section__form input:-moz-placeholder,
+.contact__form-section__form textarea:-moz-placeholder {
+    font-family: BPG Classic Medium;
+}
+
+.contact__form-section__form input::-moz-placeholder,
+.contact__form-section__form textarea::-moz-placeholder {
+    font-family: BPG Classic Medium;
+}
+
+.contact__form-section__form__submit-button {
+    background-color: #000000;
+    border-radius: 0.875rem;
+    color: #FFFFFF;
+    font-family: BPG Arial Caps;
+    font-size: 1.5rem;
+}
+
+.contact-info {
+    font-family: BPG Classic Medium;
+    height: 100%;
+    padding-top: 5rem;
+}
+
+.contact-info__email {
+    font-size: 1.5rem;
+}
+
+.contact-info__phone {
+    font-size: 1.75rem;
+}
+
+.contact-info__address {
+    margin-top: 2rem;
+    font-size: 1.75rem;
+}
+
+.contact-info__socials {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.contact-info__socials a {
+    border-bottom: 3px solid #000000;
+    margin-right: 1rem;
+}
+
+.map {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

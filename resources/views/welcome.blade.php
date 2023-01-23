@@ -17,6 +17,7 @@
         <link href="/components/header-component/header-component.css" rel="stylesheet">
         <link href="/components/home-component/home-component.css" rel="stylesheet">
         <link href="/components/about-info-component/about-info-component.css" rel="stylesheet">
+        <link href="/components/contact-component/contact-component.css" rel="stylesheet">
 
     </head>
     <body>
