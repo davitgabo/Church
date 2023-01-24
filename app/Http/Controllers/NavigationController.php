@@ -40,5 +40,11 @@ class NavigationController extends Controller
         }
     }
 
+    public function dash(){
+        return view('dashboard');
+    }
 
+    public function login(){
+        return view('login');
+    }
 }
