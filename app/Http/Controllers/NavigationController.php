@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 
 class NavigationController extends Controller
 {
-    public function render($page)
+    public function render($page=null)
     {
-        if (in_array($page,['home','about','contact','gallery','donate'])){
+        $allowedUri = ['home','about','contact','gallery','donate'];
+
+        if (in_array($page,$allowedUri)){
             return view('welcome',['component'=> $page]);
         } else{
-            return redirect('/');
+            return redirect('/home');
         }
     }
 }
