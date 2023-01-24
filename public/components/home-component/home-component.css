@@ -1,1 +1,98 @@
+.home {
+    height: 100%;
+    background-color: #E5E5E5;
+}
 
+#imageCarousel {
+    height: 100%;
+}
+
+.carousel-indicators {
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 100%;
+}
+
+.carousel-item img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.carousel-item > div {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home__text-section__text-slider__text {
+    font-family: BPG Classic Medium;
+    font-size: 1.125rem;
+    height: 12rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.home__text-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.home__text-section__title {
+    font-family: BPG Classic Medium;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    width: 50%;
+    margin-bottom: 3rem;
+}
+
+.home__text-section__text-slider {
+    width: 50%;
+    margin-bottom: 7rem;
+    display: flex;
+    position: relative;
+}
+
+.home__text-section__donate {
+    width: 50%;
+    margin-bottom: 5rem;
+}
+
+.home__text-section__donate__part-one {
+    font-family: BPG Arial;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+}
+
+.home__text-section__donate__part-two {
+    font-family: BPG Arial Caps;
+    font-size: 1.5625rem;
+    line-height: 1.875rem;
+}
+
+.home__slider-indicators {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 0.5rem;
+    position: absolute;
+    right: -10rem;
+}
+
+.home__slider-indicator {
+    width: 0.8125rem;
+    height: 0.8125rem;
+    border-radius: 100%;
+    background-color: #D9D9D9;
+}
+
+.home__slider-indicator__active {
+    background-color: #FFFFFF;
+}

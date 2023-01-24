@@ -1,0 +1,63 @@
+.about-info {
+    height: 100%;
+}
+
+.about-info__text-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.about-info__text-section__title {
+    font-family: BPG Arial Caps;
+    font-size: 2.25rem;
+    line-height: 2.5625rem;
+    width: 60%;
+    margin-bottom: 10rem;
+    margin-top: 5rem;
+}
+
+.about-info__text-section__text {
+    width: 60%;
+    margin-bottom: 2rem;
+}
+
+.about-info__text-section__text-one {
+    font-family: BPG Classic Medium;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+}
+
+.about-info__text-section__text-two {
+    font-family: BPG Classic Medium;
+    font-size: 1rem;
+}
+
+.about-info__second-section {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.about-info__second-section__title {
+    font-family: BPG Classic Medium;
+    font-size: 2rem;
+    line-height: 2.5625rem;
+    margin-top: 4rem;
+}
+
+.about-info__second-section__title-two {
+    font-family: BPG Classic Medium;
+    font-size: 2rem;
+    line-height: 2.5625rem;
+    margin-bottom: 8rem;
+}
+
+.about-info__second-section__img {
+    width: 100%;
+    height: 20rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

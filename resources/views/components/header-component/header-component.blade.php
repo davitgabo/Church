@@ -1,28 +1,22 @@
 <div class="nav">
-    @php
-        $menu_items = ['ტაძრის შესახებ', 'გალერეა', 'კონტაქტი', 'შემოწირე'];
-        $nav_logo_title = 'ზუგდიდის ივერიის ყოვლაწმინდა ღვთისმშობლის სახელობის საკათედრო ტაძარი';
-    @endphp
-
-    @for ($i = 0; $i < count($menu_items); $i++)
-        @if($i === count($menu_items) - 1)
-            <div class="nav__item nav__item-highlighted">
-                <a href="">
-                    {{ $menu_items[$i] }}
+    @foreach ($contents['menu'] as $item)
+        @if(!$loop->last)
+            <div class="nav__item">
+                <a href="/{{$lang}}/{{$item['uri']}}">
+                    {{$item['text']}}
                 </a>
             </div>
-        @else
-            <div class="nav__item">
-                <a href="">
-                    {{ $menu_items[$i] }}
+        @elseif($item['visibility'] != 'hide')
+            <div class="nav__item nav__item-highlighted">
+                <a href="/{{$lang}}/{{$item['uri']}}">
+                    {{$item['text']}}
                 </a>
             </div>
         @endif
-    @endfor
-
+    @endforeach
     <div class="nav__logo">
         <div class="nav__logo__title">
-            {{ $nav_logo_title }}
+            {{ $contents['nav_logo_title'] }}
         </div>
         <div class="nav__logo__icon">
             <img src="{{URL::asset('/assets/icons/nav_icon.png')}}" alt="Altar logo">
@@ -31,8 +25,8 @@
 
     <div class="nav__language">
         <select class="nav__language__select" name="" id="">
-            <option value="eng">ENG</option>
-            <option value="geo">ქარ</option>
+            <option value="eng" @selected($lang == 'en')>ENG</option>
+            <option value="geo" @selected($lang == 'ge')>ქარ</option>
         </select>
     </div>
 </div>
