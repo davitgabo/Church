@@ -8,6 +8,7 @@ html, body {
     overflow: hidden;
     height: 100vh;
     color: #000000;
+    position: relative;
 }
 
 a {
@@ -48,5 +49,10 @@ a:hover {
     url('assets/fonts/bpg-arial/bpg-arial-webfont.woff') format('woff'),
     url('assets/fonts/bpg-arial/bpg-arial-webfont.ttf') format('truetype'),
     url('assets/fonts/bpg-arial/bpg-arial-webfont.svg#bpg_arialregular') format('svg');
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('assets/fonts/neue-helvetica/Helvetica Neue LT GEO 65 Medium.ttf');
 }
 
