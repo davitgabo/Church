@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\EnglishContent;
+use App\Models\Content;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
@@ -24,7 +24,7 @@ class NavigationController extends Controller
         }
 
         if (in_array($page,['home','about','contact','gallery','donate'])) {
-                $tableData = EnglishContent::where('page',$page)->orwhere('page','all')->get();
+                $tableData = Content::where('page',$page)->orwhere('page','all')->get();
                 foreach ($tableData as $row) {
                     $key = $row->section;
                     $contents[$key][] = ['text' => $row->$text, 'uri' => $row->uri, 'visibility' => $row->visibility];
@@ -36,12 +36,22 @@ class NavigationController extends Controller
                                             'lang' => $lang]);
         } else {
                 return redirect("/$lang/home");
-
         }
     }
 
     public function dash(){
-        return view('dashboard');
+        $tableData = Content::all();
+        foreach ($tableData as $row) {
+            $key = $row->page;
+            $contents[$key][] = [ 'id'=>$row->id,
+                                  'text_ge' => $row->text_ge,
+                                  'text'=> $row->text,
+                                  'uri' => $row->uri,
+                                  'visibility' => $row->visibility,
+                                  'title' => $row->description];
+        }
+
+        return view('dashboard',['contents'=> $contents]);
     }
 
     public function login(){

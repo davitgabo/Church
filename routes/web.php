@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContentController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\NavigationController;
 use Illuminate\Support\Facades\Route;
@@ -16,8 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::put('/edit/{id}', [ContentController::class,'edit'])->middleware('auth');
 Route::put('/change', [AuthController::class,'changePassword'])->middleware('auth');
-Route::get('/dashboard', [NavigationController::class,'dash'])->middleware('auth','prevent-back-history');
+Route::get('/dashboard', [NavigationController::class,'dash'])->middleware('auth','prevent-back-history')->name('dashboard');
 Route::delete('/logout', [AuthController::class,'logout'])->middleware('auth');
 Route::get('/login', [NavigationController::class,'login'])->middleware('guest','prevent-back-history')->name('login');
 Route::post('/authenticate', [AuthController::class,'login']);

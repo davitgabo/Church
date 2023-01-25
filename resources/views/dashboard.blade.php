@@ -23,18 +23,26 @@
         <input type="submit">
     </form>
 
-
-    @if (session()->has('success'))
-        <div class="alert alert-success">
-            {{ session()->get('success') }}
+    @foreach($contents as $section => $content)
+        <div>
+            <h1> {{$section}} </h1>
+             @foreach($content as $item)
+                {{$item['title']}}:
+                <br/>ge: {{$item['text_ge']}}
+                <br/>en: {{$item['text']}}<br/>
+                <form action="/edit/{{$item['id']}}" method="post">
+                    @csrf
+                    @method('PUT')
+                     <input type="text" name="text_ge" value="{{$item['text_ge']}}">
+                     <input type="text" name="text_en" value="{{$item['text']}}">
+                     <button type="submit"> შეცვლა</button>
+                 </form>
+                <br/>
+                <br/>
+                <br/>
+            @endforeach
         </div>
-    @endif
-
-    @if (session()->has('error'))
-        <div class="alert alert-success">
-            {{ session()->get('error') }}
-        </div>
-    @endif
+    @endforeach
 
     <form action="/logout" method="post">
         @csrf
