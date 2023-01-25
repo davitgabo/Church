@@ -1,0 +1,29 @@
+.dashboard {
+    /*background-color: #d1d1d1;*/
+    box-shadow: 5px 0px 10px #a4a2a2;
+    padding: 1.5rem 3rem;
+    height: 90%;
+    width: 60%;
+    margin: 2rem auto;
+    display: flex;
+}
+
+.dashboard__menu {
+    width: 20%;
+    border-right: 2px solid #a4a2a2;
+    padding: 1rem;
+}
+
+.dashboard__content {
+    width: 80%;
+    overflow: auto;
+    padding: 1rem;
+}
+
+.form__input input {
+    text-overflow: ellipsis;
+}
+
+.highlighted-input {
+    border: 1px solid black;
+}
