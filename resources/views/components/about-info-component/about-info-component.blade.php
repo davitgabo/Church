@@ -24,7 +24,7 @@
                 <div class="about-info__second-section__title-two">
                     {{$contents['picture title'][1]['text']}}
                 </div>
-                <div class="about-info__second-section__img" style="background-image: url('{{ URL::asset('/assets/icons/dl.beatsnoop 2.png')}}')"></div>
+                <div class="about-info__second-section__img" style="background-image: url('/assets/images/{{$contents['picture title'][0]['uri']}}')"></div>
             </div>
         </div>
     </div>
