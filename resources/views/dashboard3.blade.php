@@ -33,37 +33,35 @@
             <div>asdasd</div>
         </div>
         <div class="dashboard__content">
+            @foreach($contents as $section => $content)
                 <div>
-                    <h1> ნავიგაცია </h1>
-                    @foreach($contents['all'] as $item)
-                        <x-dashboard-item-component.dashboard-item-component :$item />
+                    <h1> {{$section}} </h1>
+                    @foreach($content as $item)
+                        <div class="row my-4">
+                            <div class="col-3">
+                                {{$item['title']}}:
+                            </div>
+                            <div class="col-9">
+                                <form action="/edit/{{$item['id']}}" method="post" class="d-flex" id="form_{{$item['id']}}">
+                                    @csrf
+                                    @method('PUT')
+                                    <div class="w-100">
+                                        <div class="form__input my-1">
+                                            <span>GE:</span> <input class="w-50" type="text" name="text_ge" readonly onfocus="this.blur()" value="{{$item['text_ge']}}">
+                                        </div>
+                                        <div class="form__input my-1">
+                                            <span>EN:</span> <input class="w-50" type="text" name="text_en" readonly onfocus="this.blur()" value="{{$item['text']}}">
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-secondary edit-button" onclick="edit(this, {{$item['id']}})"> რედაქტირება</button>
+                                    <button type="submit" class="btn btn-success" hidden> შეცვლა</button>
+
+                                </form>
+                            </div>
+                        </div>
                     @endforeach
                 </div>
-                <div>
-                    <h1> მთავარი გვერდი </h1>
-                    @foreach($contents['home'] as $item)
-                        <x-dashboard-item-component.dashboard-item-component :$item />
-{{--                       ::todo აქ დაამატე სლაიდერის წაშლის ღილაკი და დამატების ფორმა--}}
-                    @endforeach
-                </div>
-                <div>
-                    <h1> ტაძრის შესახებ </h1>
-                    @foreach($contents['about'] as $item)
-                        <x-dashboard-item-component.dashboard-item-component :$item />
-                    @endforeach
-                </div>
-                <div>
-                    <h1> კონტაქტის გვერდი </h1>
-                    @foreach($contents['contact'] as $item)
-                        <x-dashboard-item-component.dashboard-item-component :$item />
-                    @endforeach
-                </div>
-                <div>
-                    <h1> დონაციის გვერდი </h1>
-{{--                    @foreach($contents['donate'] as $item)--}}
-{{--                        <x-dashboard-item-component.dashboard-item-component :$item /> --}}
-{{--                    @endforeach--}}
-                </div>
+            @endforeach
         </div>
     </div>
     <form action="/logout" method="post">
