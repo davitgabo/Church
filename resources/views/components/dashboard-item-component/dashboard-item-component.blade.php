@@ -30,5 +30,12 @@
             <button type="submit" class="btn btn-success submit-button" hidden> შეცვლა</button>
             <button type="button" class="btn btn-danger cancel-button" onclick="cancelEdit(this, {{$item['id']}})" hidden>X</button>
         </form>
+        @if($item['title'] == 'სლაიდერის ტექსტი')
+        <form action="/delete/{{$item['id']}}" method="post">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger">წაშლა</button>
+        </form>
+        @endif
     </div>
 </div>

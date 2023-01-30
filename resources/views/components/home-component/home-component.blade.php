@@ -20,9 +20,15 @@
                         </div>
                     </div>
                     <div class="home__slider-indicators">
-                        <div class="home__slider-indicator home__slider-indicator__active"></div>
-                        <div class="home__slider-indicator"></div>
-                        <div class="home__slider-indicator"></div>
+                        @if(count($contents['slider'])>1)
+                            @foreach($contents['slider'] as $value)
+                                @if($loop->first)
+                                    <div class="home__slider-indicator home__slider-indicator__active"></div>
+                                @else
+                                    <div class="home__slider-indicator"></div>
+                                @endif
+                            @endforeach
+                        @endif
                     </div>
                 </div>
                     @if($contents['donate'][0]['visibility'] != 'hide')

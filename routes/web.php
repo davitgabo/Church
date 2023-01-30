@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/store', [ContentController::class,'store'])->middleware('auth');
+Route::delete('/delete/{id}', [ContentController::class,'delete'])->middleware('auth');
 Route::put('/edit/{id}', [ContentController::class,'edit'])->middleware('auth');
 Route::put('/change', [AuthController::class,'changePassword'])->middleware('auth');
 Route::get('/dashboard', [NavigationController::class,'dash'])->middleware('auth','prevent-back-history')->name('dashboard');

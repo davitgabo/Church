@@ -43,10 +43,15 @@
                     <h3 class="dashboard__sub-section__heading"> მთავარი გვერდი </h3>
                     @foreach($contents['home'] as $item)
                         <x-dashboard-item-component.dashboard-item-component :$item />
-{{--                       ::todo აქ დაამატე სლაიდერის წაშლის ღილაკი და დამატების ფორმა--}}
+
                     @endforeach
-                    <button type="button" class="btn btn-primary">დამატება</button>
-                    <button type="button" class="btn btn-danger">წაშლა</button>
+                    <form action="/store" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <span>GE:</span> <textarea name="text_ge"></textarea>
+                        <span>EN:</span> <textarea name="text_en"></textarea>
+                        <span>Image</span><input type="file" name="image">
+                        <button type="submit" class="btn btn-primary">დამატება</button>
+                    </form>
                 </div>
                 <div class="dashboard__sub-section">
                     <h3 class="dashboard__sub-section__heading"> ტაძრის შესახებ </h3>
