@@ -33,33 +33,35 @@
             <div>asdasd</div>
         </div>
         <div class="dashboard__content">
-                <div>
-                    <h1> ნავიგაცია </h1>
+                <div class="dashboard__sub-section">
+                    <h3 class="dashboard__sub-section__heading"> ნავიგაცია </h3>
                     @foreach($contents['all'] as $item)
                         <x-dashboard-item-component.dashboard-item-component :$item />
                     @endforeach
                 </div>
-                <div>
-                    <h1> მთავარი გვერდი </h1>
+                <div class="dashboard__sub-section">
+                    <h3 class="dashboard__sub-section__heading"> მთავარი გვერდი </h3>
                     @foreach($contents['home'] as $item)
                         <x-dashboard-item-component.dashboard-item-component :$item />
 {{--                       ::todo აქ დაამატე სლაიდერის წაშლის ღილაკი და დამატების ფორმა--}}
                     @endforeach
+                    <button type="button" class="btn btn-primary">დამატება</button>
+                    <button type="button" class="btn btn-danger">წაშლა</button>
                 </div>
-                <div>
-                    <h1> ტაძრის შესახებ </h1>
+                <div class="dashboard__sub-section">
+                    <h3 class="dashboard__sub-section__heading"> ტაძრის შესახებ </h3>
                     @foreach($contents['about'] as $item)
                         <x-dashboard-item-component.dashboard-item-component :$item />
                     @endforeach
                 </div>
-                <div>
-                    <h1> კონტაქტის გვერდი </h1>
+                <div class="dashboard__sub-section">
+                    <h3 class="dashboard__sub-section__heading"> კონტაქტის გვერდი </h3>
                     @foreach($contents['contact'] as $item)
                         <x-dashboard-item-component.dashboard-item-component :$item />
                     @endforeach
                 </div>
-                <div>
-                    <h1> დონაციის გვერდი </h1>
+                <div class="dashboard__sub-section">
+                    <h3 class="dashboard__sub-section__heading"> დონაციის გვერდი </h3>
 {{--                    @foreach($contents['donate'] as $item)--}}
 {{--                        <x-dashboard-item-component.dashboard-item-component :$item /> --}}
 {{--                    @endforeach--}}

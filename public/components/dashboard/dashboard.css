@@ -3,7 +3,7 @@
     box-shadow: 5px 0px 10px #a4a2a2;
     padding: 1.5rem 3rem;
     height: 90%;
-    width: 60%;
+    width: 95%;
     margin: 2rem auto;
     display: flex;
 }
@@ -20,10 +20,42 @@
     padding: 1rem;
 }
 
+.dashboard__sub-section {
+    box-shadow: 5px 0px 10px #a4a2a2;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.dashboard__sub-section__heading {
+    font-family: "BPG Arial Caps";
+    border-bottom: 1px solid #000000;
+}
+
 .form__input input {
     text-overflow: ellipsis;
 }
 
+.form__textarea {
+    display: flex;
+}
+
+.form__textarea span {
+    margin-right: 0.5rem;
+    margin-top: 0.1rem;
+}
+
+.form__textarea textarea {
+    resize: none;
+}
+
 .highlighted-input {
     border: 1px solid black;
+}
+
+.edit-button, .submit-button, .cancel-button {
+    max-height: 3rem;
+}
+
+.cancel-button {
+    margin-left: 1rem;
 }
