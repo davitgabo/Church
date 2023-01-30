@@ -24,7 +24,7 @@ class EmailController extends Controller
             return strip_tags($value);
         },$letter);
 
-        if ( Mail::to('info@stiverychurch.ge')->send(new SendEmail($letter)) ){
+        if ( Mail::to('datigabashvili@gmail.com')->send(new SendEmail($letter)) ){
             Mail::to($letter['email'])->send(new SendConfirmation());
         }
 
