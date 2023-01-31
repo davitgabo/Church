@@ -9,20 +9,20 @@
             @if(strlen($item['text']) > 40 || strlen($item['text_ge']) > 40)
             <div class="w-100">
                 <div class="form__textarea">
-                    <span>GE:</span> <textarea class="w-50" name="text_ge" cols="20" rows="5" readonly onfocus="this.blur()">{{$item['text_ge']}}</textarea>
+                    <span>GE:</span> <textarea class="w-50 form-control" name="text_ge" cols="20" rows="5" readonly onfocus="this.blur()">{{$item['text_ge']}}</textarea>
                 </div>
                 <div class="form__textarea my-2">
-                    <span>EN:</span> <textarea class="w-50" name="text_en" cols="20" rows="5" readonly onfocus="this.blur()">{{$item['text']}}</textarea>
+                    <span>EN:</span> <textarea class="w-50 form-control" name="text_en" cols="20" rows="5" readonly onfocus="this.blur()">{{$item['text']}}</textarea>
                 </div>
             </div>
 
             @else
             <div class="w-100">
                 <div class="form__input">
-                    <span>GE:</span> <input class="w-50" type="text" name="text_ge" readonly onfocus="this.blur()" value="{{$item['text_ge']}}">
+                    <span>GE:</span> <input class="w-50 form-control" type="text" name="text_ge" readonly onfocus="this.blur()" value="{{$item['text_ge']}}">
                 </div>
                 <div class="form__input my-2">
-                    <span>EN:</span> <input class="w-50" type="text" name="text_en" readonly onfocus="this.blur()" value="{{$item['text']}}">
+                    <span>EN:</span> <input class="w-50 form-control" type="text" name="text_en" readonly onfocus="this.blur()" value="{{$item['text']}}">
                 </div>
             </div>
             @endif
