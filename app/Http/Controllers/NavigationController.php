@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Content;
+use App\Models\Donation;
+use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
@@ -13,7 +15,7 @@ class NavigationController extends Controller
         switch ($lang) {
             case 'en':
                 $text = 'text';
-                $contents['nav_logo_title']='Zugdidis iveriis yovladwminda tadzari';
+                $contents['nav_logo_title']='ST.VIRGIN MARY ICON OF THE IVERON CHURCH';
                 break;
             case 'ge':
                 $text = 'text_ge';
@@ -39,19 +41,26 @@ class NavigationController extends Controller
         }
     }
 
-    public function dash(){
-        $tableData = Content::all();
-        foreach ($tableData as $row) {
-            $key = $row->page;
-            $contents[$key][] = [ 'id'=>$row->id,
-                                  'text_ge' => $row->text_ge,
-                                  'text'=> $row->text,
-                                  'uri' => $row->uri,
-                                  'visibility' => $row->visibility,
-                                  'title' => $row->description];
+    public function dash($page)
+    {
+        if (in_array($page,['dashboard','images','donations'])) {
+            $tableData = Content::all();
+            foreach ($tableData as $row) {
+                $key = $row->page;
+                $contents[$key][] = [ 'id'=>$row->id,
+                    'text_ge' => $row->text_ge,
+                    'text'=> $row->text,
+                    'uri' => $row->uri,
+                    'visibility' => $row->visibility,
+                    'title' => $row->description];
+            }
+            $gallery = Image::all();
+            $donations = Donation::all();
+            return view('dashboard',['contents'=> $contents,
+                                          'images'=> $gallery,
+                                          'donations'=>$donations,
+                                          'component' => $page]);
         }
-
-        return view('dashboard',['contents'=> $contents]);
     }
 
     public function login(){
