@@ -2,21 +2,24 @@
     <div class="dashboard__sub-section">
         <h3 class="dashboard__sub-section__heading"> მთავარი გვერდი </h3>
 
-        <form action="/store" method="post" enctype="multipart/form-data">
-            @csrf
-            <label for="uploadImage">სურათი</label>
-            <input type="file" name="image" class="form-control-file" id="uploadImage">
-            <button type="submit" class="btn btn-success">შეცვლა</button>
-        </form>
+        @foreach($sliders as $item)
+            <form action="/" method="post" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
+                <label for="sliderImage_{{$loop->index}}"><img class="gallery-img" src="/assets/images/{{$item->uri}}" alt=""></label>
+                <input type="file" name="image" class="form-control-file" id="sliderImage_{{$loop->index}}">
+                <button type="submit" class="btn btn-success">შეცვლა</button>
+            </form>
+        @endforeach
     </div>
 
     <div class="dashboard__sub-section">
         <h3 class="dashboard__sub-section__heading"> ჩვენს შესახებ </h3>
-
-        <form action="/store" method="put" enctype="multipart/form-data">
+        <form action="/" method="post" enctype="multipart/form-data">
             @csrf
-            <label for="uploadImage">სურათი</label>
-            <input type="file" name="image" class="form-control-file" id="uploadImage">
+            @method('PUT')
+            <label for="aboutImage"><img class="gallery-img" src="/assets/images/{{$contents['about'][3]['uri']}}" alt=""></label>
+            <input type="file" name="image" class="form-control-file" id="aboutImage">
             <button type="submit" class="btn btn-success">შეცვლა</button>
         </form>
     </div>
@@ -24,19 +27,23 @@
     <div class="dashboard__sub-section">
         <h3 class="dashboard__sub-section__heading"> გალერეა </h3>
 
-        <form action="/store" method="put" enctype="multipart/form-data">
+        @foreach($images as $image)
+        <form action="/" method="post" enctype="multipart/form-data">
             @csrf
-            <label for="changeImage_1">
+            @method('PUT')
+            <label for="changeImage_{{$loop->index}}">
                 <img class="gallery-img" src="/assets/images/sameba.jpg" alt="">
             </label>
-            <input hidden type="file" name="image" class="form-control-file" id="changeImage_1">
+            <input hidden type="file" name="image" class="form-control-file" id="changeImage_{{$loop->index}}">
             <button type="submit" class="btn btn-success">შეცვლა</button>
             <button type="submit" class="btn btn-danger">წაშლა</button>
         </form>
+        @endforeach
 
-        <form action="/store" method="put" enctype="multipart/form-data">
+        <form action="/" method="post" enctype="multipart/form-data">
             @csrf
-            <label for="uploadImage">სურათი</label>
+            @method('PUT')
+            <label for="uploadImage"> ფოტოს დამატება </label>
             <input type="file" name="image" class="form-control-file" id="uploadImage">
             <button type="submit" class="btn btn-primary">დამატება</button>
         </form>

@@ -56,10 +56,12 @@ class NavigationController extends Controller
             }
             $gallery = Image::all();
             $donations = Donation::all();
+            $sliders = Content::where('section','slider')->get();
             return view('dashboard',['contents'=> $contents,
                                           'images'=> $gallery,
                                           'donations'=>$donations,
-                                          'component' => $page]);
+                                          'component' => $page,
+                                          'sliders'=>$sliders]);
         }
     }
 

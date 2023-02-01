@@ -25,7 +25,7 @@ class ContentController extends Controller
             $content->text_ge = $inputs['text_ge'];
             $content->save();
         }
-        return to_route('dashboard');
+        return redirect()->back();
     }
 
     public function delete($id)
