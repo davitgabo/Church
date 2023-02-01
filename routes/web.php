@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\NavigationController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,9 @@ use Illuminate\Support\Facades\Route;
 Route::post('/store', [ContentController::class,'store'])->middleware('auth');
 Route::delete('/delete/{id}', [ContentController::class,'delete'])->middleware('auth');
 Route::put('/edit/{id}', [ContentController::class,'edit'])->middleware('auth');
+Route::put('/image/change/{id}', [ContentController::class,'changeImage'])->middleware('auth');
+Route::put('/image/delete/{id}', [ContentController::class,'deleteImage'])->middleware('auth');
+Route::put('/image/add/{id}', [ImageController::class,'changeImage'])->middleware('auth');
 Route::put('/change', [AuthController::class,'changePassword'])->middleware('auth');
 Route::get('/admin/{page}', [NavigationController::class,'dash'])->middleware('auth','prevent-back-history')->name('dashboard');
 Route::delete('/logout', [AuthController::class,'logout'])->middleware('auth');

@@ -20,4 +20,9 @@ class Content extends Model
         $qty = Content::where('section', 'slider')->count();
         return $qty < 6;
     }
+
+    public function hasPicture($section): bool
+    {
+        return $section == 'slider' || $section == 'picture title';
+    }
 }

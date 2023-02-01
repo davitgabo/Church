@@ -13,16 +13,11 @@ class ContentController extends Controller
     {
         $inputs = $request->validate(['text_en'=>'required|string|max:1800',
                                       'text_ge'=>'required|string|max:1800' ]);
-
-        $inputs = array_map(function($value){
-            return strip_tags($value);
-        },$inputs);
-
         $content = Content::find($id);
 
         if($content){
-            $content->text = $inputs['text_en'];
-            $content->text_ge = $inputs['text_ge'];
+            $content->text = strip_tags($inputs['text_en']);
+            $content->text_ge = strip_tags($inputs['text_ge']);
             $content->save();
         }
         return to_route('dashboard');
@@ -46,7 +41,6 @@ class ContentController extends Controller
             if (File::exists($file_path)) {
                 File::delete($file_path);
             }
-
             $slider->delete();
 
         } catch (\Exception $e) {
@@ -75,6 +69,30 @@ class ContentController extends Controller
             if ( $slider->save() ){
                 $image->move(public_path().'/assets/images',$slider->uri);
             }
+        }
+        return redirect()->back();
+    }
+
+    public function changeImage(Request $request, $id)
+    {
+        $request->validate(['image'=>'required|image']);
+        $content = Content::find($id);
+
+        if ($content->hasPicture($content->section)){
+            $oldImage = $content->uri;
+            $image = $request->file('image');
+            $content->uri = time().$image->getClientOriginalName();
+            try {
+                if ($content->save()){
+                    $image->move(public_path().'/assets/images', $content->uri);
+                    $file_path = public_path("assets/images/$oldImage");
+                    if (File::exists($file_path)) {
+                        File::delete($file_path);
+                    }
+                }
+            }   catch (\Exception $e) {
+                    Log::error("Error deleting content with ID $id: " . $e->getMessage());
+                }
         }
         return redirect()->back();
     }
