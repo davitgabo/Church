@@ -16,6 +16,7 @@ class ImageController extends Controller
             'desc_en'=>'required|string|max:1800',
             'image'=>'required|image'
         ]);
+
         $image = new Image();
         $picture = $request->file('image');
         $image->desc_en = strip_tags($inputs['desc_en']);
@@ -52,25 +53,21 @@ class ImageController extends Controller
     {
         $inputs = $request->validate(['desc_en'=>'required|string|max:1800',
                                       'desc_ge'=>'required|string|max:1800',
-                                      'image'=>'required|image']);
+                                      'image'=>'image']);
         $image = Image::find($id);
         if (!$image) {
             Log::error("Content with ID $id not found");
             return redirect()->back();
         }
-
-        $picture = $request->file('image');
         $image->desc_en = strip_tags($inputs['text_en']);
         $image->desc_ge = strip_tags($inputs['text_ge']);
-        $image->name = time().$picture->getClientOriginalName();
 
-        try {
+        if( $request->hasFile('image') ){
+            $picture = $request->file('image');
+            $image->name = time().$picture->getClientOriginalName();
             $picture->move(public_path().'/assets/images',$image->name);
-            $image->save();
-        } catch (\Exception $e){
-            Log::error("Error changing Image with ID $id: " . $e->getMessage());
         }
-
+        $image->save();
         return to_route('dashboard');
     }
 }
