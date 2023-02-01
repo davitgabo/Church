@@ -14,6 +14,11 @@
     padding: 1rem;
 }
 
+.dashboard__menu__item.active{
+    background-color: #000000;
+    color: #ffffff;
+}
+
 .dashboard__content {
     width: 80%;
     overflow: auto;
@@ -33,6 +38,7 @@
 
 .form__input input {
     text-overflow: ellipsis;
+    display: inline;
 }
 
 .form__textarea {
@@ -58,4 +64,9 @@
 
 .cancel-button {
     margin-left: 1rem;
+}
+
+.gallery-img {
+    width: 20rem;
+    height: 20rem;
 }
