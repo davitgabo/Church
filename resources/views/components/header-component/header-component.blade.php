@@ -13,16 +13,17 @@
             </a>
         </div>
         @endif
-    <div class="nav__logo">
-{{--           ::todo აქ დალინკე        <a href="/{{$lang}}/home">      --}}
-            <div class="nav__logo__title">
-                {{ $contents['nav_logo_title'] }}
-            </div>
-            <div class="nav__logo__icon">
-                <img src="{{URL::asset('/assets/icons/nav_icon.png')}}" alt="Altar logo">
-            </div>
+        <a href="/{{$lang}}/home">
+            <div class="nav__logo">
+                <div class="nav__logo__title">
+                    {{ $contents['nav_logo_title'] }}
+                </div>
+                <div class="nav__logo__icon">
+                    <img src="{{URL::asset('/assets/icons/nav_icon.png')}}" alt="Altar logo">
+                </div>
 
-    </div>
+            </div>
+        </a>
 
     <div class="nav__language">
         <select class="nav__language__select" name="" id="">
