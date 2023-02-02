@@ -1,15 +1,29 @@
 <div class="dashboard__sub-section">
     <h3 class="dashboard__sub-section__heading"> მთავარი გვერდი </h3>
+    <div class="row">
+        @foreach($sliders as $item)
+            <div class="col-4">
+                <div class="d-flex flex-column dashboard__sub-section__edit-form">
+                    <form action="/slider/change/{{$item->id}}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+                        <label class="dashboard__sub-section__change-image my-1 d-flex justify-content-center" for="sliderImage_{{$loop->index}}">
+                            <img id="sliderImage" class="gallery-img" src="/assets/images/{{$item->uri}}" alt="">
+                        </label>
+                        <input hidden type="file" name="image" class="form-control-file" id="sliderImage_{{$loop->index}}" onchange="readURL(this, 'sliderImage');">
+                        <div class="my-2 d-flex">
+                            <span class="mr-2">GE:</span> <div class="dashboard__sub-section__edit-form__text">{{$item->text_ge}}</div>
+                        </div>
+                        <div class="my-2 d-flex">
+                            <span class="mr-2">EN:</span> <div class="dashboard__sub-section__edit-form__text">{{$item->text}}</div>
+                        </div>
+                        <button type="submit" class="btn btn-success">შეცვლა</button>
+                    </form>
+                </div>
+            </div>
+        @endforeach
+    </div>
 
-    @foreach($sliders as $item)
-        <form action="/slider/change/{{$item->id}}" method="post" enctype="multipart/form-data">
-            @csrf
-            @method('PUT')
-            <label for="sliderImage_{{$loop->index}}"><img class="gallery-img" src="/assets/images/{{$item->uri}}" alt=""></label>
-            <input hidden type="file" name="image" class="form-control-file" id="sliderImage_{{$loop->index}}">
-            <button type="submit" class="btn btn-success">შეცვლა</button>
-        </form>
-    @endforeach
 </div>
 
 <div class="dashboard__sub-section">
@@ -17,8 +31,10 @@
     <form action="/slider/change/{{$contents['about'][3]['id']}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
-        <label for="aboutImage"><img class="gallery-img" src="/assets/images/{{$contents['about'][3]['uri']}}" alt=""></label>
-        <input hidden type="file" name="image" class="form-control-file" id="aboutImage">
+        <label class="dashboard__sub-section__change-image" for="aboutImage">
+            <img id="aboutImg" class="gallery-img" src="/assets/images/{{$contents['about'][3]['uri']}}" alt="">
+        </label>
+        <input hidden type="file" name="image" class="form-control-file" id="aboutImage" onchange="readURL(this, 'aboutImg');">
         <button type="submit" class="btn btn-success">შეცვლა</button>
     </form>
 </div>
@@ -64,7 +80,7 @@
         <label for="uploadImage" class="dashboard__sub-section__upload-label">
             <img src="{{URL::asset('/assets/icons/upload_img.png')}}" alt=""> ფოტოს დამატება
         </label>
-        <input hidden type="file" name="image" class="form-control-file" id="uploadImage" onchange="readURL(this);">
+        <input hidden type="file" name="image" class="form-control-file" id="uploadImage" onchange="readURL(this, 'uploadedImage');">
         <div class="my-3">
             <input class="form-control" type="text" name="desc_ge" placeholder="სურათის ქართული აღწერა">
         </div>

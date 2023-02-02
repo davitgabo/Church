@@ -10,18 +10,11 @@
         <x-dashboard-item-component.dashboard-item-component :$item />
 
     @endforeach
-{{--    <form action="/store" method="post" enctype="multipart/form-data">--}}
-{{--        @csrf--}}
-{{--        <span>GE:</span> <textarea name="text_ge"></textarea>--}}
-{{--        <span>EN:</span> <textarea name="text_en"></textarea>--}}
-{{--        <span>Image</span><input type="file" name="image">--}}
-{{--        <button type="submit" class="btn btn-primary">დამატება</button>--}}
-{{--    </form>--}}
     <form class="w-50 dashboard__sub-section__add-form" action="/store" method="post" enctype="multipart/form-data">
         <h5>სლაიდერის ინფორმაცია</h5>
         @csrf
         <div class="d-flex">
-            <img id="uploadedImage" src="#" alt="">
+            <img id="uploadedImage" src="#">
         </div>
         <label for="uploadImage" class="dashboard__sub-section__upload-label">
             <img src="{{URL::asset('/assets/icons/upload_img.png')}}" alt=""> ფოტოს დამატება

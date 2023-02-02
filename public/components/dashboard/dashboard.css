@@ -42,11 +42,18 @@
     margin-bottom: 3rem;
 }
 
-.dashboard__sub-section__change-image {
-    cursor: pointer;
+.dashboard__sub-section__edit-form__text {
+    inline-size: 90%;
+    overflow-wrap: break-word;
+    height: 4rem;
+    overflow: auto;
+    border: 1px solid #ced4da;
+    padding: 0 0.5rem;
+    border-radius: 0.25rem;
 }
 
-.dashboard__sub-section__edit-btn {
+.dashboard__sub-section__change-image {
+    cursor: pointer;
 }
 
 .dashboard__sub-section__upload-label {
@@ -94,4 +101,5 @@
 
 .gallery-img {
     height: 20rem;
+    width: 100%;
 }
