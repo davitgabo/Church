@@ -28,10 +28,10 @@
         </label>
         <input hidden type="file" name="image" class="form-control-file" id="uploadImage" onchange="readURL(this);">
         <div class="my-3">
-            <input class="form-control" type="text" name="desc_ge" placeholder="სლაიდერის ქართული ტექსტი">
+            <input class="form-control" type="text" name="text_ge" placeholder="სლაიდერის ქართული ტექსტი">
         </div>
         <div  class="my-3">
-            <input class="form-control" type="text" name="desc_en" placeholder="სლაიდერის ინგლისური ტექსტი">
+            <input class="form-control" type="text" name="text_en" placeholder="სლაიდერის ინგლისური ტექსტი">
         </div>
         <button type="submit" class="btn btn-primary">დამატება</button>
     </form>
