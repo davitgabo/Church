@@ -52,12 +52,16 @@ function cancelEdit(e, id) {
     })
 }
 
-function readURL(input) {
+function readURL(input,idName) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
 
         reader.onload = function (e) {
-            $('#uploadedImage').attr('src', e.target.result).height(200);
+            if(idName === 'aboutImg') {
+                $('#' + idName).attr('src', e.target.result);
+            } else {
+                $('#' + idName).attr('src', e.target.result).height(320).width(320);
+            }
         };
 
         reader.readAsDataURL(input.files[0]);
