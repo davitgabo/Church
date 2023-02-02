@@ -1,6 +1,6 @@
 .dashboard {
     /*background-color: #d1d1d1;*/
-    box-shadow: 5px 0px 10px #a4a2a2;
+    box-shadow: 0 0 10px #a4a2a2;
     padding: 1.5rem 3rem;
     height: 90%;
     width: 95%;
@@ -26,7 +26,7 @@
 }
 
 .dashboard__sub-section {
-    box-shadow: 5px 0px 10px #a4a2a2;
+    box-shadow: 0 0 10px #a4a2a2;
     padding: 1.5rem;
     margin-bottom: 2rem;
 }
@@ -34,6 +34,32 @@
 .dashboard__sub-section__heading {
     font-family: "BPG Arial Caps";
     border-bottom: 1px solid #000000;
+}
+
+.dashboard__sub-section__edit-form {
+    box-shadow: 0 0 10px #a4a2a2;
+    padding: 1rem;
+    margin-bottom: 3rem;
+}
+
+.dashboard__sub-section__change-image {
+    cursor: pointer;
+}
+
+.dashboard__sub-section__edit-btn {
+}
+
+.dashboard__sub-section__upload-label {
+    cursor: pointer;
+}
+
+.dashboard__sub-section__upload-label img {
+    width: 3rem;
+}
+
+.dashboard__sub-section__add-form {
+    box-shadow: 0 0 10px #a4a2a2;
+    padding: 1rem;
 }
 
 .form__input input {
@@ -67,6 +93,5 @@
 }
 
 .gallery-img {
-    width: 20rem;
     height: 20rem;
 }

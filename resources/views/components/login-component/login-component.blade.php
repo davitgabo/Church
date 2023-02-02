@@ -1,8 +1,8 @@
 <div class="login h-100 d-flex">
     <form class="d-flex flex-column login__form" action="/authenticate" method="post">
         @csrf
-        <input class="m-1" type="text" name="name" placeholder="user">
-        <input class="m-1" type="password" name="password" placeholder="password">
-        <button class="m-1" type="submit">Log in</button>
+        <input class="m-1 form-control" type="text" name="name" placeholder="ოუზერი">
+        <input class="m-1 form-control" type="password" name="password" placeholder="პაროლი">
+        <button class="m-1 btn btn-success" type="submit">შესვლა</button>
     </form>
 </div>

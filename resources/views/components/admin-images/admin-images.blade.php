@@ -1,58 +1,76 @@
-<div>
-    <div class="dashboard__sub-section">
-        <h3 class="dashboard__sub-section__heading"> მთავარი გვერდი </h3>
+<div class="dashboard__sub-section">
+    <h3 class="dashboard__sub-section__heading"> მთავარი გვერდი </h3>
 
-        @foreach($sliders as $item)
-            <form action="/slider/change/{{$item->id}}" method="post" enctype="multipart/form-data">
-                @csrf
-                @method('PUT')
-                <label for="sliderImage_{{$loop->index}}"><img class="gallery-img" src="/assets/images/{{$item->uri}}" alt=""></label>
-                <input type="file" name="image" class="form-control-file" id="sliderImage_{{$loop->index}}">
-                <button type="submit" class="btn btn-success">შეცვლა</button>
-            </form>
-        @endforeach
-    </div>
-
-    <div class="dashboard__sub-section">
-        <h3 class="dashboard__sub-section__heading"> ჩვენს შესახებ </h3>
-        <form action="/slider/change/{{$contents['about'][3]['id']}}" method="post" enctype="multipart/form-data">
+    @foreach($sliders as $item)
+        <form action="/slider/change/{{$item->id}}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <label for="aboutImage"><img class="gallery-img" src="/assets/images/{{$contents['about'][3]['uri']}}" alt=""></label>
-            <input type="file" name="image" class="form-control-file" id="aboutImage">
+            <label for="sliderImage_{{$loop->index}}"><img class="gallery-img" src="/assets/images/{{$item->uri}}" alt=""></label>
+            <input hidden type="file" name="image" class="form-control-file" id="sliderImage_{{$loop->index}}">
             <button type="submit" class="btn btn-success">შეცვლა</button>
         </form>
-    </div>
+    @endforeach
+</div>
 
-    <div class="dashboard__sub-section">
-        <h3 class="dashboard__sub-section__heading"> გალერეა </h3>
+<div class="dashboard__sub-section">
+    <h3 class="dashboard__sub-section__heading"> ჩვენს შესახებ </h3>
+    <form action="/slider/change/{{$contents['about'][3]['id']}}" method="post" enctype="multipart/form-data">
+        @csrf
+        @method('PUT')
+        <label for="aboutImage"><img class="gallery-img" src="/assets/images/{{$contents['about'][3]['uri']}}" alt=""></label>
+        <input hidden type="file" name="image" class="form-control-file" id="aboutImage">
+        <button type="submit" class="btn btn-success">შეცვლა</button>
+    </form>
+</div>
 
+<div class="dashboard__sub-section">
+    <h3 class="dashboard__sub-section__heading"> გალერეა </h3>
+    <div class="row">
         @foreach($images as $image)
-        <form action="/gallery/change/{{$image->id}}" method="post" enctype="multipart/form-data">
-            @csrf
-            @method('PUT')
-            <label for="changeImage_{{$loop->index}}">
-                <img class="gallery-img" src="/assets/images/sameba.jpg" alt="">
-            </label>
-            <span>GE:</span> <textarea name="desc_ge">{{$image->desc_ge}}</textarea>
-            <span>EN:</span> <textarea name="desc_en">{{$image->desc_en}}</textarea>
-            <input  type="file" name="image" class="form-control-file" id="changeImage_{{$loop->index}}">
-            <button type="submit" class="btn btn-success">შეცვლა</button>
-        </form>
-            <form action="/gallery/delete/{{$image->id}}" method="post">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger">წაშლა</button>
-            </form>
+            <div class="col-4">
+                <div class="d-flex flex-column dashboard__sub-section__edit-form">
+                    <form id="pic_edit_{{$image->id}}" class="d-flex flex-column" action="/gallery/change/{{$image->id}}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+                        <label class="dashboard__sub-section__change-image my-1 d-flex justify-content-center" for="changeImage_{{$loop->index}}">
+                            <img class="gallery-img" src="/assets/images/sameba.jpg" alt="">
+                        </label>
+                        <div class="my-2 d-flex">
+                            <span class="mr-2">GE:</span> <textarea class="form-control" cols="25" rows="3" name="desc_ge">{{$image->desc_ge}}</textarea>
+                        </div>
+                        <div class="my-2 d-flex">
+                            <span class="mr-2">EN:</span> <textarea class="form-control" name="desc_en">{{$image->desc_en}}</textarea>
+                        </div>
+                        <input hidden type="file" name="image" class="form-control-file" id="changeImage_{{$loop->index}}">
+                    </form>
+                    <form id="pic_delete_{{$image->id}}" action="/gallery/delete/{{$image->id}}" method="post">
+                        @csrf
+                        @method('DELETE')
+                    </form>
+                    <div class="d-flex my-2">
+                        <button form="pic_edit_{{$image->id}}" type="submit" class="btn btn-success dashboard__sub-section__edit-btn">შეცვლა</button>
+                        <button form="pic_delete_{{$image->id}}" type="submit" class="btn btn-danger ml-2">წაშლა</button>
+                    </div>
+                </div>
+            </div>
         @endforeach
-
-        <form action="/gallery/store" method="post" enctype="multipart/form-data">
-            @csrf
-            <label for="uploadImage"> ფოტოს დამატება </label>
-            <input type="file" name="image" class="form-control-file" id="uploadImage">
-            <input type="text" name="desc_ge" >
-            <input type="text" name="desc_en" >
-            <button type="submit" class="btn btn-primary">დამატება</button>
-        </form>
     </div>
+
+    <form class="w-50 dashboard__sub-section__add-form" action="/gallery/store" method="post" enctype="multipart/form-data">
+        @csrf
+        <div class="d-flex">
+            <img id="uploadedImage" src="#" alt="">
+        </div>
+        <label for="uploadImage" class="dashboard__sub-section__upload-label">
+            <img src="{{URL::asset('/assets/icons/upload_img.png')}}" alt=""> ფოტოს დამატება
+        </label>
+        <input hidden type="file" name="image" class="form-control-file" id="uploadImage" onchange="readURL(this);">
+        <div class="my-3">
+            <input class="form-control" type="text" name="desc_ge" placeholder="სურათის ქართული აღწერა">
+        </div>
+        <div  class="my-3">
+            <input class="form-control" type="text" name="desc_en" placeholder="სურათის ინგლისური აღწერა">
+        </div>
+        <button type="submit" class="btn btn-primary">დამატება</button>
+    </form>
 </div>
