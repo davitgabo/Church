@@ -35,6 +35,7 @@ class ContentController extends Controller
         $content->save();
 
         return redirect()->back()->with('success', 'Content updated successfully');
+
     }
 
     /**
@@ -122,14 +123,12 @@ class ContentController extends Controller
         }
 
         $image = $request->file('image');
-        $imageName = time() . $image->getClientOriginalName();
-        $imagePath = public_path("assets/images/$imageName");
+        $imagePath = public_path("assets/images/$content->uri");
+        $content->uri = time() . $image->getClientOriginalName();
 
         try {
-            if ($content->update([
-                'uri' => $imageName,
-            ])) {
-                $image->move(public_path().'/assets/images', $imageName);
+            if ($content->save()) {
+                $image->move(public_path().'/assets/images', $content->uri);
 
                 if ($content->uri && file_exists($imagePath)) {
                     unlink($imagePath);
@@ -137,7 +136,6 @@ class ContentController extends Controller
             }
         } catch (\Exception $e) {
             Log::error("Error updating content with ID $id: " . $e->getMessage());
-            return redirect()->back()->withErrors(['Error updating content']);
         }
 
         return redirect()->back();

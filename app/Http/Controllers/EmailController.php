@@ -12,7 +12,7 @@ class EmailController extends Controller
 {
     public function send(Request $request)
     {
-        $letter = $request->validate([
+        $validatedData = $request->validate([
             'name' => 'required|string',
             'surname' => 'required|string',
             'email' => 'required|email',
@@ -20,13 +20,10 @@ class EmailController extends Controller
             'text' => 'required|string|max:1800',
         ]);
 
-        $letter = array_map(function($value){
-            return strip_tags($value);
-        },$letter);
+        $letter = array_map('strip_tags', $validatedData);
 
-        if ( Mail::to('datigabashvili@gmail.com')->send(new SendEmail($letter)) ){
-            Mail::to($letter['email'])->send(new SendConfirmation());
-        }
+        Mail::to('datigabashvili@gmail.com')->send(new SendEmail($letter));
+        Mail::to($letter['email'])->send(new SendConfirmation());
 
         return redirect()->back();
     }

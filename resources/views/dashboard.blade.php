@@ -41,7 +41,7 @@
                     <x-admin-texts.admin-texts :$contents/>
                     @break
                 @case ('images')
-                    <x-admin-images.admin-images :$images />
+                    <x-admin-images.admin-images :$images :$contents :$sliders/>
                     @break
                 @case ('donations')
                     <x-admin-donations.admin-donations :$donations/>
