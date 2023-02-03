@@ -1,0 +1,81 @@
+.make-donation__form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.make-donation__form-section__title {
+    font-family: BPG Arial Caps;
+    font-size: 2.25rem;
+    line-height: 2.5625rem;
+    width: 50%;
+    margin-bottom: 4rem;
+    margin-top: 5rem;
+}
+
+.make-donation__form-section__form {
+    width: 50%;
+}
+
+.make-donation__form-section__form__input {
+    border: 1px solid #000000;
+    border-radius: 0.875rem;
+    width: 100%;
+    padding: 0.3rem 0.5rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.make-donation__form-section__form input::-webkit-input-placeholder,
+.make-donation__form-section__form textarea::-webkit-input-placeholder{
+    font-family: BPG Classic Medium;
+}
+
+.make-donation__form-section__form input:-ms-input-placeholder,
+.make-donation__form-section__form textarea:-ms-input-placeholder {
+    font-family: BPG Classic Medium;
+}
+
+.make-donation__form-section__form input:-moz-placeholder,
+.make-donation__form-section__form textarea:-moz-placeholder {
+    font-family: BPG Classic Medium;
+}
+
+.make-donation__form-section__form input::-moz-placeholder,
+.make-donation__form-section__form textarea::-moz-placeholder {
+    font-family: BPG Classic Medium;
+}
+
+.make-donation__info {
+    margin-top: 13rem;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    width: 70%;
+}
+
+.make-donation__info div {
+    font-size: 1.2rem;
+    color: #a4a2a2;
+}
+
+.make-donation__info hr {
+    margin: 0;
+}
+
+.make-donation__info span {
+    cursor: pointer;
+}
+
+#bankAccNo, #paymentTitle {
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #000000;
+}
+
+.make-donation__info__note {
+    font-size: 1rem !important;
+    color: #404040 !important;
+}
