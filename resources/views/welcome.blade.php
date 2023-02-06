@@ -18,6 +18,7 @@
         <link href="/components/home-component/home-component.css" rel="stylesheet">
         <link href="/components/about-info-component/about-info-component.css" rel="stylesheet">
         <link href="/components/contact-component/contact-component.css" rel="stylesheet">
+        <link href="/components/make-donation-component/make-donation-component.css" rel="stylesheet">
 
     </head>
     <body>
@@ -44,5 +45,6 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <script src="/components/home-component/home-component.js"></script>
+        <script src="/components/make-donation-component/make-donation-component.js"></script>
     </body>
 </html>
