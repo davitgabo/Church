@@ -34,11 +34,11 @@
                 <x-contact-component.contact-component :$contents :$lang/>
                 @break
             @case ('gallery')
-                <x-gallery-component.gallery-component :$contents :$lang/>
+                <x-gallery-component.gallery-component :$contents :$lang />
                 @break
             @case ('donate')
 {{--                <x-donate-component.donate-component :$contents :$lang/>--}}
-            <x-make-donation-component.make-donation-component :$contents :$lang/>
+            <x-make-donation-component.make-donation-component :$contents :$lang :$payment/>
                 @break
         @endswitch
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
