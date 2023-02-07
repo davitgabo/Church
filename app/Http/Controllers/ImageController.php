@@ -12,8 +12,8 @@ class ImageController extends Controller
     public function store(Request $request)
     {
         $inputs = $request->validate([
-            'desc_ge'=>'required|string|max:1800',
-            'desc_en'=>'required|string|max:1800',
+            'desc_ge'=>'nullable|string|max:1800',
+            'desc_en'=>'nullable|string|max:1800',
             'image'=>'required|image'
         ]);
 
@@ -59,8 +59,8 @@ class ImageController extends Controller
             Log::error("Content with ID $id not found");
             return redirect()->back();
         }
-        $image->desc_en = strip_tags($inputs['text_en']);
-        $image->desc_ge = strip_tags($inputs['text_ge']);
+        $image->desc_en = strip_tags($inputs['desc_en']);
+        $image->desc_ge = strip_tags($inputs['desc_ge']);
 
         if( $request->hasFile('image') ){
             $picture = $request->file('image');
@@ -68,6 +68,6 @@ class ImageController extends Controller
             $picture->move(public_path().'/assets/images',$image->name);
         }
         $image->save();
-        return to_route('dashboard');
+        return redirect()->back();
     }
 }
