@@ -51,8 +51,8 @@ class ImageController extends Controller
 
     public function change(Request $request, $id)
     {
-        $inputs = $request->validate(['desc_en'=>'required|string|max:1800',
-                                      'desc_ge'=>'required|string|max:1800',
+        $inputs = $request->validate(['desc_en'=>'nullable|string|max:1800',
+                                      'desc_ge'=>'nullable|string|max:1800',
                                       'image'=>'image']);
         $image = Image::find($id);
         if (!$image) {

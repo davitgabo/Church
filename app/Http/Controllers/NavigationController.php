@@ -35,7 +35,8 @@ class NavigationController extends Controller
                 return view('welcome',['component'=> $page,
                                             'contents' => $contents,
                                             'text' => $text,
-                                            'lang' => $lang]);
+                                            'lang' => $lang,
+                                            'payment' => $this->generateUniqueNumber()]);
         } else {
                 return redirect("/$lang/home");
         }
@@ -62,10 +63,21 @@ class NavigationController extends Controller
                                           'donations'=>$donations,
                                           'component' => $page,
                                           'sliders'=>$sliders]);
+        } else {
+            return redirect()->back();
         }
     }
 
     public function login(){
         return view('login');
+    }
+
+    function generateUniqueNumber() {
+        do {
+            $number = rand(10000, 99999);
+            $exists = Donation::where('payment_title', $number)->exists();
+        } while ($exists);
+
+        return $number;
     }
 }

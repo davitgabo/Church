@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContentController;
+use App\Http\Controllers\DonationController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\NavigationController;
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/donations/store', [DonationController::class,'store']);
 Route::post('/store', [ContentController::class,'store'])->middleware('auth');
 Route::delete('/delete/{id}', [ContentController::class,'delete'])->middleware('auth');
 Route::put('/edit/{id}', [ContentController::class,'edit'])->middleware('auth');

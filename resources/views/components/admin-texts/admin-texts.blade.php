@@ -14,7 +14,7 @@
         <h5>სლაიდერის ინფორმაცია</h5>
         @csrf
         <div class="d-flex">
-            <img id="uploadedImage" src="#">
+            <img id="uploadedImage" src="#" alt="">
         </div>
         <label for="uploadImage" class="dashboard__sub-section__upload-label">
             <img src="{{URL::asset('/assets/icons/upload_img.png')}}" alt=""> ფოტოს დამატება
@@ -43,7 +43,7 @@
 </div>
 <div class="dashboard__sub-section">
     <h3 class="dashboard__sub-section__heading"> დონაციის გვერდი </h3>
-    {{--                    @foreach($contents['donate'] as $item)--}}
-    {{--                        <x-dashboard-item-component.dashboard-item-component :$item /> --}}
-    {{--                    @endforeach--}}
+                        @foreach($contents['donate'] as $item)
+                            <x-dashboard-item-component.dashboard-item-component :$item />
+                        @endforeach
 </div>
