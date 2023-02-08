@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Donation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class DonationController extends Controller
 {
@@ -26,6 +27,7 @@ class DonationController extends Controller
         $comment = htmlentities(strip_tags($request->input('comment')));
         $show_donation = $request->has('show_donation') ? 1 : 0;
         $show_name = $request->has('show_name') ? 1 : 0;
+        $show_amount = $request->has('show_amount') ? 1 : 0;
         $show_comment = $request->has('show_comment') ? 1 : 0;
 
         // Create a new donation object
@@ -36,6 +38,7 @@ class DonationController extends Controller
         $donation->last_name = $last_name;
         $donation->comment = $comment;
         $donation->public = $show_donation;
+        $donation->amount_visibility = $show_amount;
         $donation->name_visibility = $show_name;
         $donation->comment_visibility = $show_comment;
 
@@ -43,6 +46,42 @@ class DonationController extends Controller
         $donation->save();
 
         // Redirect the user with a success message
-        return redirect('/donations')->with('success', 'Donation has been successfully made!');
+        return redirect()->back();
+    }
+
+    public function changeStatus($id, Request $request)
+    {
+        $request->validate([
+            'approved' => 'required|bool'
+        ]);
+        $donation = Donation::find($id);
+
+        if (!$donation) {
+            Log::error("Content with ID $id not found");
+            return redirect()->back();
+        }
+
+        if ($request->input('approved')){
+            $donation->status = 'approved';
+        } else {
+            $donation->status = 'rejected';
+        }
+
+        $donation->save();
+        return redirect()->back();
+    }
+
+    public function delete($id)
+    {
+        $donation = Donation::find($id);
+
+        if (!$donation) {
+            Log::error("Donation with ID $id not found");
+            return redirect()->back();
+        }
+
+        $donation->delete();
+
+        return redirect()->back();
     }
 }

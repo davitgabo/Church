@@ -15,12 +15,14 @@
                         </div>
                         <div class="col-6 mt-4">
                             <input id="showDonation" type="checkbox" class="form-check-input" name="show_donation">
-                            <label for="showDonation">{{ ($lang=='ge') ? "ჩემი შემოწირულობა საჯაროა" : 'My donation is public'}}</label>
+                            <label for="showDonation">{{ ($lang=='ge') ? "გახადე საჯარო" : 'My donation is public'}}</label>
+                            <input id="showAmount" type="checkbox" class="form-check-input" name="show_amount">
+                            <label for="showAmount">{{ ($lang=='ge') ? "ჩანდეს თანხა" : 'Show amount'}}</label>
                         </div>
                         <div class="col-6 mt-4">
                             <input type="text" class="make-donation__form-section__form__input" name="first_name" placeholder="{{ ($lang=='ge') ? "სახელი" : 'First Name'}}">
                             <input class="mt-2" id="showName" name="show_name" type="checkbox" class="form-check-input">
-                            <label class="mt-2" for="showName">{{ ($lang=='ge') ? "აჩვენე ჩემი სახელი შემოწირულობებში" : 'Show my name in donations'}}</label>
+                            <label class="mt-2" for="showName">{{ ($lang=='ge') ? "ჩანდეს ჩემი სახელი" : 'Show my name in donations'}}</label>
                         </div>
                         <div class="col-6 mt-4">
                             <input type="text" class="make-donation__form-section__form__input" name="last_name" placeholder="{{ ($lang=='ge') ? "გვარი" : 'Last Name'}}">
