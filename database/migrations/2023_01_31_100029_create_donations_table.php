@@ -20,9 +20,11 @@ return new class extends Migration
             $table->float('amount');
             $table->string('comment');
             $table->boolean('public');
-            $table->string('name_visibility');
-            $table->string('comment_visibility');
+            $table->boolean('amount_visibility');
+            $table->boolean('name_visibility');
+            $table->boolean('comment_visibility');
             $table->string('payment_title');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }
