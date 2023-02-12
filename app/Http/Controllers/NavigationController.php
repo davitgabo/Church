@@ -25,7 +25,7 @@ class NavigationController extends Controller
                 return redirect('/ge/home');
         }
 
-        if (in_array($page,['home','about','contact','gallery','donate'])) {
+        if (in_array($page,['home','about','contact','gallery','donate','payment'])) {
                 $tableData = Content::where('page',$page)->orwhere('page','all')->get();
                 foreach ($tableData as $row) {
                     $key = $row->section;
