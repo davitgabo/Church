@@ -12,6 +12,10 @@
     padding: 1rem;
 }
 
+.donate__card img {
+    max-width: 2.5rem;
+}
+
 .donate__card__text, .donate__card__text span {
     font-size: 1.5rem;
     font-family: BPG Classic Medium;
@@ -24,4 +28,76 @@
 .donate__card__title {
     font-family: BPG Arial Caps;
     font-size: 2rem;
+}
+
+.donate__progress-bar {
+    margin-top: 4rem;
+}
+
+.donate__progress-bar__amount {
+    font-family: BPG Classic Medium;
+    font-size: 1.5rem;
+}
+
+.donate__progress-bar__bar {
+    background-color: #F9F9F9;
+    border-radius: 0.875rem;
+    padding: 2rem 1rem;
+}
+
+.progress-bar {
+    background-color: #7E7E7E;
+}
+
+.donate__last-donations {
+    margin-top: 2rem;
+}
+
+.donate__last-donations__title {
+    font-family: BPG Classic Medium;
+    font-size: 1.5rem;
+}
+
+.donate__last-donations__list {
+    background-color: #F9F9F9;
+    border-radius: 0.875rem;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.donate__last-donations__list__item {
+    font-family: BPG Classic Medium;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+
+.donate__last-donations__list__item__name {
+    font-size: 1.3rem;
+    order: 1;
+}
+
+.donate__last-donations__list__item__comment {
+    font-size: 1.1rem;
+    flex-grow: 100;
+    text-align: center;
+    border-bottom: 1px solid #D9D9D9;
+    position: relative;
+    margin-right: 1rem;
+    order: 2;
+}
+
+.donate__last-donations__list__item__comment__date {
+    font-size: 0.675rem;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.donate__last-donations__list__item__amount {
+    font-size: 1.3rem;
+    max-width: 10%;
+    order: 3;
 }
