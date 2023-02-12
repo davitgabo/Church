@@ -1,5 +1,13 @@
 <div>
     <div>
+        <form action="/donations/visibility" method="post">
+            @csrf
+            @method('PUT')
+            <button type="submit" value="1" name="hide"> Hide </button>
+            <button type="submit" value="0" name="hide"> Show </button>
+        </form>
+    </div>
+    <div>
         <h3> დაუდასტურებელი</h3>
         @foreach($donations as $donation)
             @if($donation->status == 'pending')

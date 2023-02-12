@@ -140,4 +140,17 @@ class ContentController extends Controller
 
         return redirect()->back();
     }
+
+    public function hideDonation(Request $request)
+    {
+        $request->validate(['hide' => 'required|bool']);
+
+        if ($request->input('hide')) {
+            Content::where('id', '4')->update(['visibility' => 'hide']);
+        } else {
+            Content::where('id','4')->update(['visibility' => 'show']);
+        }
+
+        return redirect()->back();
+    }
 }
