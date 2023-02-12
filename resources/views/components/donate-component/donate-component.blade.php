@@ -53,120 +53,55 @@
         </div>
 
         <div class="donate__last-donations">
-            <div class="donate__last-donations__title">
-                ბოლო შემოწირულობები
-            </div>
-            <div id="paginationData" style="display: none" class="donate__last-donations__list">
-                <div class="donate__last-donations__list__item">
-                    <div>
-                        ელდარ ხარბედია 1
-                    </div>
-                    <div>
-                        გფარავდეთ უფალი! გისურვებთ ბედნიერბას!
-                    </div>
-                    <div>
-                        22.12.22
-                    </div>
-                    <div>
-                        1500
-                    </div>
-                </div>
-                <div class="donate__last-donations__list__item">
-                    <div>
-                        ნინო დალაქიშვილი 2
-                    </div>
-                    <div>
-                        გისურვებთ მალე დამთავრებულიყოს ტაძრის მშენებლობა!
-
-                    </div>
-                    <div>
-                        22.12.22
-                    </div>
-                    <div>
-                        1500
-                    </div>
-                </div>
-                <div class="donate__last-donations__list__item">
-                    <div>
-                        ელდარ ხარბედია 3
-                    </div>
-                    <div>
-                        გფარავდეთ უფალი! გისურვებთ ბედნიერბას!
-
-                    </div>
-                    <div>
-                        22.12.22
-                    </div>
-                    <div>
-                        1500
-                    </div>
-                </div>
-                <div class="donate__last-donations__list__item">
-                    <div>
-                        ელდარ ხარბედია 4
-                    </div>
-                    <div>
-                        გფარავდეთ უფალი! გისურვებთ ბედნიერბას!
-
-                    </div>
-                    <div>
-                        22.12.22
-                    </div>
-                    <div>
-                        1500
-                    </div>
-                </div>
-                <div class="donate__last-donations__list__item">
-                    <div>
-                        ელდარ ხარბედია 5
-                    </div>
-                    <div>
-                        გფარავდეთ უფალი! გისურვებთ ბედნიერბას!
-
-                    </div>
-                    <div>
-                        22.12.22
-                    </div>
-                    <div>
-                        1500
-                    </div>
-                </div>
-                <div class="donate__last-donations__list__item">
-                    <div>
-                        ელდარ ხარბედია 6
-                    </div>
-                    <div>
-                        გფარავდეთ უფალი! გისურვებთ ბედნიერბას!
-
-                    </div>
-                    <div>
-                        22.12.22
-                    </div>
-                    <div>
-                        1500
-                    </div>
+                <div class="donate__last-donations__title">
+                    ბოლო შემოწირულობები
                 </div>
 
-                <div class="donate__last-donations__list__item">
-                    <div>
-                        ელდარ ხარბედია 7
-                    </div>
-                    <div>
-                        გფარავდეთ უფალი! გისურვებთ ბედნიერბას!
+                <div id="paginationData" style="display: none" class="donate__last-donations__list">
+                    @foreach($donations as $donation)
+                        <div
+                            @if ($loop->first)
+                            class="donate__last-donations__list__item"
+                            @endif
+                        >
 
-                    </div>
-                    <div>
-                        22.12.22
-                    </div>
-                    <div>
-                        1500
-                    </div>
+                                @if($donation->name_visibility)
+                                <div>
+                                    {{$donation->first_name. ' ' . $donation->last_name}}
+                                </div>
+                                @else
+                                    <div>
+                                        ****** *********
+                                    </div>
+                                @endif
+                                @if($donation->comment_visibility)
+                                    <div>
+                                        {{$donation->comment}}
+                                    </div>
+                                @else
+                                    <div>
+                                        ***************
+                                    </div>
+                                @endif
+                                <div>
+                                    {{$donation->created_at}}
+                                </div>
+                                @if($donation->amount_visibility)
+                                    <div>
+                                        {{$donation->amount}}
+                                    </div>
+                                @else
+                                    <div>
+                                       ****
+                                    </div>
+                                @endif
+                        </div>
+                    @endforeach
                 </div>
-            </div>
-            <div id="paginationVisibleData">
+                <div id="paginationVisibleData">
 
-            </div>
-            <div id="pagination"></div>
+                </div>
+                <div id="pagination"></div>
         </div>
     </div>
 </div>
