@@ -18,6 +18,10 @@
     width: 50%;
 }
 
+.make-donation__form-section__form label{
+    font-family: BPG Arial Caps;
+}
+
 .make-donation__form-section__form__input {
     border: 1px solid #000000;
     border-radius: 0.875rem;
@@ -49,6 +53,14 @@
     font-family: BPG Classic Medium;
 }
 
+.make-donation__form-section__form__submit-button {
+    background-color: #000000;
+    border-radius: 0.875rem;
+    color: #FFFFFF;
+    font-family: BPG Arial Caps;
+    font-size: 1.5rem;
+}
+
 .make-donation__info {
     margin-top: 13rem;
     background-color: #f9f9f9;
@@ -58,7 +70,8 @@
 
 .make-donation__info div {
     font-size: 1.2rem;
-    color: #a4a2a2;
+    color: #7E7E7E;
+    font-family: Helvetica Neue Roman;
 }
 
 .make-donation__info hr {
@@ -71,11 +84,21 @@
 
 #bankAccNo, #paymentTitle {
     font-weight: 600;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: #000000;
 }
 
 .make-donation__info__note {
-    font-size: 1rem !important;
-    color: #404040 !important;
+    font-size: 1.125rem !important;
+    color: #000000 !important;
+    font-family: BPG Classic Medium !important;
+}
+
+.copy {
+    font-size: 1rem;
+}
+
+.span-width {
+    width: 20%;
+    font-size: 1.2rem;
 }

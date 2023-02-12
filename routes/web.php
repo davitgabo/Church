@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('/donations/store', [DonationController::class,'store']);
+Route::put('/donations/status/{id}', [DonationController::class,'changeStatus'])->middleware('auth');;
+Route::delete('/donations/delete/{id}', [DonationController::class,'delete'])->middleware('auth');;
 Route::post('/store', [ContentController::class,'store'])->middleware('auth');
 Route::delete('/delete/{id}', [ContentController::class,'delete'])->middleware('auth');
 Route::put('/edit/{id}', [ContentController::class,'edit'])->middleware('auth');

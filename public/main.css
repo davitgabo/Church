@@ -56,3 +56,8 @@ a:hover {
     src: url('assets/fonts/neue-helvetica/Helvetica Neue LT GEO 65 Medium.ttf');
 }
 
+@font-face {
+    font-family: 'Helvetica Neue Roman';
+    src: url('assets/fonts/neue-helvetica/Helvetica Neue LT GEO 55 Roman.ttf');
+}
+
