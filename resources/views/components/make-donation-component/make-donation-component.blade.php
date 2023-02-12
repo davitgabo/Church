@@ -11,13 +11,17 @@
                         @csrf
                         <input type="hidden" name="payment_title" value="{{$payment}}">
                         <div class="col-6 mt-4">
-                            <input type="text" class="make-donation__form-section__form__input" name="amount" placeholder="{{ ($lang=='ge') ? "ოდენობა" : 'amount'}}">
+                            <input type="text" class="make-donation__form-section__form__input" name="amount" placeholder="{{ ($lang=='ge') ? "თანხა" : 'Amount'}}">
                         </div>
-                        <div class="col-6 mt-4">
-                            <input id="showDonation" type="checkbox" class="form-check-input" name="show_donation">
-                            <label for="showDonation">{{ ($lang=='ge') ? "გახადე საჯარო" : 'My donation is public'}}</label>
-                            <input id="showAmount" type="checkbox" class="form-check-input" name="show_amount">
-                            <label for="showAmount">{{ ($lang=='ge') ? "ჩანდეს თანხა" : 'Show amount'}}</label>
+                        <div class="col-12 mt-4">
+                            <div>
+                                <input id="showDonation" type="checkbox" class="form-check-input" name="show_donation">
+                                <label for="showDonation">{{ ($lang=='ge') ? "გახადე საჯარო" : 'My donation is public'}}</label>
+                            </div>
+                            <div>
+                                <input id="showAmount" type="checkbox" class="form-check-input" name="show_amount">
+                                <label for="showAmount">{{ ($lang=='ge') ? "ჩანდეს თანხა" : 'Show amount'}}</label>
+                            </div>
                         </div>
                         <div class="col-6 mt-4">
                             <input type="text" class="make-donation__form-section__form__input" name="first_name" placeholder="{{ ($lang=='ge') ? "სახელი" : 'First Name'}}">
@@ -32,19 +36,19 @@
                             <input class="mt-2" id="showComment" name="show_comment" type="checkbox" class="form-check-input">
                             <label class="mt-2" for="showComment">{{ ($lang=='ge') ? "აჩვენე ჩემი კომენტარი შემოწირულობებში" : 'Show my comment in donations'}}</label>
                         </div>
-                        <button type="submit"> {{ ($lang=='ge') ? "გაგზავნა" : 'Comment'}} </button>
+                        <button class="make-donation__form-section__form__submit-button mt-3" type="submit"> {{ ($lang=='ge') ? "შემოწირვა" : 'DONATE'}} </button>
                     </form>
                 </div>
             </div>
         </div>
         <div class="col-xl-6">
             <div class="make-donation__info">
-                <div class="mb-2">
-                    Bank Account: <span id="bankAccNo">GE00TB000000000000</span> <span onclick="copy('bankAccNo')">copy</span>
+                <div class="mb-2 d-flex align-items-center">
+                    <span class="span-width">Bank Account:</span> <span class="mx-2" id="bankAccNo">GE00TB000000000000</span> <span onclick="copy('bankAccNo')"><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">copy</span></span>
                 </div>
                 <hr>
-                <div class="mb-4">
-                    Payment Title: <span id="paymentTitle">{{$payment}}</span> <span onclick="copy('paymentTitle')">copy</span>
+                <div class="mb-4 d-flex align-items-center">
+                    <span class="span-width">Payment Title:</span> <span class="mx-2" id="paymentTitle">{{$payment}}</span> <span onclick="copy('paymentTitle')"><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">copy</span></span>
                 </div>
                 <div class="make-donation__info__note">
                     Please transfer the amount you want to donate to the selected bank account with payment title: {{$payment}}
