@@ -25,6 +25,10 @@ class NavigationController extends Controller
                 return redirect('/ge/home');
         }
 
+        if (($page == 'donate' || $page == 'payment') && Content::invisible()){
+            return redirect("/$lang/home");
+        }
+
         if (in_array($page,['home','about','contact','gallery','donate','payment'])) {
                 $tableData = Content::where('page',$page)->orwhere('page','all')->get();
                 foreach ($tableData as $row) {

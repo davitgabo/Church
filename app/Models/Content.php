@@ -9,6 +9,12 @@ class Content extends Model
 {
     use HasFactory;
 
+    public static function invisible()
+    {
+        $donation = Content::find(4);
+        return $donation->visibility == 'hide';
+    }
+
     public function isDeletable($section): bool
     {
         $qty = Content::where('section', 'slider')->count();

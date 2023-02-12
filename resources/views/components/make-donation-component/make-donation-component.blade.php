@@ -44,14 +44,14 @@
         <div class="col-xl-6">
             <div class="make-donation__info">
                 <div class="mb-2 d-flex align-items-center">
-                    <span class="span-width">Bank Account:</span> <span class="mx-2" id="bankAccNo">GE00TB000000000000</span> <span onclick="copy('bankAccNo')"><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">copy</span></span>
+                    <span class="span-width">{{ ($lang=='ge') ? "ბანკის ანგარიში" : 'Bank Account'}}:</span> <span class="mx-2" id="bankAccNo">GE00TB000000000000</span> <span onclick="copy('bankAccNo')"><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">copy</span></span>
                 </div>
                 <hr>
                 <div class="mb-4 d-flex align-items-center">
-                    <span class="span-width">Payment Title:</span> <span class="mx-2" id="paymentTitle">{{$payment}}</span> <span onclick="copy('paymentTitle')"><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">copy</span></span>
+                    <span class="span-width">{{ ($lang=='ge') ? "საგადახდო კოდი" : 'Payment Title'}}:</span> <span class="mx-2" id="paymentTitle">{{$payment}}</span> <span onclick="copy('paymentTitle')"><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">copy</span></span>
                 </div>
                 <div class="make-donation__info__note">
-                    Please transfer the amount you want to donate to the selected bank account with payment title: {{$payment}}
+                    {{ ($lang=='ge') ? "დონაციის იდენტიფიცირებისათვის დანიშნულებაში მიუთითეთ მოცემული საგადახდო კოდი" : 'Please transfer the amount you want to donate to the selected bank account with payment title:'}} {{$payment}}
                 </div>
             </div>
         </div>
