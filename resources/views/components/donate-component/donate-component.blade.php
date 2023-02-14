@@ -5,12 +5,15 @@
         </div>
         <div class="row mb-5">
             <div class="col-5">
-                <div class="donate__card d-flex align-items-center">
-                    <img class="mr-2" src="{{ URL::asset('/assets/icons/card.png')}}">
-                    <div class="donate__card__text ml-2">
-                        <span class="underline">შემოწირე</span> ბარათით
+                <a href="/{{$lang}}/payment">
+                    <div class="donate__card d-flex align-items-center">
+                        <img class="mr-2" src="{{ URL::asset('/assets/icons/card.png')}}">
+                        <div class="donate__card__text ml-2">
+                            <span class="underline">შემოწირე</span> ბარათით
+                        </div>
                     </div>
-                </div>
+                </a>
+
             </div>
             <div class="col-2"></div>
             <div class="col-5">
@@ -24,12 +27,15 @@
         </div>
         <div class="row mt-5">
             <div class="col-5">
-                <div class="donate__card d-flex align-items-center">
-
-                    <div class="donate__card__text ml-2">
-                        <span class="underline">გადმორიცხე</span> ბანკით
+                <a href="/{{$lang}}/payment">
+                    <div class="donate__card d-flex align-items-center">
+                        <img class="mr-2" src="{{ URL::asset('/assets/icons/bank.png')}}">
+                        <div class="donate__card__text ml-2">
+                            <span class="underline">გადმორიცხე</span> ბანკით
+                        </div>
                     </div>
-                </div>
+                </a>
+
             </div>
             <div class="col-2"></div>
             <div class="col-5">
