@@ -40,8 +40,9 @@ class NavigationController extends Controller
                                             'contents' => $contents,
                                             'text' => $text,
                                             'lang' => $lang,
+                                            'donated' => Donation::where('status','approved')->sum('amount'),
                                             'payment' => $this->generateUniqueNumber(),
-                                            'donations' => Donation::where('status','approved')->get(),]);
+                                            'donations' => Donation::where('status','approved')->where('public',true)->get(),]);
         } else {
                 return redirect("/$lang/home");
         }

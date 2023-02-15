@@ -37,7 +37,7 @@
                 <x-gallery-component.gallery-component :$contents :$lang />
                 @break
             @case ('donate')
-                <x-donate-component.donate-component :$contents :$donations :$lang/>
+                <x-donate-component.donate-component :$contents :$donations :$lang :$donated/>
                 @break
             @case ('payment')
             <x-make-donation-component.make-donation-component :$contents :$lang :$payment/>

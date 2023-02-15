@@ -43,6 +43,12 @@
 </div>
 <div class="dashboard__sub-section">
     <h3 class="dashboard__sub-section__heading"> დონაციის გვერდი </h3>
+    @foreach($contents['donate'] as $item)
+        <x-dashboard-item-component.dashboard-item-component :$item />
+    @endforeach
+</div>
+<div class="dashboard__sub-section">
+    <h3 class="dashboard__sub-section__heading"> გადახდის გვერდი </h3>
     @foreach($contents['payment'] as $item)
         <x-dashboard-item-component.dashboard-item-component :$item />
     @endforeach

@@ -44,7 +44,7 @@
         <div class="col-xl-6">
             <div class="make-donation__info">
                 <div class="mb-2 d-flex align-items-center">
-                    <span class="span-width">{{ ($lang=='ge') ? "ბანკის ანგარიში" : 'Bank Account'}}:</span> <span class="mx-2" id="bankAccNo">GE00TB000000000000</span> <span onclick="copy('bankAccNo')"><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">copy</span></span>
+                    <span class="span-width">{{ ($lang=='ge') ? "ბანკის ანგარიში" : 'Bank Account'}}:</span> <span class="mx-2" id="bankAccNo"> {{$contents['iban'][0]['text']}} </span> <span onclick="copy('bankAccNo')"><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">copy</span></span>
                 </div>
                 <hr>
                 <div class="mb-4 d-flex align-items-center">
