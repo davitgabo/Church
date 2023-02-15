@@ -51,7 +51,7 @@
                     <span class="span-width">{{ ($lang=='ge') ? "საგადახდო კოდი" : 'Payment Title'}}:</span> <span class="mx-2" id="paymentTitle">{{$payment}}</span> <span onclick="copy('paymentTitle')"><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">copy</span></span>
                 </div>
                 <div class="make-donation__info__note">
-                    {{ ($lang=='ge') ? "დონაციის იდენტიფიცირებისათვის დანიშნულებაში მიუთითეთ მოცემული საგადახდო კოდი" : 'Please transfer the amount you want to donate to the selected bank account with payment title:'}} {{$payment}}
+                    {{$contents['payment_warning'][0]['text']}}: {{$payment}}
                 </div>
             </div>
         </div>

@@ -38,6 +38,7 @@ class NavigationController extends Controller
 
                 return view('welcome',['component'=> $page,
                                             'contents' => $contents,
+                                            'images' => Image::all(),
                                             'text' => $text,
                                             'lang' => $lang,
                                             'donated' => Donation::where('status','approved')->sum('amount'),
@@ -61,14 +62,12 @@ class NavigationController extends Controller
                     'visibility' => $row->visibility,
                     'title' => $row->description];
             }
-            $gallery = Image::all();
-            $donations = Donation::all();
-            $sliders = Content::where('section','slider')->get();
+
             return view('dashboard',['contents'=> $contents,
-                                          'images'=> $gallery,
-                                          'donations'=>$donations,
+                                          'images'=> Image::all(),
+                                          'donations'=>Donation::all(),
                                           'component' => $page,
-                                          'sliders'=>$sliders]);
+                                          'sliders'=>Content::where('section','slider')->get()]);
         } else {
             return redirect()->back();
         }
