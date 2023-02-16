@@ -12,6 +12,8 @@
         </style>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-lightbox/0.2.12/slick-lightbox.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" rel="stylesheet" />
         <link href="/main.css" rel="stylesheet">
         <link href="/components/header-component/header-component.css" rel="stylesheet">
         <link href="/components/home-component/home-component.css" rel="stylesheet">
@@ -19,6 +21,7 @@
         <link href="/components/contact-component/contact-component.css" rel="stylesheet">
         <link href="/components/donate-component/donate-component.css" rel="stylesheet">
         <link href="/components/make-donation-component/make-donation-component.css" rel="stylesheet">
+        <link href="/components/gallery-component/gallery-component.css" rel="stylesheet">
 
     </head>
     <body>
@@ -47,6 +50,7 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-lightbox/0.2.12/slick-lightbox.min.js"></script>
         <script src="/plugins/pagination.min.js"></script>
         <script src="/components/home-component/home-component.js"></script>
         <script src="/components/make-donation-component/make-donation-component.js"></script>
