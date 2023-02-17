@@ -9,7 +9,11 @@
                     <div class="donate__card d-flex align-items-center">
                         <img class="mr-2" src="{{ URL::asset('/assets/icons/card.png')}}">
                         <div class="donate__card__text ml-2">
-                            <span class="underline">შემოწირე</span> ბარათით
+                            @if($lang == 'ge')
+                                <span class="underline">შემოწირე</span> ბარათით
+                            @else
+                                <span class="underline">Donate</span> with Card
+                            @endif
                         </div>
                     </div>
                 </a>
@@ -31,7 +35,11 @@
                     <div class="donate__card d-flex align-items-center">
                         <img class="mr-2" src="{{ URL::asset('/assets/icons/bank.png')}}">
                         <div class="donate__card__text ml-2">
-                            <span class="underline">გადმორიცხე</span> ბანკით
+                            @if($lang == 'ge')
+                                <span class="underline">გადმორიცხე</span> ბანკით
+                            @else
+                                <span class="underline">Transfer</span> from Bank
+                            @endif
                         </div>
                     </div>
                 </a>
@@ -47,7 +55,11 @@
 
         <div class="donate__progress-bar">
             <div class="donate__progress-bar__amount">
-                {{ number_format($donated) }} ₾ ჩარიცხულია {{ number_format((float)$contents['amount'][0]['text']) }} ₾ დან
+                @if($lang == 'ge')
+                    {{ number_format($donated) }} ₾ ჩარიცხულია {{ number_format((float)$contents['amount'][0]['text']) }} ₾ დან
+                @else
+                    {{ number_format($donated) }} ₾ is donated from {{ number_format((float)$contents['amount'][0]['text']) }} ₾
+                @endif
             </div>
             <div class="donate__progress-bar__bar w-100">
                 <div class="progress">
