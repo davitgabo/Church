@@ -56,5 +56,6 @@
             </div>
         </div>
     </div>
-
 </div>
+<script src="/components/make-donation-component/make-donation-component.js"></script>
+

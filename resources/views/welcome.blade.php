@@ -52,7 +52,5 @@
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-lightbox/0.2.12/slick-lightbox.min.js"></script>
         <script src="/plugins/pagination.min.js"></script>
-        <script src="/components/home-component/home-component.js"></script>
-        <script src="/components/make-donation-component/make-donation-component.js"></script>
     </body>
 </html>

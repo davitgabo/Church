@@ -6,9 +6,8 @@
 
     </div>
     <div class="" style="height: 100%; position:relative;">
-        <div id="mygallery" style="height: 100%;">
+        <div id="mygallery" style="height: 100%; width: 80%">
             @foreach($images as $image)
-{{--                TODO:: data-caption აქ ჩასვი ენების მიხედვით სურათის ტექსტები--}}
             <a href="/assets/images/{{$image->name}}" style="margin-right: 3rem" data-caption="{{($lang == 'ge') ? $image->desc_ge : $image->desc_en}}">
                 <img style="height: 300px" src="/assets/images/{{$image->name}}"/>
             </a>

@@ -1,12 +1,12 @@
 $('document').ready(() => {
-    showPagination(6, false);
+    showPagination(4, false);
     $('body').css('overflow', 'auto');
     $('body').css('overflow-x', 'hidden');
 })
 
 function showAll() {
     $('#showAllButton').css('display', 'none');
-    showPagination(1, true);
+    showPagination(4, true);
 }
 
 function showPagination(itemsPerPage, show) {

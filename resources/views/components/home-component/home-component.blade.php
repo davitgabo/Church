@@ -10,57 +10,66 @@
                         <div class="carousel-inner">
                             @foreach($contents['slider'] as $slider)
                                 @if ($loop->first)
-                                    <div class="carousel-item home__text-section__text-slider__text active" data-bs-interval="5000">
-                                @else
-                                    <div class="carousel-item home__text-section__text-slider__text" data-bs-interval="5000">
-                                @endif
-                                        {{$slider['text']}}
+                                    <div class="carousel-item home__text-section__text-slider__text active"
+                                         data-bs-interval="5000">
+                                        @else
+                                            <div class="carousel-item home__text-section__text-slider__text"
+                                                 data-bs-interval="5000">
+                                                @endif
+                                                {{$slider['text']}}
+                                            </div>
+                                            @endforeach
                                     </div>
-                            @endforeach
+                        </div>
+                        <div class="home__slider-indicators">
+                            @if(count($contents['slider'])>1)
+                                @foreach($contents['slider'] as $value)
+                                    @if($loop->first)
+                                        <div class="home__slider-indicator home__slider-indicator__active"></div>
+                                    @else
+                                        <div class="home__slider-indicator"></div>
+                                    @endif
+                                @endforeach
+                            @endif
                         </div>
                     </div>
-                    <div class="home__slider-indicators">
-                        @if(count($contents['slider'])>1)
-                            @foreach($contents['slider'] as $value)
-                                @if($loop->first)
-                                    <div class="home__slider-indicator home__slider-indicator__active"></div>
-                                @else
-                                    <div class="home__slider-indicator"></div>
-                                @endif
-                            @endforeach
-                        @endif
-                    </div>
-                </div>
                     @if($contents['donate'][0]['visibility'] != 'hide')
-                <div class="home__text-section__donate">
-                    <a href="/{{$lang}}/{{$contents['Make donation'][0]['uri']}}">
-                        <div class="home__text-section__donate__part-one">
-                            {{$contents['Make donation'][0]['text']}} <img src="{{ URL::asset('/assets/icons/arrow_long_right.png')}}" alt="Arrow pointing right">
+                        <div class="home__text-section__donate">
+                            <a href="/{{$lang}}/{{$contents['Make donation'][0]['uri']}}">
+                                <div class="home__text-section__donate__part-one">
+                                    {{$contents['Make donation'][0]['text']}} <img
+                                        src="{{ URL::asset('/assets/icons/arrow_long_right.png')}}"
+                                        alt="Arrow pointing right">
+                                </div>
+                                <div class="home__text-section__donate__part-two">
+                                    {{$contents['Make donation'][1]['text']}}
+                                </div>
+                            </a>
                         </div>
-                        <div class="home__text-section__donate__part-two">
-                            {{$contents['Make donation'][1]['text']}}
-                        </div>
-                    </a>
-                </div>
                     @endif
+                </div>
             </div>
-        </div>
 
-        <div class="col-xl-7">
-            <div id="imageCarousel" class="carousel slide carousel-fade h-100" data-pause="false" data-ride="carousel">
-                <div class="carousel-inner h-100">
-                    @foreach($contents['slider'] as $slider)
-                        @if ($loop->first)
-                            <div class="carousel-item carousel-item-count active h-100" data-bs-interval="5000">
-                        @else
-                            <div class="carousel-item carousel-item-count h-100" data-bs-interval="5000">
-                        @endif
-                                <div class="h-100" style="background-image: url('/assets/images/{{$slider['uri']}}')"></div>
-                            </div>
-                    @endforeach
+            <div class="col-xl-7">
+                <div id="imageCarousel" class="carousel slide carousel-fade h-100" data-pause="false"
+                     data-ride="carousel">
+                    <div class="carousel-inner h-100">
+                        @foreach($contents['slider'] as $slider)
+                            @if ($loop->first)
+                                <div class="carousel-item carousel-item-count active h-100" data-bs-interval="5000">
+                                    @else
+                                        <div class="carousel-item carousel-item-count h-100" data-bs-interval="5000">
+                                            @endif
+                                            <div class="h-100"
+                                                 style="background-image: url('/assets/images/{{$slider['uri']}}')"></div>
+                                        </div>
+                                        @endforeach
+                                </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script src="/components/home-component/home-component.js"></script>
 

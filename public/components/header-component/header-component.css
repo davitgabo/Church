@@ -1,10 +1,11 @@
 .nav {
-    min-height: 3rem;
-    display: flex;
+    min-height: 7rem;
+    width: 100%;
+    /*display: flex;*/
     align-items: center;
-    padding: 3rem 10rem;
+    /*padding: 3rem 10rem;*/
     background-color: #FFFFFF;
-    gap: 2rem;
+    /*gap: 2rem;*/
     border-bottom: 1px solid #E1E1E1
 }
 
@@ -22,29 +23,27 @@
 }
 
 .nav__logo {
-    max-width: 45rem;
+    /*max-width: 45rem;*/
     text-align: right;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*gap: 2rem;*/
     overflow-wrap: break-word;
 }
 
 .nav__logo__title {
     font-family: 'BPG Classic Medium';
-    font-size: 1.5625rem;
-    line-height: 2rem;
+    font-size: 1.5rem;
 }
 
 .nav__language {
-    width: 5rem;
     padding: 0 3rem;
 }
 
 .nav__language__select {
     font-family: 'BPG Arial Caps';
     font-size: 0.6875rem;
-    width: 3rem;
+    /*width: 3rem;*/
 }
 
 .nav__language__select:focus {
@@ -56,23 +55,77 @@
     font-size: 0.6875rem;
 }
 
-@media screen and (max-width: 1550px) {
+.nav__logo-container-small {
+    display: none;
+}
+
+@media screen and (max-width: 1600px) {
+    .nav__logo__title {
+        font-size: 1.25rem;
+    }
+
+    .nav__logo-container-small {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .nav__item a {
+        font-size: 0.8rem;
+    }
+
+    .nav__logo-container-small {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1260px) {
+    .nav__logo__title {
+        font-size: 1.1rem;
+    }
+
+    .nav__logo-container-small {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1200px) {
     .nav {
-        padding: 3rem 7rem;
+        padding: 1rem;
+    }
+
+    .nav__logo-container-big {
+        display: none;
+    }
+
+    .nav__logo-container-small {
+        display: block;
     }
 
     .nav__logo {
-        max-width: 30rem;
+        flex-direction: column;
+        text-align: center;
     }
 
     .nav__logo__title {
-        font-size: 1.1rem;
-        line-height: 1.4rem;
+        order: 2;
     }
 
-    .nav__item a {
-        font-size: 0.9rem;
-        width: 100%;
+    .nav__logo__icon {
+        order: 1;
+        margin-bottom: 0.5rem;
+    }
+
+    .nav__item-container {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .nav__language {
+        position: absolute;
+        top: 1rem;
+        right: 3rem;
+        width: 5rem;
     }
 }
 
