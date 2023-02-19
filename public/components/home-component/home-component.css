@@ -18,12 +18,6 @@
 }
 
 .carousel-item img {
-    /*width: auto;*/
-    /*height: auto;*/
-    /*max-width: 100%;*/
-    /*max-height: 100%;*/
-    /*object-fit: cover;*/
-    /*overflow: hidden;*/
     object-fit: contain;
     float: right;
 }
@@ -74,7 +68,6 @@
     color: #404040;
     font-weight: 500;
     font-size: 1.125rem;
-    line-height: 1.375rem;
 }
 
 .home__text-section__donate__part-two {
@@ -83,7 +76,6 @@
     color: #404040;
     font-weight: 700;
     font-size: 1.5625rem;
-    line-height: 1.875rem;
 }
 
 .home__slider-indicators {
@@ -106,4 +98,78 @@
 
 .home__slider-indicator__active {
     background-color: #FFFFFF;
+}
+
+@media screen and (max-width: 1500px) {
+    .home__text-section__title,
+    .home__text-section__donate,
+    .home__text-section__text-slider {
+        width: 70%;
+    }
+
+    .home__slider-indicators {
+        right: -5rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .home {
+        height: auto;
+    }
+
+    .home__text-section {
+        justify-content: unset;
+        padding: 3rem;
+        position: relative;
+    }
+
+    .home__text-section__title,
+    .home__text-section__donate,
+    .home__text-section__text-slider {
+        width: 100%;
+    }
+
+    .home__text-section__title {
+        font-size: 1.5rem;
+    }
+
+    .home__text-section__text-slider {
+        position: unset;
+        margin-bottom: 0;
+    }
+
+    .carousel-item img {
+        float: unset;
+        width: 100%;
+        margin: auto;
+        height: 30rem !important;
+    }
+
+    .home__slider-indicators {
+        flex-direction: row;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 2rem;
+        height: auto;
+    }
+
+    .carousel-item {
+        height: 100%;
+    }
+
+    #carouselText .carousel-item {
+        height: 15rem;
+    }
+
+    .home__text-section__donate__part-one {
+        font-size: 2rem;
+    }
+
+    .home__text-section__donate__part-two {
+        font-size: 2.5rem;
+    }
+
+    .home__text-section__text-slider__text {
+        font-size: 1rem;
+    }
 }

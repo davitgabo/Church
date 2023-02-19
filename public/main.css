@@ -64,6 +64,7 @@ a:hover {
 @media screen and (max-width: 1200px) {
     html, body {
         overflow: auto;
+        overflow-x: hidden;
         height: 100%;
     }
 }

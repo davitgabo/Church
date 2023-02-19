@@ -1,7 +1,7 @@
 <div class="home">
     <div class="row h-100">
-        <div class="col-xl-5">
-            <div class="home__text-section">
+        <div class="col-xl-5 col-12">
+            <div class="home__text-section container-lg">
                 <div class="home__text-section__title">
                     {{$contents['title'][0]['text']}}
                 </div>
@@ -50,7 +50,7 @@
                 </div>
             </div>
 
-            <div class="col-xl-7">
+            <div class="col-xl-7 col-12">
                 <div id="imageCarousel" class="carousel slide carousel-fade h-100" data-pause="false"
                      data-ride="carousel">
                     <div class="carousel-inner h-100">

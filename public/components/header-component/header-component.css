@@ -127,5 +127,23 @@
         right: 3rem;
         width: 5rem;
     }
+
+    .nav__item a {
+        font-size: 1rem;
+    }
+
+    .nav__logo__title div {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav__item a {
+        font-size: 0.8rem;
+    }
+
+    .nav__logo__title div {
+        font-size: 1.1rem;
+    }
 }
 
