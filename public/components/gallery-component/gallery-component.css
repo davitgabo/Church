@@ -1,0 +1,41 @@
+.gallery__title {
+    font-family: BPG Arial Caps;
+    font-size: 2.25rem;
+    line-height: 2.5625rem;
+    margin-bottom: 4rem;
+    margin-top: 5rem;
+}
+
+.slick-lightbox-slick-caption {
+    font-size: 1rem;
+    font-family: BPG Classic Medium;
+}
+
+.no-before::before{
+    display:none;
+}
+
+.no-before {
+    z-index: 1;
+}
+
+.prev-new {
+    left: 8rem !important;
+}
+
+.next-new {
+    left: 16rem !important;
+}
+
+.prev-new, .next-new {
+    bottom: 9rem !important;
+    top: unset !important;
+}
+
+.next-lightbox {
+    right: 3rem !important;
+}
+
+.prev-new {
+    z-index: 2;
+}

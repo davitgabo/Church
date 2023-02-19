@@ -94,10 +94,55 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+    color: #000000;
 }
 
 .donate__last-donations__list__item__amount {
     font-size: 1.3rem;
     max-width: 10%;
     order: 3;
+}
+
+.donate__last-donations__list__show-all, .underline {
+    font-family: BPG Classic Medium;
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.donate__last-donations__list__show-all button {
+    background-color: #ffffff;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.paginationjs-pages {
+    width: 100%;
+}
+
+.paginationjs-pages ul {
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    gap: 0.4rem;
+    font-family: BPG Classic Medium;
+}
+
+.paginationjs-pages a {
+    text-decoration: underline !important;
+    color: #000000 !important;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.paginationjs-pages .active a {
+    color: #868686 !important;
+}
+
+.hiddenData {
+    color: #C9C9C9;
 }

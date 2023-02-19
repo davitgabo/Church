@@ -5,8 +5,7 @@
 
 html, body {
     margin: 0;
-    overflow: auto;
-    overflow-x: hidden;
+    overflow: hidden;
     height: 100vh;
     color: #000000;
     position: relative;
