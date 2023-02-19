@@ -15,11 +15,13 @@ class NavigationController extends Controller
         switch ($lang) {
             case 'en':
                 $text = 'text';
-                $contents['nav_logo_title']='ST.VIRGIN MARY ICON OF THE IVERON CHURCH';
+                $contents['nav_logo_title'][0]='Cathedral church of the';
+                $contents['nav_logo_title'][1]='All Holly Mother of Good Iveria,Zugdidi';
                 break;
             case 'ge':
                 $text = 'text_ge';
-                $contents['nav_logo_title']='ზუგდიდის ივერიის ყოვლაწმინდა ღვთისმშობლის სახელობის საკათედრო ტაძარი';
+                $contents['nav_logo_title'][0]='ზუგდიდის ივერიის ყოვლაწმინდა ღვთისმშობლის';
+                $contents['nav_logo_title'][1]='სახელობის საკათედრო ტაძარი';
                 break;
             default:
                 return redirect('/ge/home');

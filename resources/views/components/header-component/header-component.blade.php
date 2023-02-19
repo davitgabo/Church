@@ -5,7 +5,8 @@
             <a href="/{{$lang}}/home" class="col-lg-12 nav__logo-container-small">
                 <div class="nav__logo d-flex align-items-center">
                     <div class="nav__logo__title mx-3">
-                        {{ $contents['nav_logo_title'] }}
+                        {{ $contents['nav_logo_title'][0] }}
+                        {{ $contents['nav_logo_title'][1] }}
                     </div>
                     <div class="nav__logo__icon">
                         <img src="{{URL::asset('/assets/icons/nav_icon.png')}}" alt="Altar logo">
@@ -36,7 +37,8 @@
             <a href="/{{$lang}}/home" class="col-xl-5 nav__logo-container-big">
                 <div class="nav__logo d-flex align-items-center">
                     <div class="nav__logo__title mx-3">
-                        {{ $contents['nav_logo_title'] }}
+                        {{ $contents['nav_logo_title'][0] }}
+                        {{ $contents['nav_logo_title'][1] }}
                     </div>
                     <div class="nav__logo__icon">
                         <img src="{{URL::asset('/assets/icons/nav_icon.png')}}" alt="Altar logo">
