@@ -56,12 +56,13 @@
                     <div class="carousel-inner h-100">
                         @foreach($contents['slider'] as $slider)
                             @if ($loop->first)
-                                <div class="carousel-item carousel-item-count active h-100" data-bs-interval="5000">
+                                <div class="carousel-item carousel-item-count active" data-bs-interval="5000">
                                     @else
-                                        <div class="carousel-item carousel-item-count h-100" data-bs-interval="5000">
+                                        <div class="carousel-item carousel-item-count" data-bs-interval="5000">
                                             @endif
-                                            <div class="h-100"
-                                                 style="background-image: url('/assets/images/{{$slider['uri']}}')"></div>
+{{--                                            <div class="h-100"--}}
+{{--                                                 style="background-image: url('/assets/images/{{$slider['uri']}}')"></div>--}}
+                                            <img class="h-100" src="/assets/images/{{$slider['uri']}}" alt="">
                                         </div>
                                         @endforeach
                                 </div>

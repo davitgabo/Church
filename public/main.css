@@ -61,3 +61,10 @@ a:hover {
     src: url('assets/fonts/neue-helvetica/Helvetica Neue LT GEO 55 Roman.ttf');
 }
 
+@media screen and (max-width: 1200px) {
+    html, body {
+        overflow: auto;
+        height: 100%;
+    }
+}
+

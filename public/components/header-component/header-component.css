@@ -31,7 +31,7 @@
     overflow-wrap: break-word;
 }
 
-.nav__logo__title {
+.nav__logo__title div {
     font-family: 'BPG Classic Medium';
     font-size: 1.5rem;
 }
@@ -60,7 +60,7 @@
 }
 
 @media screen and (max-width: 1600px) {
-    .nav__logo__title {
+    .nav__logo__title div {
         font-size: 1.25rem;
     }
 
@@ -80,7 +80,7 @@
 }
 
 @media screen and (max-width: 1260px) {
-    .nav__logo__title {
+    .nav__logo__title div {
         font-size: 1.1rem;
     }
 
