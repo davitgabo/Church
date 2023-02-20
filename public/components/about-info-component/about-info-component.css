@@ -13,13 +13,13 @@
     font-family: BPG Arial Caps;
     font-size: 2.25rem;
     line-height: 2.5625rem;
-    width: 60%;
+    width: 80%;
     margin-bottom: 10rem;
     margin-top: 5rem;
 }
 
 .about-info__text-section__text {
-    width: 60%;
+    width: 80%;
     margin-bottom: 2rem;
 }
 
@@ -56,8 +56,54 @@
 }
 
 .about-info__second-section__img {
-    width: 100%;
     height: 20rem;
-    background-repeat: no-repeat;
-    background-size: cover;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 1400px) {
+    .about-info__text-section__title {
+        margin-bottom: 3rem;
+        margin-top: 5rem;
+        font-size: 2rem;
+    }
+
+    .about-info__text-section__text-one {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .about-info__text-section {
+        align-items: unset;
+    }
+
+    .about-info__text-section__title {
+        margin-bottom: 3rem;
+        margin-top: 2rem;
+        width: 100%;
+    }
+
+    .about-info__text-section__text {
+        width: 100%;
+    }
+
+    .about-info__text-section__text-one {
+        font-size: 1.2rem;
+    }
+
+    .about-info__second-section__title,
+    .about-info__second-section__title-two {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-info__text-section__text-one {
+        font-size: 1rem;
+    }
+
+    .about-info__text-section__text-two {
+        font-size: 0.9rem;
+    }
+
 }

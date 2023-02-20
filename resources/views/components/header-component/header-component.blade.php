@@ -20,7 +20,7 @@
             </a>
             <div class="col-xl-4 col-lg-12">
                 <div class="d-flex align-items-center h-100">
-                    <div class="d-flex w-100 nav__item-container">
+                    <div class="d-flex justi w-100 nav__item-container">
                         @foreach ($contents['menu'] as $item)
                             <div class="nav__item d-flex align-items-center justify-content-center mx-2">
                                 <a href="/{{$lang}}/{{$item['uri']}}">

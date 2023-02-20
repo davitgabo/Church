@@ -59,6 +59,10 @@
     display: none;
 }
 
+.nav__item-container {
+    justify-content: space-evenly;
+}
+
 @media screen and (max-width: 1600px) {
     .nav__logo__title div {
         font-size: 1.25rem;
@@ -89,7 +93,7 @@
     }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199px) {
     .nav {
         padding: 1rem;
     }
