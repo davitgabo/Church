@@ -5,11 +5,11 @@
         </div>
 
     </div>
-    <div class="" style="height: 100%; position:relative;">
-        <div id="mygallery" style="height: 100%; width: 80%">
+    <div class="gallery__img-container">
+        <div id="mygallery">
             @foreach($images as $image)
-            <a href="/assets/images/{{$image->name}}" style="margin-right: 3rem" data-caption="{{($lang == 'ge') ? $image->desc_ge : $image->desc_en}}">
-                <img style="height: 300px" src="/assets/images/{{$image->name}}"/>
+            <a href="/assets/images/{{$image->name}}" data-caption="{{($lang == 'ge') ? $image->desc_ge : $image->desc_en}}">
+                <img class="gallery__img" src="/assets/images/{{$image->name}}"/>
             </a>
             @endforeach
         </div>

@@ -69,3 +69,11 @@ a:hover {
     }
 }
 
+@media screen and (max-height: 800px) {
+    html, body {
+        overflow: auto;
+        overflow-x: hidden;
+        height: 100%;
+    }
+}
+

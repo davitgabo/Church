@@ -25,9 +25,12 @@
                         </div>
                         <div class="col-6 mt-4">
                             <input type="text" class="make-donation__form-section__form__input" name="first_name" placeholder="{{ ($lang=='ge') ? "სახელი" : 'First Name'}}">
-                            <input class="mt-2" id="showName" name="show_name" type="checkbox" class="form-check-input">
-                            <label class="mt-2" for="showName">{{ ($lang=='ge') ? "ჩანდეს ჩემი სახელი" : 'Show my name in donations'}}</label>
                         </div>
+                        <div class="col-12 mt-2">
+                            <input class="form-check-input" id="showName" name="show_name" type="checkbox">
+                            <label for="showName">{{ ($lang=='ge') ? "ჩანდეს ჩემი სახელი" : 'Show my name in donations'}}</label>
+                        </div>
+
                         <div class="col-6 mt-4">
                             <input type="text" class="make-donation__form-section__form__input" name="last_name" placeholder="{{ ($lang=='ge') ? "გვარი" : 'Last Name'}}">
                         </div>
@@ -44,11 +47,11 @@
         <div class="col-xl-6">
             <div class="make-donation__info">
                 <div class="mb-2 d-flex align-items-center">
-                    <span class="span-width">{{ ($lang=='ge') ? "ბანკის ანგარიში" : 'Bank Account'}}:</span> <span class="mx-2" id="bankAccNo"> {{$contents['iban'][0]['text']}} </span> <span onclick="copy('bankAccNo')"><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">copy</span></span>
+                    <span class="span-width">{{ ($lang=='ge') ? "ბანკის ანგარიში" : 'Bank Account'}}:</span> <span class="mx-2" id="bankAccNo"> {{$contents['iban'][0]['text']}} </span> <span onclick="copy('bankAccNo')"><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">{{ ($lang=='ge') ? "კოპირება" : 'copy'}}</span></span>
                 </div>
                 <hr>
                 <div class="mb-4 d-flex align-items-center">
-                    <span class="span-width">{{ ($lang=='ge') ? "საგადახდო კოდი" : 'Payment Title'}}:</span> <span class="mx-2" id="paymentTitle">{{$payment}}</span> <span onclick="copy('paymentTitle')"><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">copy</span></span>
+                    <span class="span-width">{{ ($lang=='ge') ? "საგადახდო კოდი" : 'Payment Title'}}:</span> <span class="mx-2" id="paymentTitle">{{$payment}}</span> <span onclick="copy('paymentTitle')"><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">{{ ($lang=='ge') ? "კოპირება" : 'copy'}}</span></span>
                 </div>
                 <div class="make-donation__info__note">
                     {{$contents['payment_warning'][0]['text']}}: {{$payment}}

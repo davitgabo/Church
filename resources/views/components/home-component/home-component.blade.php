@@ -25,9 +25,9 @@
                             @if(count($contents['slider'])>1)
                                 @foreach($contents['slider'] as $value)
                                     @if($loop->first)
-                                        <div class="home__slider-indicator home__slider-indicator__active"></div>
+                                        <div class="home__slider-indicator home__slider-indicator__active" onclick="slideTo('{{$loop->index}}')"></div>
                                     @else
-                                        <div class="home__slider-indicator"></div>
+                                        <div class="home__slider-indicator" onclick="slideTo('{{$loop->index}}')"></div>
                                     @endif
                                 @endforeach
                             @endif

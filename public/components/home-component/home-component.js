@@ -13,3 +13,7 @@ $('document').ready(function () {
     })
 })
 
+function slideTo(index) {
+    $('#imageCarousel').carousel(+index);
+    $('#carouselText').carousel(+index);
+}

@@ -94,6 +94,7 @@
     height: 0.8125rem;
     border-radius: 100%;
     background-color: #D9D9D9;
+    cursor: pointer;
 }
 
 .home__slider-indicator__active {
