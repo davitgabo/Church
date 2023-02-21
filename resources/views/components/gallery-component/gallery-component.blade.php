@@ -1,7 +1,7 @@
 <div class="gallery">
     <div class="container">
         <div class="gallery__title">
-            გალერეა
+            {{$contents['title'][0]['text']}}
         </div>
 
     </div>
