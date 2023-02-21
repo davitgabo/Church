@@ -22,7 +22,7 @@ class EmailController extends Controller
 
         $letter = array_map('strip_tags', $validatedData);
 
-        Mail::to('datigabashvili@gmail.com')->send(new SendEmail($letter));
+        Mail::to('iveriistadzari@gmail.com')->send(new SendEmail($letter));
         Mail::to($letter['email'])->send(new SendConfirmation());
 
         return redirect()->back();
