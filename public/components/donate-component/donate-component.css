@@ -34,7 +34,7 @@
     margin-top: 4rem;
 }
 
-.donate__progress-bar__amount {
+.donate__progress-bar__amount span {
     font-family: BPG Classic Medium;
     font-size: 1.5rem;
 }
@@ -145,4 +145,53 @@
 
 .hiddenData {
     color: #C9C9C9;
+}
+
+@media screen and (max-width: 1199px) {
+    .donate__title {
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+
+    .donate__progress-bar__amount {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .donate__last-donations__list__item {
+        flex-wrap: wrap;
+        margin-bottom: 0.5rem;
+    }
+
+    .donate__last-donations__list__item__amount {
+        font-size: 1rem;
+        order: 2;
+        max-width: 20%;
+    }
+
+    .donate__last-donations__list__item__comment {
+        font-size: 0.9rem;
+        order: 3;
+        flex-basis: 100%;
+        display: flex;
+        margin-top: 0.3rem;
+        justify-content: center;
+    }
+
+    .donate__last-donations__list__item__comment__text {
+        max-width: 80%;
+    }
+
+    .donate__last-donations__list__item__name {
+        font-size: 1rem;
+        order: 1;
+    }
+
+    .donate__card__text, .donate__card__text span {
+        font-size: 1.2rem;
+    }
+
+    .donate__progress-bar__amount span {
+        font-size: 1.2rem;
+    }
 }

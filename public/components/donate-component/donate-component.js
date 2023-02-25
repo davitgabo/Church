@@ -36,7 +36,7 @@ function showPagination(itemsPerPage, show) {
                         '<div class="donate__last-donations__list__item__comment hiddenData">' + item.children[1].innerHTML + '<div class="donate__last-donations__list__item__comment__date">' +
                         item.children[2].innerHTML +
                         '</div>' + '</div>' :
-                        '<div class="donate__last-donations__list__item__comment">' + item.children[1].innerHTML + '<div class="donate__last-donations__list__item__comment__date">' +
+                        '<div class="donate__last-donations__list__item__comment">' + '<div class="donate__last-donations__list__item__comment__text">' + item.children[1].innerHTML + '</div>' + '<div class="donate__last-donations__list__item__comment__date">' +
                         item.children[2].innerHTML +
                         '</div>' + '</div>') +
 
