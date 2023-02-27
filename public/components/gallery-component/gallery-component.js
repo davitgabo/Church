@@ -73,7 +73,7 @@ $('document').ready(() => {
         swipe: false,
         responsive: [
             {
-                breakpoint: 2500,
+                breakpoint: 4000,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3,
