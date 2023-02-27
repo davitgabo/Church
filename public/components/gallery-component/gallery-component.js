@@ -131,7 +131,6 @@ $('document').ready(() => {
     });
 
     $('#mygallery').on('reInit', function(event, slick) {
-        console.log(window.fullscreen)
         changeNavButtons();
     })
 
@@ -193,5 +192,3 @@ $(window).resize(function () {
         }
     }
 })
-
-
