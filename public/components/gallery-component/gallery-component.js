@@ -1,6 +1,6 @@
 let elementLength = $('#mygallery a').length;
 let maxDiv = Math.round(elementLength / 5);
-
+let resizeTimeout
 $('document').ready(() => {
 
     let rows = 1;
@@ -92,6 +92,7 @@ $('document').ready(() => {
     });
 
     $('#mygallery').on('breakpoint', function(event, slick) {
+        clearTimeout(resizeTimeout);
         if(window.innerWidth > 1199 && $('.decoyDiv').length !== maxDiv) {
             rows = 2;
             for(i = 0; i <= elementLength; i++) {
@@ -118,11 +119,16 @@ $('document').ready(() => {
         }
 
         if(window.innerWidth <= 1199) {
-            for(i=1 ; i < elementLength; i += 6) {
-                if($('.decoyDiv').length !== 0) {
-                    $('#mygallery').slick('slickRemove', i);
+            let index = 0;
+            resizeTimeout = setTimeout(() => {
+                for(i = 1 ; i <= elementLength; i += 6) {
+                    if($('.decoyDiv').length !== 0) {
+                        $('#mygallery').slick('slickRemove', i - index);
+                        index++
+                    }
                 }
-            }
+            }, 500)
+
 
             changeNavButtons();
 
