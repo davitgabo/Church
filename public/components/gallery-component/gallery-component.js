@@ -1,20 +1,26 @@
 let elementLength = $('#mygallery a').length;
-let maxDiv = elementLength / 5;
+let maxDiv = Math.round(elementLength / 5);
 
 $('document').ready(() => {
 
     let rows = 1;
-    if(screen.width > 1199) {
+    if(window.innerWidth > 1199) {
         rows = 2;
         for(i = 0; i <= elementLength; i++) {
             if((i % 5 === 0 ) && (i !== 0)) {
-                $('<div class="decoyDiv" style="height: 19rem; width: 100%; display: inline-block"></div>').insertBefore($('#mygallery a')[i-4]);
+                $('<div class="decoyDiv" style="height: 300px; width: 100%; display: inline-block"></div>').insertBefore($('#mygallery a')[i-4]);
             }
         }
+
+        maxDiv = $('.decoyDiv').length
 
         if(elementLength <= 4) {
             rows = 1;
         }
+    }
+
+    if (window.innerWidth <= 1199) {
+        $('#navigationDiv').css('display', 'none');
     }
 
     $('#mygallery').on('init', function(event, slick){
@@ -25,13 +31,13 @@ $('document').ready(() => {
         if($('.slick-prev')[0].attributes['aria-disabled'].nodeValue === 'true') {
             $('.slick-prev')[0].css('display', 'none');
         } else {
-            $('.slick-prev')[0].css('display', 'block');
+            $('.slick-prev')[0]?.css('display', 'block');
         }
 
         if($('.slick-next')[0].attributes['aria-disabled'].nodeValue === 'true') {
             $('.slick-next')[0].css('display', 'none');
         } else {
-            $('.slick-next')[0].css('display', 'block');
+            $('.slick-next')[0]?.css('display', 'block');
         }
     });
 
@@ -64,17 +70,70 @@ $('document').ready(() => {
         rows: rows,
         slidesToScroll:3,
         infinite: false,
+        swipe: false,
         responsive: [
+            {
+                breakpoint: 2500,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    rows: 2
+                },
+            },
             {
                 breakpoint: 1199,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     rows: 1
-                }
+                },
             }
         ]
     });
+
+    $('#mygallery').on('breakpoint', function(event, slick) {
+        if(window.innerWidth > 1199 && $('.decoyDiv').length !== maxDiv) {
+            rows = 2;
+            for(i = 0; i <= elementLength; i++) {
+                if((i % 5 === 0 ) && (i !== 0)) {
+                    $('<div class="decoyDiv" style="height: 300px; width: 100%; display: inline-block"></div>').insertBefore($('#mygallery a')[i-4]);
+                }
+            }
+
+            if(elementLength <= 4) {
+                rows = 1;
+            }
+
+            $('#mygallery').slick('reinit');
+
+
+            $('#mygallery').slick('setOption', 'rows', '2')
+            $('#navigationDiv').css('display', 'block');
+
+            if(elementLength > 4) {
+                $('#navigationDiv').css({'height': '19rem', 'width': ($('.decoyDiv').width() + 'px')})
+            } else {
+                $('#navigationDiv').css('display', 'none');
+            }
+        }
+
+        if(window.innerWidth <= 1199) {
+            for(i=1 ; i < elementLength; i += 6) {
+                if($('.decoyDiv').length !== 0) {
+                    $('#mygallery').slick('slickRemove', i);
+                }
+            }
+
+            changeNavButtons();
+
+            $('#navigationDiv').css('display', 'none');
+        }
+    });
+
+    $('#mygallery').on('reInit', function(event, slick) {
+        console.log(window.fullscreen)
+        changeNavButtons();
+    })
 
     $('#mygallery').slickLightbox({
         src: 'href',
@@ -87,11 +146,11 @@ $('document').ready(() => {
         'shown.slickLightbox': function(){ changeNavButtons() },
     });
 
-    if(screen.width > 1199) {
+    if(window.innerWidth > 1199) {
         if(elementLength > 4) {
-            $('#navigationDiv').css({'height': ($('.decoyDiv').height() + 'px'), 'width': ($('.decoyDiv').width() + 'px')})
+            $('#navigationDiv').css({'height': '19rem', 'width': ($('.decoyDiv').width() + 'px')})
         } else {
-            $('#navigationDiv').remove();
+            $('#navigationDiv').css('display', 'none');
         }
     }
 })
@@ -124,36 +183,15 @@ function changeNavButtons() {
     })
 }
 
-// $(window).resize(function () {
-//     if(screen.width > 1199) {
-//         rows = 2;
-//         for(i = 0; i <= elementLength; i++) {
-//             if((i % 5 === 0 ) && (i !== 0) && $('.decoyDiv').length !== maxDiv) {
-//                 console.log(1);
-//                 $('<div class="decoyDiv" style="height: 19rem; width: 100%; display: inline-block"></div>').insertBefore($('#mygallery a')[i-4]);
-//             }
-//         }
-//
-//         if(elementLength <= 4) {
-//             rows = 1;
-//         }
-//
-//         $('#mygallery').slick('setOption', 'rows', '2', true)
-//     }
-//
-//     if(screen.width <= 1199) {
-//         for(i=1 ; i < elementLength; i += 6) {
-//             if($('.decoyDiv').length !== 0) {
-//                 $('#mygallery').slick('slickRemove', i);
-//             }
-//         }
-//
-//         changeNavButtons();
-//
-//         if($('#navigationDiv').length > 0 ) {
-//             $('#navigationDiv').remove();
-//         }
-//     }
-// })
+$(window).resize(function () {
+    $('#mygallery').slick('reinit');
+    if(window.innerWidth > 1199) {
+        if(elementLength > 4) {
+            $('#navigationDiv').css({'height': '19rem', 'width': ($('.decoyDiv').width() + 'px')})
+        } else {
+            $('#navigationDiv').css('display', 'none');
+        }
+    }
+})
 
 
