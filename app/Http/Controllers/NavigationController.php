@@ -45,7 +45,7 @@ class NavigationController extends Controller
                                             'lang' => $lang,
                                             'donated' => Donation::where('status','approved')->sum('amount'),
                                             'payment' => $this->generateUniqueNumber(),
-                                            'donations' => Donation::where('status','approved')->where('public',true)->get(),]);
+                                            'donations' => Donation::where('status', 'approved')->where('public', true)->orderByDesc('created_at')->get(),]);
         } else {
                 return redirect("/$lang/home");
         }
@@ -67,7 +67,7 @@ class NavigationController extends Controller
 
             return view('dashboard',['contents'=> $contents,
                                           'images'=> Image::all(),
-                                          'donations'=>Donation::all(),
+                                          'donations'=>Donation::orderByDesc('created_at')->get(),
                                           'component' => $page,
                                           'sliders'=>Content::where('section','slider')->get()]);
         } else {

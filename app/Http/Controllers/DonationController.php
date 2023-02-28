@@ -12,7 +12,7 @@ class DonationController extends Controller
     {
         // Validate user input
         $request->validate([
-            'amount' => 'required|numeric',
+            'amount' => 'required|numeric|max:1000000',
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
             'comment' => 'nullable|max:255',
@@ -43,10 +43,13 @@ class DonationController extends Controller
         $donation->comment_visibility = $show_comment;
 
         // Save the donation object to the database
-        $donation->save();
+        if ($donation->save()){
+            return redirect()->back();
+        }
 
-        // Redirect the user with a success message
+        // Redirect the user with an error message
         return redirect()->back();
+
     }
 
     public function changeStatus($id, Request $request)
