@@ -44,11 +44,11 @@ class DonationController extends Controller
 
         // Save the donation object to the database
         if ($donation->save()){
-            return redirect()->back();
+            return true;
         }
 
         // Redirect the user with an error message
-        return redirect()->back();
+        return false;
 
     }
 
