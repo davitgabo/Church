@@ -20,11 +20,11 @@
                 </div>
 
                 <div class="make-donation__form-section__form mb-3">
-                    <form action="/donations/store" class="row" method="post">
+                    <form id="paymentForm" action='/donations/store' class="row" method="post" novalidate>
                         @csrf
                         <input type="hidden" name="payment_title" value="{{$payment}}">
                         <div class="col-6 mt-4">
-                            <input type="text" class="make-donation__form-section__form__input" name="amount" placeholder="{{ ($lang=='ge') ? "თანხა" : 'Amount'}}">
+                            <input type="number" class="make-donation__form-section__form__input" name="amount" required placeholder="{{ ($lang=='ge') ? "თანხა" : 'Amount'}}">
                         </div>
                         <div class="col-12 mt-4">
                             <div>
@@ -37,7 +37,7 @@
                             </div>
                         </div>
                         <div class="col-6 mt-4">
-                            <input type="text" class="make-donation__form-section__form__input" name="first_name" placeholder="{{ ($lang=='ge') ? "სახელი" : 'First Name'}}">
+                            <input type="text" class="make-donation__form-section__form__input" required name="first_name" placeholder="{{ ($lang=='ge') ? "სახელი" : 'First Name'}}">
                         </div>
                         <div class="col-12 mt-2">
                             <input class="form-check-input" id="showName" name="show_name" type="checkbox">
@@ -45,7 +45,7 @@
                         </div>
 
                         <div class="col-6 mt-4">
-                            <input type="text" class="make-donation__form-section__form__input" name="last_name" placeholder="{{ ($lang=='ge') ? "გვარი" : 'Last Name'}}">
+                            <input type="text" class="make-donation__form-section__form__input" required name="last_name" placeholder="{{ ($lang=='ge') ? "გვარი" : 'Last Name'}}">
                         </div>
                         <div class="col-12 mt-4">
                             <textarea id="" cols="30" rows="5" class="make-donation__form-section__form__input" name="comment" placeholder="{{ ($lang=='ge') ? "კომენტარი" : 'Comment'}}"></textarea>
@@ -53,7 +53,7 @@
                             <label class="mt-2" for="showComment">{{ ($lang=='ge') ? "აჩვენე ჩემი კომენტარი შემოწირულობებში" : 'Show my comment in donations'}}</label>
                         </div>
                         <div class="col-12">
-                            <button class="make-donation__form-section__form__submit-button mt-3 w-100" type="submit"> {{ ($lang=='ge') ? "შემოწირვა" : 'DONATE'}} </button>
+                            <button class="make-donation__form-section__form__submit-button mt-3 w-100" id="submitBtn" type="button" onclick="submitForm()"> {{ ($lang=='ge') ? "შემოწირვა" : 'DONATE'}} </button>
                         </div>
                     </form>
                 </div>
@@ -71,6 +71,22 @@
                 <div class="make-donation__info__note">
                     {{$contents['payment_warning'][0]['text']}}: {{$payment}}
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="passwordModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="passwordModalLabel">Thank you!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                We've received your donation
             </div>
         </div>
     </div>
