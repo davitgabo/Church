@@ -44,11 +44,11 @@ class DonationController extends Controller
 
         // Save the donation object to the database
         if ($donation->save()){
-            return true;
+            return response()->json(['status' => 'successful']);
         }
 
         // Redirect the user with an error message
-        return false;
+        return response()->json(['error' => 'Not Found'], 404);
 
     }
 
