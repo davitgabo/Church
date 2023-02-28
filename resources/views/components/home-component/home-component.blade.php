@@ -11,10 +11,10 @@
                             @foreach($contents['slider'] as $slider)
                                 @if ($loop->first)
                                     <div class="carousel-item home__text-section__text-slider__text active"
-                                         data-bs-interval="5000">
+                                         data-bs-interval="10000">
                                         @else
                                             <div class="carousel-item home__text-section__text-slider__text"
-                                                 data-bs-interval="5000">
+                                                 data-bs-interval="10000">
                                                 @endif
                                                 {{$slider['text']}}
                                             </div>
@@ -56,13 +56,19 @@
                     <div class="carousel-inner h-100">
                         @foreach($contents['slider'] as $slider)
                             @if ($loop->first)
-                                <div class="carousel-item carousel-item-count active" data-bs-interval="5000">
+                                <div class="carousel-item carousel-item-count active" data-bs-interval="10000">
                                     @else
-                                        <div class="carousel-item carousel-item-count" data-bs-interval="5000">
+                                        <div class="carousel-item carousel-item-count" data-bs-interval="10000">
                                             @endif
 {{--                                            <div class="h-100"--}}
 {{--                                                 style="background-image: url('/assets/images/{{$slider['uri']}}')"></div>--}}
-                                            <img class="h-100" src="/assets/images/{{$slider['uri']}}" alt="">
+                                            <div class="carousel-item__img-container">
+                                                <img class="h-100" src="/assets/images/{{$slider['uri']}}" alt="">
+                                                {{--                                        TODO:: ამას შემოარტყი if--}}
+                                                <img class="video-icon" src="/assets/icons/outline-green-triangle.png" alt="">
+                                                {{--                                        endif--}}
+                                            </div>
+
                                         </div>
                                         @endforeach
                                 </div>

@@ -19,12 +19,18 @@
         <label for="uploadImage" class="dashboard__sub-section__upload-label">
             <img src="{{URL::asset('/assets/icons/upload_img.png')}}" alt=""> ფოტოს დამატება
         </label>
-        <input hidden type="file" name="image" class="form-control-file" id="uploadImage" onchange="readURL(this);">
+        <input hidden type="file" name="image" class="form-control-file" id="uploadImage" onchange="readURL(this, 'uploadedImage');">
         <div class="my-3">
             <input class="form-control" type="text" name="text_ge" placeholder="სლაიდერის ქართული ტექსტი">
         </div>
-        <div  class="my-3">
+        <div class="my-3">
             <input class="form-control" type="text" name="text_en" placeholder="სლაიდერის ინგლისური ტექსტი">
+        </div>
+        <div class="my-3">
+            <input class="form-check-input" id="videoUrl" type="checkbox" onclick="addVideoUrl()">
+            <label for="videoUrl">თან ახლავს ვიდეო</label>
+        </div>
+        <div class="my-3" id="videoUrlContainer">
         </div>
         <button type="submit" class="btn btn-primary">დამატება</button>
     </form>
