@@ -109,6 +109,14 @@
     font-size: 1.2rem;
 }
 
+.modal-content {
+    border-radius: 1rem;
+}
+
+.close {
+    background: none;
+}
+
 @media screen and (min-width: 1199px) {
     .make-donation {
         max-width: 100%;
