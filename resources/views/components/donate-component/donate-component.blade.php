@@ -4,9 +4,9 @@
             {{$contents['title'][0]['text']}}
         </div>
         <div class="row mb-5">
-            <div class="col-5">
+            <div class="col-xl-5 col-12">
                 <a href="/{{$lang}}/payment">
-                    <div class="donate__card d-flex align-items-center">
+                    <div class="donate__card d-flex align-items-center mb-5">
                         <img class="mr-2" src="{{ URL::asset('/assets/icons/card.png')}}">
                         <div class="donate__card__text ml-2">
                             @if($lang == 'ge')
@@ -18,21 +18,8 @@
                     </div>
                 </a>
 
-            </div>
-            <div class="col-2"></div>
-            <div class="col-5">
-                <div class="donate__card d-flex align-items-center">
-                    <img class="mr-2" src="{{ URL::asset('/assets/icons/paypal.png')}}">
-                    <div class="donate__card__text ml-2 mt-2">
-                        {{$contents['email'][0]['text']}}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-5">
-            <div class="col-5">
                 <a href="/{{$lang}}/payment">
-                    <div class="donate__card d-flex align-items-center">
+                    <div class="donate__card d-flex align-items-center mb-5">
                         <img class="mr-2" src="{{ URL::asset('/assets/icons/bank.png')}}">
                         <div class="donate__card__text ml-2">
                             @if($lang == 'ge')
@@ -43,22 +30,27 @@
                         </div>
                     </div>
                 </a>
-
             </div>
             <div class="col-2"></div>
-            <div class="col-5">
-                <div class="donate__card__title">
+            <div class="col-xl-5 col-12">
+                <div class="donate__card d-flex align-items-center mb-5">
+                    <img class="mr-2" src="{{ URL::asset('/assets/icons/paypal.png')}}">
+                    <div class="donate__card__text ml-2 mt-2">
+                        {{$contents['email'][0]['text']}}
+                    </div>
+                </div>
+
+                <div class="donate__card__title mb-3 mt-2">
                     {{$contents['message'][0]['text']}}
                 </div>
             </div>
         </div>
-
         <div class="donate__progress-bar">
             <div class="donate__progress-bar__amount">
                 @if($lang == 'ge')
-                    {{ number_format($donated) }} ₾ ჩარიცხულია {{ number_format((float)$contents['amount'][0]['text']) }} ₾ დან
+                    <span>{{ number_format($donated) }} ₾ </span> <span>ჩარიცხულია </span> <span>{{ number_format((float)$contents['amount'][0]['text']) }} ₾ დან</span>
                 @else
-                    {{ number_format($donated) }} ₾ is donated from {{ number_format((float)$contents['amount'][0]['text']) }} ₾
+                    <span>{{ number_format($donated) }} ₾ </span> <span>Raised of </span> <span>{{ number_format((float)$contents['amount'][0]['text']) }} ₾</span>
                 @endif
             </div>
             <div class="donate__progress-bar__bar w-100">

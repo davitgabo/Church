@@ -1,12 +1,25 @@
-<div class="make-donation h-100">
+<div class="make-donation h-100 container-lg container-md container-sm pb-3">
     <div class="row h-100">
-        <div class="col-xl-6">
+        <div class="col-xl-6 col-12">
             <div class="make-donation__form-section">
                 <div class="make-donation__form-section__title">
                     {{$contents['title'][0]['text']}}
                 </div>
 
-                <div class="make-donation__form-section__form">
+                <div class="make-donation__info d-none-xl">
+                    <div class="mb-2 d-flex align-items-center make-donation__info__acc">
+                        <span class="span-width">{{ ($lang=='ge') ? "ბანკის ანგარიში" : 'Bank Account'}}:</span> <span class="mx-2" id="bankAccNo"> {{$contents['iban'][0]['text']}} </span> <span><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">{{ ($lang=='ge') ? "კოპირება" : 'copy'}}</span></span>
+                    </div>
+                    <hr>
+                    <div class="mb-4 d-flex align-items-center make-donation__info__acc">
+                        <span class="span-width">{{ ($lang=='ge') ? "საგადახდო კოდი" : 'Payment Title'}}:</span> <span class="mx-2" id="paymentTitle">{{$payment}}</span> <span><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">{{ ($lang=='ge') ? "კოპირება" : 'copy'}}</span></span>
+                    </div>
+                    <div class="make-donation__info__note">
+                        {{$contents['payment_warning'][0]['text']}}: {{$payment}}
+                    </div>
+                </div>
+
+                <div class="make-donation__form-section__form mb-3">
                     <form action="/donations/store" class="row" method="post">
                         @csrf
                         <input type="hidden" name="payment_title" value="{{$payment}}">
@@ -39,19 +52,21 @@
                             <input class="mt-2" id="showComment" name="show_comment" type="checkbox" class="form-check-input">
                             <label class="mt-2" for="showComment">{{ ($lang=='ge') ? "აჩვენე ჩემი კომენტარი შემოწირულობებში" : 'Show my comment in donations'}}</label>
                         </div>
-                        <button class="make-donation__form-section__form__submit-button mt-3" type="submit"> {{ ($lang=='ge') ? "შემოწირვა" : 'DONATE'}} </button>
+                        <div class="col-12">
+                            <button class="make-donation__form-section__form__submit-button mt-3 w-100" type="submit"> {{ ($lang=='ge') ? "შემოწირვა" : 'DONATE'}} </button>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
         <div class="col-xl-6">
-            <div class="make-donation__info">
-                <div class="mb-2 d-flex align-items-center">
-                    <span class="span-width">{{ ($lang=='ge') ? "ბანკის ანგარიში" : 'Bank Account'}}:</span> <span class="mx-2" id="bankAccNo"> {{$contents['iban'][0]['text']}} </span> <span onclick="copy('bankAccNo')"><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">{{ ($lang=='ge') ? "კოპირება" : 'copy'}}</span></span>
+            <div class="make-donation__info d-none-lg">
+                <div class="mb-2 d-flex align-items-center make-donation__info__acc">
+                    <span class="span-width">{{ ($lang=='ge') ? "ბანკის ანგარიში" : 'Bank Account'}}:</span> <span class="mx-2" id="bankAccNo"> {{$contents['iban'][0]['text']}} </span> <span><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">{{ ($lang=='ge') ? "კოპირება" : 'copy'}}</span></span>
                 </div>
                 <hr>
-                <div class="mb-4 d-flex align-items-center">
-                    <span class="span-width">{{ ($lang=='ge') ? "საგადახდო კოდი" : 'Payment Title'}}:</span> <span class="mx-2" id="paymentTitle">{{$payment}}</span> <span onclick="copy('paymentTitle')"><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">{{ ($lang=='ge') ? "კოპირება" : 'copy'}}</span></span>
+                <div class="mb-4 d-flex align-items-center make-donation__info__acc">
+                    <span class="span-width">{{ ($lang=='ge') ? "საგადახდო კოდი" : 'Payment Title'}}:</span> <span class="mx-2" id="paymentTitle">{{$payment}}</span> <span><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">{{ ($lang=='ge') ? "კოპირება" : 'copy'}}</span></span>
                 </div>
                 <div class="make-donation__info__note">
                     {{$contents['payment_warning'][0]['text']}}: {{$payment}}

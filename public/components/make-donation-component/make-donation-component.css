@@ -1,3 +1,5 @@
+
+
 .make-donation__form-section {
     display: flex;
     flex-direction: column;
@@ -68,6 +70,10 @@
     width: 70%;
 }
 
+.d-none-xl {
+    display: none;
+}
+
 .make-donation__info div {
     font-size: 1.2rem;
     color: #7E7E7E;
@@ -101,4 +107,56 @@
 .span-width {
     width: 30%;
     font-size: 1.2rem;
+}
+
+@media screen and (min-width: 1199px) {
+    .make-donation {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .make-donation__form-section {
+        align-items: start;
+    }
+
+    .d-none-lg {
+        display: none;
+    }
+
+    .d-none-xl {
+        display: block;
+    }
+
+    .make-donation__info {
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .make-donation__form-section__title {
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+        width: 80%;
+        font-size: 2rem;
+    }
+
+    .make-donation__form-section__form {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .make-donation__form-section__title {
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+        width: 100%;
+    }
+
+    .make-donation__info span, #bankAccNo, #paymentTitle {
+        font-size: 0.9rem;
+    }
+
+    .make-donation__info__note {
+        font-size: 0.9rem !important;
+    }
 }

@@ -16,7 +16,7 @@ class NavigationController extends Controller
             case 'en':
                 $text = 'text';
                 $contents['nav_logo_title'][0]='Cathedral church of the';
-                $contents['nav_logo_title'][1]='All Holly Mother of Good Iveria,Zugdidi';
+                $contents['nav_logo_title'][1]='All Holly Mother of Good Iveria, Zugdidi';
                 break;
             case 'ge':
                 $text = 'text_ge';
