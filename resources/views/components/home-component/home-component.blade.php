@@ -11,12 +11,23 @@
                             @foreach($contents['slider'] as $slider)
                                 @if ($loop->first)
                                     <div class="carousel-item home__text-section__text-slider__text active"
+<<<<<<< HEAD
                                          data-bs-interval="5000">
                                 @else
                                     <div class="carousel-item home__text-section__text-slider__text"
                                          data-bs-interval="5000">
                                 @endif
                                         {{$slider['text']}}
+=======
+                                         data-bs-interval="10000">
+                                        @else
+                                            <div class="carousel-item home__text-section__text-slider__text"
+                                                 data-bs-interval="10000">
+                                                @endif
+                                                {{$slider['text']}}
+                                            </div>
+                                            @endforeach
+>>>>>>> c2631a03f0eec501cead0d2dd18bb7a2d9d8bd65
                                     </div>
                             @endforeach
                         </div>
@@ -56,17 +67,18 @@
                     <div class="carousel-inner h-100">
                         @foreach($contents['slider'] as $slider)
                             @if ($loop->first)
-                                <div class="carousel-item carousel-item-count active" data-bs-interval="5000">
+                                <div class="carousel-item carousel-item-count active" data-bs-interval="10000">
                                     @else
-                                        <div class="carousel-item carousel-item-count" data-bs-interval="5000">
+                                        <div class="carousel-item carousel-item-count" data-bs-interval="10000">
                                             @endif
 {{--                                            <div class="h-100"--}}
 {{--                                                 style="background-image: url('/assets/images/{{$slider['uri']}}')"></div>--}}
-                                            <img class="h-100" src="/assets/images/{{$slider['uri']}}" alt="">
-                                            @if($slider['video_url'])
-                                                <a href="/ge/video/{{$slider['id']}}">ვიდეოს ლოგო</a>
-
-                                            @endif
+                                            <div class="carousel-item__img-container">
+                                                <img class="h-100" src="/assets/images/{{$slider['uri']}}" alt="">
+                                                @if($slider['video_url'])
+                                                <img class="video-icon" src="/assets/icons/outline-green-triangle.png" alt="">
+                                                @endif
+                                            </div>
                                         </div>
                                         @endforeach
                                 </div>

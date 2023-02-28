@@ -101,6 +101,21 @@
     background-color: #FFFFFF;
 }
 
+.video-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.carousel-item__img-container {
+    position:relative;
+    height: 100%;
+    display: flex;
+    float: right
+}
+
 @media screen and (max-width: 1500px) {
     .home__text-section__title,
     .home__text-section__donate,

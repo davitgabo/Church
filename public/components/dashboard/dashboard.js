@@ -67,3 +67,11 @@ function readURL(input,idName) {
         reader.readAsDataURL(input.files[0]);
     }
 }
+
+function addVideoUrl() {
+    if($('#videoUrl').prop('checked')) {
+        $('#videoUrlContainer')[0].innerHTML = '<input class="form-control" type="text" name="video_url" placeholder="ვიდეოს ლინკი">';
+    } else {
+        $('#videoUrlContainer')[0].innerHTML = '';
+    }
+}
