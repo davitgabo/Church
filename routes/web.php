@@ -37,5 +37,6 @@ Route::delete('/logout', [AuthController::class,'logout'])->middleware('auth');
 Route::get('/login', [NavigationController::class,'login'])->middleware('guest','prevent-back-history')->name('login');
 Route::post('/authenticate', [AuthController::class,'login']);
 Route::post('/send', [EmailController::class,'send']);
+Route::get('/{lang}/{page}/{id}', [NavigationController::class,'render']);
 Route::get('/{lang}/{page}', [NavigationController::class,'render']);
 Route::get('/', [NavigationController::class,'render']);

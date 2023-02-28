@@ -53,6 +53,9 @@
             @case ('payment')
             <x-make-donation-component.make-donation-component :$contents :$lang :$payment/>
                 @break
+            @case ('video')
+            <x-video-component.video-component :$contents :$lang :$slider/>
+                @break
         @endswitch
 
     </body>

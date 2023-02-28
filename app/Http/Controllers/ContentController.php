@@ -83,7 +83,8 @@ class ContentController extends Controller
         $validatedData = $request->validate([
             'text_ge' => 'required|string|max:1800',
             'text_en' => 'required|string|max:1800',
-            'image' => 'required|image'
+            'image' => 'required|image',
+            'video_url' => 'sometimes|required|string'
         ]);
 
         $slider = new Content();
@@ -99,6 +100,9 @@ class ContentController extends Controller
         $slider->description = 'სლაიდერის ტექსტი';
         $slider->uri = time().$image->getClientOriginalName();
 
+        if($request->has('video_url')){
+            $slider->video_url = strip_tags($validatedData['video_url']);
+        }
         if ($slider->save()) {
             $image->move(public_path().'/assets/images', $slider->uri);
         }

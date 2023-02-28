@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\App;
 
 class NavigationController extends Controller
 {
-    public function render($lang=null, $page=null)
+    public function render($lang=null, $page=null, $id=null)
     {
         switch ($lang) {
             case 'en':
@@ -31,16 +31,21 @@ class NavigationController extends Controller
             return redirect("/$lang/home");
         }
 
-        if (in_array($page,['home','about','contact','gallery','donate','payment'])) {
+        if (in_array($page,['home','about','contact','gallery','donate','payment','video'])) {
                 $tableData = Content::where('page',$page)->orwhere('page','all')->get();
                 foreach ($tableData as $row) {
                     $key = $row->section;
-                    $contents[$key][] = ['text' => $row->$text, 'uri' => $row->uri, 'visibility' => $row->visibility];
+                    $contents[$key][] = ['id'=>$row->id,
+                                        'text' => $row->$text,
+                                        'uri' => $row->uri,
+                                        'visibility' => $row->visibility,
+                                        'video_url' => $row->video_url];
                 }
 
                 return view('welcome',['component'=> $page,
                                             'contents' => $contents,
                                             'images' => Image::all(),
+                                            'slider' => Content::find($id),
                                             'text' => $text,
                                             'lang' => $lang,
                                             'donated' => Donation::where('status','approved')->sum('amount'),

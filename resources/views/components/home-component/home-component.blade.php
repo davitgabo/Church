@@ -12,16 +12,16 @@
                                 @if ($loop->first)
                                     <div class="carousel-item home__text-section__text-slider__text active"
                                          data-bs-interval="5000">
-                                        @else
-                                            <div class="carousel-item home__text-section__text-slider__text"
-                                                 data-bs-interval="5000">
-                                                @endif
-                                                {{$slider['text']}}
-                                            </div>
-                                            @endforeach
+                                @else
+                                    <div class="carousel-item home__text-section__text-slider__text"
+                                         data-bs-interval="5000">
+                                @endif
+                                        {{$slider['text']}}
                                     </div>
+                            @endforeach
                         </div>
-                        <div class="home__slider-indicators">
+                    </div>
+                    <div class="home__slider-indicators">
                             @if(count($contents['slider'])>1)
                                 @foreach($contents['slider'] as $value)
                                     @if($loop->first)
@@ -31,8 +31,8 @@
                                     @endif
                                 @endforeach
                             @endif
-                        </div>
                     </div>
+                </div>
                     @if($contents['donate'][0]['visibility'] != 'hide')
                         <div class="home__text-section__donate">
                             <a href="/{{$lang}}/{{$contents['Make donation'][0]['uri']}}">
@@ -63,6 +63,10 @@
 {{--                                            <div class="h-100"--}}
 {{--                                                 style="background-image: url('/assets/images/{{$slider['uri']}}')"></div>--}}
                                             <img class="h-100" src="/assets/images/{{$slider['uri']}}" alt="">
+                                            @if($slider['video_url'])
+                                                <a href="/ge/video/{{$slider['id']}}">ვიდეოს ლოგო</a>
+
+                                            @endif
                                         </div>
                                         @endforeach
                                 </div>
