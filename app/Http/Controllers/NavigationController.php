@@ -7,11 +7,13 @@ use App\Models\Donation;
 use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Madcoda\Youtube\Youtube;
 
 class NavigationController extends Controller
 {
     public function render($lang=null, $page=null, $id=null)
     {
+        // detect chosen language
         switch ($lang) {
             case 'en':
                 $text = 'text';
@@ -27,10 +29,12 @@ class NavigationController extends Controller
                 return redirect('/ge/home');
         }
 
+        //check for hidden pages
         if (($page == 'donate' || $page == 'payment') && Content::invisible()){
             return redirect("/$lang/home");
         }
 
+        //check for allowed url
         if (in_array($page,['home','about','contact','gallery','donate','payment','video'])) {
                 $tableData = Content::where('page',$page)->orwhere('page','all')->get();
                 foreach ($tableData as $row) {
@@ -39,14 +43,20 @@ class NavigationController extends Controller
                                         'text' => $row->$text,
                                         'uri' => $row->uri,
                                         'visibility' => $row->visibility,
-                                        'video_url' => $row->video_url];
+                                        'video_id' => $row->video_id];
+                }
+
+                if ($id){
+                    $sliderRecord = Content::find($id);
+                    $slider['title'] = $this->video($sliderRecord->video_id);
+                    $slider['text'] = $sliderRecord->$text;
+                    $slider['video_id'] = $sliderRecord->video_id;
                 }
 
                 return view('welcome',['component'=> $page,
                                             'contents' => $contents,
                                             'images' => Image::all(),
-                                            'slider' => Content::find($id),
-                                            'text' => $text,
+                                            'slider' => $slider ?? null,
                                             'lang' => $lang,
                                             'donated' => Donation::where('status','approved')->sum('amount'),
                                             'payment' => $this->generateUniqueNumber(),
@@ -66,6 +76,7 @@ class NavigationController extends Controller
                     'text_ge' => $row->text_ge,
                     'text'=> $row->text,
                     'uri' => $row->uri,
+                    'video_id' => $row->video_id,
                     'visibility' => $row->visibility,
                     'title' => $row->description];
             }
@@ -91,5 +102,15 @@ class NavigationController extends Controller
         } while ($exists);
 
         return $number;
+    }
+
+    function video($videoId){
+        // Set up the Google client object with your API key
+        $config = [
+            'key' => env('YOUTUBE_API_KEY')
+        ];
+        $youtube = new Youtube($config);
+        $video = $youtube->getVideoInfo($videoId);
+        return $video->snippet->title;
     }
 }

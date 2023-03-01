@@ -21,7 +21,8 @@ class ContentController extends Controller
     {
         $request->validate([
             'text_en' => 'required|string|max:1800',
-            'text_ge' => 'required|string|max:1800'
+            'text_ge' => 'required|string|max:1800',
+            'video_url' => 'sometimes|nullable|max:120'
         ]);
 
         $content = Content::find($id);
@@ -32,6 +33,15 @@ class ContentController extends Controller
 
         $content->text = htmlentities($request->input('text_en'));
         $content->text_ge = htmlentities($request->input('text_ge'));
+        if ($request->has('video_url')){
+            $url = $request->input('video_url');
+
+            // Parse the URL and get the query string
+            parse_str(parse_url($url, PHP_URL_QUERY), $query);
+
+            // Get the value of the 'v' parameter, which is the video ID and save to slider model
+            $content->video_id = strip_tags( $query['v'] ?? $request->input('video_url'));
+        }
         $content->save();
 
         return redirect()->back()->with('success', 'Content updated successfully');
@@ -101,7 +111,13 @@ class ContentController extends Controller
         $slider->uri = time().$image->getClientOriginalName();
 
         if($request->has('video_url')){
-            $slider->video_url = strip_tags($validatedData['video_url']);
+            $url = $validatedData['video_url'];
+
+            // Parse the URL and get the query string
+            parse_str(parse_url($url, PHP_URL_QUERY), $query);
+
+            // Get the value of the 'v' parameter, which is the video ID and save to slider model
+            $slider->video_id = strip_tags( $query['v'] ?? $request->input('video_url'));
         }
         if ($slider->save()) {
             $image->move(public_path().'/assets/images', $slider->uri);

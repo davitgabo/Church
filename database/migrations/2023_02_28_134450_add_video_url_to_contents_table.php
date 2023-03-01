@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('contents', function (Blueprint $table) {
-            $table->string('video_url')->nullable()->after('uri');
+            $table->string('video_id')->nullable()->after('uri');
         });
     }
 
@@ -26,7 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('contents', function (Blueprint $table) {
-            $table->dropColumn('video_url');
+            $table->dropColumn('video_id');
         });
     }
 };
