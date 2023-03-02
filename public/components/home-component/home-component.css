@@ -166,7 +166,11 @@
         float: unset;
         width: 100%;
         margin: auto;
-        height: 30rem !important;
+        height: 30rem;
+    }
+
+    .video-icon {
+        height: 5rem !important;
     }
 
     .home__slider-indicators {
