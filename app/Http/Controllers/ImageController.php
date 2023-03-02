@@ -14,7 +14,7 @@ class ImageController extends Controller
         $inputs = $request->validate([
             'desc_ge'=>'nullable|string|max:1800',
             'desc_en'=>'nullable|string|max:1800',
-            'image'=>'required|image'
+            'image'=>'required|image|max:2560'
         ]);
 
         $image = new Image();
