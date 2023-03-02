@@ -63,7 +63,7 @@
                                             <div class="carousel-item__img-container">
                                                 <img class="h-100" src="/assets/images/{{$slider['uri']}}" alt="">
                                                 @if($slider['video_id'])
-                                                    <a href="/{{$lang}}/video/{{$slider['id']}}">
+                                                    <a class="video__url" href="/{{$lang}}/video/{{$slider['id']}}">
                                                         <img class="video-icon" src="/assets/icons/outline-green-triangle.png" alt="">
                                                     </a>
                                                 @endif
