@@ -93,11 +93,12 @@ class ContentController extends Controller
         $validatedData = $request->validate([
             'text_ge' => 'required|string|max:1800',
             'text_en' => 'required|string|max:1800',
-            'image' => 'required|image',
+            'image' => 'required|image|max:2560',
             'video_url' => 'sometimes|required|string'
         ]);
 
         $slider = new Content();
+
         if (!$slider->isStorable()) {
             return redirect()->back();
         }
@@ -135,7 +136,7 @@ class ContentController extends Controller
      */
     public function changeImage(Request $request, $id)
     {
-        $request->validate(['image' => 'required|image']);
+        $request->validate(['image' => 'required|image|max:2560']);
         $content = Content::find($id);
 
         if (!$content) {
