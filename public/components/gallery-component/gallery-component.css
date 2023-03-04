@@ -2,7 +2,7 @@
     font-family: BPG Arial Caps;
     font-size: 2.25rem;
     line-height: 2.5625rem;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
     margin-top: 5rem;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .gallery__img {
-    height: 19rem;
+    height: 14rem;
     width: 100%;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .prev-new, .next-new {
-    bottom: 9rem !important;
+    bottom: 6rem !important;
     top: unset !important;
     width: 4rem;
     z-index: 2;
