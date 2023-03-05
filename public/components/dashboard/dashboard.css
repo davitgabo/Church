@@ -78,9 +78,15 @@
     display: flex;
 }
 
-.form__textarea span {
+.form__input {
+    display: flex;
+    align-items: center;
+}
+
+.form__textarea span, .form__input span {
     margin-right: 0.5rem;
     margin-top: 0.1rem;
+    width: 5rem;
 }
 
 .form__textarea textarea {

@@ -60,7 +60,7 @@ function readURL(input,idName) {
             if(idName === 'aboutImg') {
                 $('#' + idName).attr('src', e.target.result);
             } else {
-                $('#' + idName).attr('src', e.target.result).height(320).width(320);
+                $('#' + idName).attr('src', e.target.result).height(320).width(380);
             }
         };
 
