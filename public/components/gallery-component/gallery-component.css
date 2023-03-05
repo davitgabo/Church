@@ -17,7 +17,7 @@
 }
 
 .gallery__img {
-    height: 14rem;
+    height: 19rem;
     width: 100%;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .prev-new, .next-new {
-    bottom: 6rem !important;
+    bottom: 9rem !important;
     top: unset !important;
     width: 4rem;
     z-index: 2;

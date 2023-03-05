@@ -112,7 +112,7 @@ $('document').ready(() => {
             $('#navigationDiv').css('display', 'block');
 
             if(elementLength > 4) {
-                $('#navigationDiv').css({'height': '14rem', 'width': ($('.decoyDiv').width() + 'px')})
+                $('#navigationDiv').css({'height': '19rem', 'width': ($('.decoyDiv').width() + 'px')})
             } else {
                 $('#navigationDiv').css('display', 'none');
             }
@@ -153,7 +153,7 @@ $('document').ready(() => {
 
     if(window.innerWidth > 1199) {
         if(elementLength > 4) {
-            $('#navigationDiv').css({'height': '14rem', 'width': ($('.decoyDiv').width() + 'px')})
+            $('#navigationDiv').css({'height': '19rem', 'width': ($('.decoyDiv').width() + 'px')})
         } else {
             $('#navigationDiv').css('display', 'none');
         }
@@ -192,7 +192,7 @@ $(window).resize(function () {
     $('#mygallery').slick('reinit');
     if(window.innerWidth > 1199) {
         if(elementLength > 4) {
-            $('#navigationDiv').css({'height': '14rem', 'width': ($('.decoyDiv').width() + 'px')})
+            $('#navigationDiv').css({'height': '19rem', 'width': ($('.decoyDiv').width() + 'px')})
         } else {
             $('#navigationDiv').css('display', 'none');
         }
