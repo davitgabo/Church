@@ -56,16 +56,12 @@
             </a>
 
             <div class="nav__language col-xl-1 d-flex align-items-center">
-                <select class="nav__language__select" name="" id="languageSelect">
-                    <option value="en" @selected($lang == 'en')>ENG</option>
-                    <option value="ge" @selected($lang == 'ge')>ქარ</option>
-                </select>
-{{--                <label for="languageSelect">--}}
-{{--                    <div class="nav__language__select">--}}
-{{--                        <div>ENG</div>--}}
-{{--                        <div>ქარ</div>--}}
-{{--                    </div>--}}
-{{--                </label>--}}
+                <div class="custom-select">
+                    <select id="languageSelect">
+                        <option value="en" @selected($lang == 'en')>ENG</option>
+                        <option value="ge" @selected($lang == 'ge')>ქარ</option>
+                    </select>
+                </div>
             </div>
         </div>
     </div>
