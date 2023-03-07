@@ -8,9 +8,9 @@
                         @csrf
                         @method('PUT')
                         <label class="dashboard__sub-section__change-image my-1 d-flex justify-content-center" for="sliderImage_{{$loop->index}}">
-                            <img id="sliderImage" class="gallery-img" src="/assets/images/{{$item->uri}}" alt="">
+                            <img id="sliderImageRe_{{$loop->index}}" class="gallery-img" src="/assets/images/{{$item->uri}}" alt="">
                         </label>
-                        <input hidden type="file" name="image" class="form-control-file" id="sliderImage_{{$loop->index}}" onchange="readURL(this, 'sliderImage');">
+                        <input hidden type="file" name="image" class="form-control-file" id="sliderImage_{{$loop->index}}" onchange="readURL(this, 'sliderImageRe_' + {{$loop->index}});">
                         <div class="my-2 d-flex">
                             <span class="mr-2">GE:</span> <div class="dashboard__sub-section__edit-form__text">{{$item->text_ge}}</div>
                         </div>
@@ -49,7 +49,7 @@
                         @csrf
                         @method('PUT')
                         <label class="dashboard__sub-section__change-image my-1 d-flex justify-content-center" for="changeImage_{{$loop->index}}">
-                            <img class="gallery-img" src="/assets/images/{{$image->name}}" alt="">
+                            <img id="galleryImageRe_{{$loop->index}}" class="gallery-img" src="/assets/images/{{$image->name}}" alt="">
                         </label>
                         <div class="my-2 d-flex">
                             <span class="mr-2">GE:</span> <textarea class="form-control" cols="25" rows="3" name="desc_ge">{{$image->desc_ge}}</textarea>
@@ -57,7 +57,7 @@
                         <div class="my-2 d-flex">
                             <span class="mr-2">EN:</span> <textarea class="form-control" name="desc_en">{{$image->desc_en}}</textarea>
                         </div>
-                        <input hidden type="file" name="image" class="form-control-file" id="changeImage_{{$loop->index}}">
+                        <input hidden type="file" name="image" class="form-control-file" onchange="readURL(this, 'galleryImageRe_' + {{$loop->index}});" id="changeImage_{{$loop->index}}">
                     </form>
                     <form id="pic_delete_{{$image->id}}" action="/gallery/delete/{{$image->id}}" method="post">
                         @csrf

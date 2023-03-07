@@ -1,14 +1,3 @@
-// function copy() {
-//     $('.test').click(function(event) {
-//         console.log(event.target)
-//     })
-//     // var copyText = document.getElementById(id);
-//     // navigator.clipboard.writeText(copyText.innerHTML);
-// }
-//
-// $(document).ready(function() {
-//     copy();
-// })
 let form = document.getElementById('paymentForm');
 
 $('document').ready(function() {
@@ -20,13 +9,13 @@ $('document').ready(function() {
     })
 
     $("#passwordModal").on("hidden.bs.modal", function () {
-        // var url = window.location.toString();
-        // if(this.value === 'ge') {
-        //     window.location = url.replace('/en/', '/ge/');
-        // } else {
-        //     window.location = url.replace('/ge/', '/en/');
-        // }
-        // window.location = "/donate";
+        var url = window.location.toString();
+
+        if(url.includes('/ge/')) {
+            window.location = '/ge/donate';
+        } else if(url.includes('/ge/')) {
+            window.location = '/en/donate';
+        }
     });
 })
 
