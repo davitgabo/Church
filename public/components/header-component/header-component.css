@@ -58,10 +58,6 @@
 }
 
 @media screen and (max-width: 1600px) {
-    .nav__logo__title div {
-        font-size: 1.25rem;
-    }
-
     .nav__logo-container-small {
         display: none;
     }
@@ -78,10 +74,6 @@
 }
 
 @media screen and (max-width: 1260px) {
-    .nav__logo__title div {
-        font-size: 1.1rem;
-    }
-
     .nav__logo-container-small {
         display: none;
     }
@@ -129,20 +121,12 @@
     .nav__item a {
         font-size: 1rem;
     }
-
-    .nav__logo__title div {
-        font-size: 1.3rem;
-    }
 }
 
 @media screen and (max-width: 768px) {
     .nav__item a {
         font-size: 0.7rem;
         text-align: center;
-    }
-
-    .nav__logo__title div {
-        font-size: 1.1rem;
     }
 }
 
