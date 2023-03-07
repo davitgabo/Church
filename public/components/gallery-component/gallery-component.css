@@ -58,8 +58,12 @@
     left: 14rem !important;
 }
 
+.slick-next, .slick-prev {
+    width: 4rem;
+}
+
 .next-lightbox {
-    right: 3rem !important;
+    right: 1rem !important;
 }
 
 
