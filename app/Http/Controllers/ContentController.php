@@ -20,8 +20,8 @@ class ContentController extends Controller
     public function edit(Request $request, $id)
     {
         $request->validate([
-            'text_en' => 'required|string|max:1800',
-            'text_ge' => 'required|string|max:1800',
+            'text_en' => 'required|string',
+            'text_ge' => 'required|string',
             'video_url' => 'sometimes|nullable|max:120'
         ]);
 
@@ -91,8 +91,8 @@ class ContentController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'text_ge' => 'required|string|max:1800',
-            'text_en' => 'required|string|max:1800',
+            'text_ge' => 'required|string',
+            'text_en' => 'required|string',
             'image' => 'required|image|max:2560',
             'video_url' => 'sometimes|required|string'
         ]);
