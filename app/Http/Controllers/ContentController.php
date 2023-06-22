@@ -19,11 +19,6 @@ class ContentController extends Controller
      */
     public function edit(Request $request, $id)
     {
-        $request->validate([
-            'text_en' => 'required|string',
-            'text_ge' => 'required|string',
-            'video_url' => 'sometimes|nullable|max:120'
-        ]);
 
         $content = Content::find($id);
 
@@ -31,8 +26,21 @@ class ContentController extends Controller
             return redirect()->route('dashboard')->with('error', 'Content not found');
         }
 
-        $content->text = htmlentities($request->input('text_en'));
-        $content->text_ge = htmlentities($request->input('text_ge'));
+        if (in_array($content->text,['Facebook','Instagram','Twitter']) ){
+            $request->validate([
+                'link' => 'required|string'
+            ]);
+            $content->uri = htmlentities($request->input('link'));
+        } else {
+            $request->validate([
+                'text_en' => 'required|string',
+                'text_ge' => 'required|string',
+                'video_url' => 'sometimes|nullable|max:120'
+            ]);
+            $content->text = htmlentities($request->input('text_en'));
+            $content->text_ge = htmlentities($request->input('text_ge'));
+        }
+
         if ($request->has('video_url')){
             $url = $request->input('video_url');
 
