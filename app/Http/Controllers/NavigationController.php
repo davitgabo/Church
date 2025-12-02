@@ -17,8 +17,8 @@ class NavigationController extends Controller
         switch ($lang) {
             case 'en':
                 $text = 'text';
-                $contents['nav_logo_title'][0]='Cathedral Church of the';
-                $contents['nav_logo_title'][1]='All Holly Mother of God Iveria, Zugdidi';
+                $contents['nav_logo_title'][0]='Zugdidi Cathedral Church';
+                $contents['nav_logo_title'][1]='of the All Holy Mother of God Iveria';
                 break;
             case 'ge':
                 $text = 'text_ge';
