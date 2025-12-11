@@ -30,15 +30,15 @@ class ContentController extends Controller
             $request->validate([
                 'link' => 'required|string'
             ]);
-            $content->uri = htmlentities($request->input('link'));
+            $content->uri = $request->input('link');
         } else {
             $request->validate([
                 'text_en' => 'required|string',
                 'text_ge' => 'required|string',
                 'video_url' => 'sometimes|nullable|max:120'
             ]);
-            $content->text = htmlentities($request->input('text_en'));
-            $content->text_ge = htmlentities($request->input('text_ge'));
+            $content->text = $request->input('text_en');
+            $content->text_ge = $request->input('text_ge');
         }
 
         if ($request->has('video_url')){
