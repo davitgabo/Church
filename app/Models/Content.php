@@ -23,7 +23,7 @@ class Content extends Model
 
     public function isStorable(): bool
     {
-        $qty = Content::where('section', 'slider')->count();
+        $qty = Content::where('section', 'slider')->where('is_slider',true)->count();
         return $qty < 6;
     }
 

@@ -19,7 +19,6 @@ class ContentController extends Controller
      */
     public function edit(Request $request, $id)
     {
-
         $content = Content::find($id);
 
         if (!$content) {
@@ -35,10 +34,14 @@ class ContentController extends Controller
             $request->validate([
                 'text_en' => 'required|string',
                 'text_ge' => 'required|string',
-                'video_url' => 'sometimes|nullable|max:120'
+                'text_ru' => 'required|string',
+                'video_url' => 'sometimes|nullable|max:120',
+                'is_slider' => 'sometimes|nullable|bool'
             ]);
             $content->text = $request->input('text_en');
             $content->text_ge = $request->input('text_ge');
+            $content->text_ru = $request->input('text_ru');
+            $content->is_slider = $request->input('is_slider');
         }
 
         if ($request->has('video_url')){

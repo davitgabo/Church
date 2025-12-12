@@ -11,7 +11,7 @@
 
     @endforeach
     <form class="w-50 dashboard__sub-section__add-form" action="/store" method="post" enctype="multipart/form-data">
-        <h5>სლაიდერის ინფორმაცია</h5>
+        <h5>სიახლეების დამატება</h5>
         @csrf
         <div class="d-flex">
             <img id="uploadedImage" src="#" alt="">
@@ -21,16 +21,23 @@
         </label>
         <input hidden type="file" name="image" class="form-control-file" id="uploadImage" onchange="readURL(this, 'uploadedImage');">
         <div class="my-3">
-            <input class="form-control" type="text" name="text_ge" placeholder="სლაიდერის ქართული ტექსტი">
+            <input class="form-control" type="text" name="text_ge" placeholder="სიახლის ქართული ტექსტი">
         </div>
         <div class="my-3">
-            <input class="form-control" type="text" name="text_en" placeholder="სლაიდერის ინგლისური ტექსტი">
+            <input class="form-control" type="text" name="text_en" placeholder="სიახლის ინგლისური ტექსტი">
+        </div>
+        <div class="my-3">
+            <input class="form-control" type="text" name="text_ru" placeholder="სიახლის რუსული ტექსტი">
         </div>
         <div class="my-3">
             <input class="form-check-input" id="videoUrl" type="checkbox" onclick="addVideoUrl()">
             <label for="videoUrl">თან ახლავს ვიდეო</label>
         </div>
         <div class="my-3" id="videoUrlContainer">
+        </div>
+        <div class="my-3">
+            <input class="form-check-input" id="videoUrl" name="is_slider" type="checkbox">
+            <label for="videoUrl">სლაიდერად დამატება</label>
         </div>
         <button type="submit" class="btn btn-primary">დამატება</button>
     </form>

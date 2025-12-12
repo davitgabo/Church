@@ -25,6 +25,11 @@ class NavigationController extends Controller
                 $contents['nav_logo_title'][0]='ზუგდიდის ივერიის ყოვლაწმინდა ღვთისმშობლის';
                 $contents['nav_logo_title'][1]='სახელობის საკათედრო ტაძარი';
                 break;
+            case 'ru':
+                $text = 'text_ru';
+                $contents['nav_logo_title'][0]='ზუგდიდის ივერიის ყოვლაწმინდა ღვთისმშობლის';
+                $contents['nav_logo_title'][1]='სახელობის საკათედრო ტაძარი';
+                break;
             default:
                 return redirect('/ge/home');
         }
@@ -35,15 +40,17 @@ class NavigationController extends Controller
         }
 
         //check for allowed url
-        if (in_array($page,['home','about','contact','gallery','donate','payment','video'])) {
+        if (in_array($page,['home','about','news','contact','gallery','donate','payment','video'])) {
                 $tableData = Content::where('page',$page)->orwhere('page','all')->get();
                 foreach ($tableData as $row) {
                     $key = $row->section;
-                    $contents[$key][] = ['id'=>$row->id,
-                                        'text' => $row->$text,
-                                        'uri' => $row->uri,
-                                        'visibility' => $row->visibility,
-                                        'video_id' => $row->video_id];
+                    $contents[$key][] = [
+                        'id'=>$row->id,
+                        'text' => $row->$text,
+                        'uri' => $row->uri,
+                        'visibility' => $row->visibility,
+                        'video_id' => $row->video_id
+                    ];
                 }
 
                 if ($id){
@@ -53,14 +60,16 @@ class NavigationController extends Controller
                     $slider['video_id'] = $sliderRecord->video_id;
                 }
 
-                return view('welcome',['component'=> $page,
-                                            'contents' => $contents,
-                                            'images' => Image::all(),
-                                            'slider' => $slider ?? null,
-                                            'lang' => $lang,
-                                            'donated' => Donation::where('status','approved')->sum('amount'),
-                                            'payment' => $this->generateUniqueNumber(),
-                                            'donations' => Donation::where('status', 'approved')->where('public', true)->orderByDesc('created_at')->get(),]);
+                return view('welcome',[
+                    'component'=> $page,
+                    'contents' => $contents,
+                    'images' => Image::all(),
+                    'slider' => $slider ?? null,
+                    'lang' => $lang,
+                    'donated' => Donation::where('status','approved')->sum('amount'),
+                    'payment' => $this->generateUniqueNumber(),
+                    'donations' => Donation::where('status', 'approved')->where('public', true)->orderByDesc('created_at')->get(),
+                ]);
         } else {
                 return redirect("/$lang/home");
         }
@@ -75,17 +84,21 @@ class NavigationController extends Controller
                 $contents[$key][] = [ 'id'=>$row->id,
                     'text_ge' => $row->text_ge,
                     'text'=> $row->text,
+                    'text_ru' => $row->text_ru,
                     'uri' => $row->uri,
                     'video_id' => $row->video_id,
+                    'is_slider' => $row->is_slider,
                     'visibility' => $row->visibility,
                     'title' => $row->description];
             }
 
-            return view('dashboard',['contents'=> $contents,
-                                          'images'=> Image::all(),
-                                          'donations'=>Donation::orderByDesc('created_at')->get(),
-                                          'component' => $page,
-                                          'sliders'=>Content::where('section','slider')->get()]);
+            return view('dashboard',[
+                'contents' => $contents,
+                'images' => Image::all(),
+                'donations' => Donation::orderByDesc('created_at')->get(),
+                'component' => $page,
+                'sliders' => Content::where('section','slider')->where('is_slider',true)->get(),
+                'news' => Content::where('section','slider')->get()]);
         } else {
             return redirect()->back();
         }
