@@ -33,6 +33,15 @@
                     </div>
                @endif
             @if($item['title'] == 'სლაიდერის ტექსტი')
+                <div class="form__input">
+                    <span>სათაური GE:</span> <input class="w-50 form-control" type="text" name="news_title_ge" readonly onfocus="this.blur()" value="{{$item['news_title_ge']}}">
+                </div>
+                <div class="form__input my-2">
+                    <span>სათაური EN:</span> <input class="w-50 form-control" type="text" name="news_title_en" readonly onfocus="this.blur()" value="{{$item['news_title_en']}}">
+                </div>
+                <div class="form__input my-2">
+                    <span>სათაური RU:</span> <input class="w-50 form-control" type="text" name="news_title_ru" readonly onfocus="this.blur()" value="{{$item['news_title_ru']}}">
+                </div>
                 <div class="form__input my-3">
                     <span>სლაიდერზე გამოჩენა:</span> <input
                         type="checkbox"
