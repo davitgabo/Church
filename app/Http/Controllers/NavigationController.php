@@ -59,12 +59,14 @@ class NavigationController extends Controller
                     $slider['text'] = $sliderRecord->$text;
                     $slider['video_id'] = $sliderRecord->video_id;
                 }
-                $news = Content::where('section','slider')->get();
+                $homeNews = Content::where('section','slider')->paginate(3);
+                $news = Content::where('section','slider')->paginate(5);
                 return view('welcome',[
                     'component'=> $page,
                     'contents' => $contents,
                     'images' => Image::all(),
                     'slider' => $slider ?? null,
+                    'homeNews' => $homeNews,
                     'news' => $news,
                     'lang' => $lang,
                     'donated' => Donation::where('status','approved')->sum('amount'),

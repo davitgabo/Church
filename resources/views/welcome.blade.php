@@ -37,7 +37,7 @@
         <x-header-component.header-component :$contents :$lang/>
         @switch ($component)
             @case ('home')
-                <x-home-component.home-component :$contents :$lang :$news/>
+                <x-home-component.home-component :$contents :$lang :$homeNews/>
                 @break;
             @case ('about')
                 <x-about-info-component.about-info-component :$contents :$lang/>
