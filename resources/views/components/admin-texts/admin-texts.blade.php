@@ -21,6 +21,15 @@
         </label>
         <input hidden type="file" name="image" class="form-control-file" id="uploadImage" onchange="readURL(this, 'uploadedImage');">
         <div class="my-3">
+            <input class="form-control" type="text" name="news_title_ge" placeholder="სიახლის ქართული სათაური">
+        </div>
+        <div class="my-3">
+            <input class="form-control" type="text" name="news_title_en" placeholder="სიახლის ინგლისური სათაური">
+        </div>
+        <div class="my-3">
+            <input class="form-control" type="text" name="news_title_ru" placeholder="სიახლის რუსული სათაური">
+        </div>
+        <div class="my-3">
             <input class="form-control" type="text" name="text_ge" placeholder="სიახლის ქართული ტექსტი">
         </div>
         <div class="my-3">
@@ -36,7 +45,7 @@
         <div class="my-3" id="videoUrlContainer">
         </div>
         <div class="my-3">
-            <input class="form-check-input" id="videoUrl" name="is_slider" type="checkbox">
+            <input class="form-check-input" id="videoUrl" name="is_slider" type="checkbox" value="1">
             <label for="videoUrl">სლაიდერად დამატება</label>
         </div>
         <button type="submit" class="btn btn-primary">დამატება</button>

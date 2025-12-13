@@ -55,7 +55,11 @@ class NavigationController extends Controller
 
                 if ($id){
                     $sliderRecord = Content::find($id);
-                    $slider['title'] = $this->video($sliderRecord->video_id);
+                    if($sliderRecord->video_id){
+                        $slider['title'] = $this->video($sliderRecord->video_id);
+                    } else {
+                        $slider['title'] = $sliderRecord->title;
+                    }
                     $slider['text'] = $sliderRecord->$text;
                     $slider['video_id'] = $sliderRecord->video_id;
                 }

@@ -35,12 +35,18 @@ class ContentController extends Controller
                 'text_en' => 'required|string',
                 'text_ge' => 'required|string',
                 'text_ru' => 'required|string',
+                'news_title_en' => 'nullable|string',
+                'news_title_ge' => 'nullable|string',
+                'news_title_ru' => 'nullable|string',
                 'video_url' => 'sometimes|nullable|max:120',
                 'is_slider' => 'sometimes|nullable|bool'
             ]);
             $content->text = $request->input('text_en');
             $content->text_ge = $request->input('text_ge');
             $content->text_ru = $request->input('text_ru');
+            $content->news_title_en = $request->input('news_title_en');
+            $content->news_title_ge = $request->input('news_title_ge');
+            $content->news_title_ru = $request->input('news_title_ru');
             $content->is_slider = $request->input('is_slider');
         }
 
@@ -104,8 +110,13 @@ class ContentController extends Controller
         $validatedData = $request->validate([
             'text_ge' => 'required|string',
             'text_en' => 'required|string',
+            'text_ru' => 'required|string',
+            'news_title_en' => 'nullable|string',
+            'news_title_ge' => 'nullable|string',
+            'news_title_ru' => 'nullable|string',
             'image' => 'required|image|max:2560',
-            'video_url' => 'sometimes|required|string'
+            'video_url' => 'sometimes|nullable|string',
+            'is_slider' => 'nullable|bool'
         ]);
 
         $slider = new Content();
@@ -117,6 +128,11 @@ class ContentController extends Controller
         $image = $request->file('image');
         $slider->text = strip_tags($validatedData['text_en']);
         $slider->text_ge = strip_tags($validatedData['text_ge']);
+        $slider->text_ru = strip_tags($validatedData['text_ru']);
+        $slider->news_title_en = strip_tags($validatedData['news_title_en']);
+        $slider->news_title_ge = strip_tags($validatedData['news_title_ge']);
+        $slider->news_title_ru = strip_tags($validatedData['news_title_ru']);
+        $slider->is_slider = $validatedData['is_slider'];
         $slider->section = 'slider';
         $slider->page = 'home';
         $slider->description = 'სლაიდერის ტექსტი';
