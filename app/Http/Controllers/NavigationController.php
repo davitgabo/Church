@@ -65,6 +65,7 @@ class NavigationController extends Controller
                     'contents' => $contents,
                     'images' => Image::all(),
                     'slider' => $slider ?? null,
+                    'news' => Content::where('section','slider')->get(),
                     'lang' => $lang,
                     'donated' => Donation::where('status','approved')->sum('amount'),
                     'payment' => $this->generateUniqueNumber(),
@@ -97,8 +98,8 @@ class NavigationController extends Controller
                 'images' => Image::all(),
                 'donations' => Donation::orderByDesc('created_at')->get(),
                 'component' => $page,
-                'sliders' => Content::where('section','slider')->where('is_slider',true)->get(),
-                'news' => Content::where('section','slider')->get()]);
+                'sliders' => Content::where('section','slider')->get(),
+            ]);
         } else {
             return redirect()->back();
         }
