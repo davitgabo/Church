@@ -47,6 +47,7 @@ class NavigationController extends Controller
                     $contents[$key][] = [
                         'id'=>$row->id,
                         'text' => $row->$text,
+                        'news_title' => $row->{'news_title'.$lang},
                         'uri' => $row->uri,
                         'visibility' => $row->visibility,
                         'video_id' => $row->video_id
