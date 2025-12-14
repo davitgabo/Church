@@ -58,7 +58,8 @@ class NavigationController extends Controller
                     if($sliderRecord->video_id){
                         $slider['title'] = $this->video($sliderRecord->video_id);
                     } else {
-                        $slider['title'] = $sliderRecord->title;
+                        $title = 'news_title_'.$lang;
+                        $slider['title'] = $sliderRecord->$title;
                     }
                     $slider['text'] = $sliderRecord->$text;
                     $slider['video_id'] = $sliderRecord->video_id;
