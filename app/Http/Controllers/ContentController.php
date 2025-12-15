@@ -132,7 +132,7 @@ class ContentController extends Controller
         $slider->news_title_en = strip_tags($validatedData['news_title_en']);
         $slider->news_title_ge = strip_tags($validatedData['news_title_ge']);
         $slider->news_title_ru = strip_tags($validatedData['news_title_ru']);
-        $slider->is_slider = $validatedData['is_slider'];
+        $slider->is_slider = $validatedData['is_slider'] ?? false;
         $slider->section = 'slider';
         $slider->page = 'home';
         $slider->description = 'სლაიდერის ტექსტი';

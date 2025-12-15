@@ -57,6 +57,9 @@
             @case ('news')
             <x-video-component.video-component  :$lang :$slider/>
                 @break
+            @case ('all-news')
+            <x-all-news-component.all-news-component  :$lang :$news/>
+                @break
         @endswitch
 
     </body>

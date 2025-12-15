@@ -14,7 +14,7 @@
     padding: 1rem;
 }
 
-.dashboard__menu__item.active{
+.dashboard__menu__item.active {
     background-color: #000000;
     color: #ffffff;
 }
@@ -83,10 +83,11 @@
     align-items: center;
 }
 
-.form__textarea span, .form__input span {
+.form__textarea span,
+.form__input span {
     margin-right: 0.5rem;
     margin-top: 0.1rem;
-    width: 5rem;
+    width: 7rem;
 }
 
 .form__textarea textarea {
@@ -97,7 +98,9 @@
     border: 1px solid black;
 }
 
-.edit-button, .submit-button, .cancel-button {
+.edit-button,
+.submit-button,
+.cancel-button {
     max-height: 3rem;
 }
 
@@ -135,8 +138,8 @@
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
 }
 
 .slider:before {
@@ -147,16 +150,16 @@
     left: 4px;
     bottom: 4px;
     background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
 }
 
 .active + .slider {
-    background-color: #2196F3;
+    background-color: #2196f3;
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #2196f3;
 }
 
 .active + .slider:before {
@@ -173,6 +176,6 @@ input:focus + .slider {
     border-radius: 50%;
 }
 
-.donation-sub-section h3{
+.donation-sub-section h3 {
     font-family: "BPG Arial Caps";
 }

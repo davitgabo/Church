@@ -5,7 +5,7 @@
         </div>
 
     </div>
-    <div class="gallery__img-container">
+    <div class="gallery__img-container container">
         <div id="mygallery">
             @foreach($images as $image)
             <a href="/assets/images/{{$image->name}}" data-caption="{{($lang == 'ge') ? $image->desc_ge : $image->desc_en}}">
@@ -13,7 +13,7 @@
             </a>
             @endforeach
         </div>
-        <div id="navigationDiv" style="position: absolute; bottom: 0.375rem; left: 0; background-color: white">
+        <div id="navigationDiv" style="position: absolute; bottom: 0.375rem; left: 12px; background-color: white">
 
         </div>
     </div>

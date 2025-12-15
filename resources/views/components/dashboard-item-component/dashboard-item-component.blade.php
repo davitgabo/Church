@@ -46,6 +46,7 @@
                     <span>სლაიდერზე გამოჩენა:</span> <input
                         type="checkbox"
                         name="is_slider"
+                        disabled
                         value="1"
                         @checked(!empty($item['is_slider']))
                     >

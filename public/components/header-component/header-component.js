@@ -1,11 +1,11 @@
-$('#languageSelect').on('change', function() {
+$("#languageSelect").on("change", function () {
     var url = window.location.toString();
-    if(this.value === 'ge') {
-        window.location = url.replace('/en/', '/ge/');
+    if (this.value === "ge") {
+        window.location = url.replace("/en/", "/ge/");
     } else {
-        window.location = url.replace('/ge/', '/en/');
+        window.location = url.replace("/ge/", "/en/");
     }
-})
+});
 
 var x, i, j, l, ll, selElmnt, a, b, c;
 x = document.getElementsByClassName("custom-select");
@@ -22,22 +22,35 @@ for (i = 0; i < l; i++) {
     for (j = 0; j < ll; j++) {
         c = document.createElement("DIV");
         c.innerHTML = selElmnt.options[j].innerHTML;
-        c.addEventListener("click", function(e) {
+        c.addEventListener("click", function (e) {
             var y, i, k, s, h, sl, yl;
             s = this.parentNode.parentNode.getElementsByTagName("select")[0];
             sl = s.length;
             h = this.parentNode.previousSibling;
             var url = window.location.toString();
-            if(this.innerHTML === 'ENG') {
-                window.location = url.replace('/ge/', '/en/');
-            } else {
-                window.location = url.replace('/en/', '/ge/');
+            const langMap = {
+                ქარ: "ge",
+                ENG: "en",
+                РУС: "ru",
+            };
+
+            const currentLang = this.innerHTML.trim();
+            const targetLang = langMap[currentLang];
+
+            if (targetLang) {
+                window.location = url.replace(
+                    /\/(ge|en|ru)\//,
+                    `/${targetLang}/`
+                );
             }
             for (i = 0; i < sl; i++) {
                 if (s.options[i].innerHTML == this.innerHTML) {
                     s.selectedIndex = i;
                     h.innerHTML = this.innerHTML;
-                    y = this.parentNode.getElementsByClassName("same-as-selected");
+                    y =
+                        this.parentNode.getElementsByClassName(
+                            "same-as-selected"
+                        );
                     yl = y.length;
                     for (k = 0; k < yl; k++) {
                         y[k].removeAttribute("class");
@@ -51,7 +64,7 @@ for (i = 0; i < l; i++) {
         b.appendChild(c);
     }
     x[i].appendChild(b);
-    a.addEventListener("click", function(e) {
+    a.addEventListener("click", function (e) {
         e.stopPropagation();
         closeAllSelect(this);
         this.nextSibling.classList.toggle("select-hide");
@@ -60,14 +73,19 @@ for (i = 0; i < l; i++) {
 }
 
 function closeAllSelect(elmnt) {
-    var x, y, i, xl, yl, arrNo = [];
+    var x,
+        y,
+        i,
+        xl,
+        yl,
+        arrNo = [];
     x = document.getElementsByClassName("select-items");
     y = document.getElementsByClassName("select-selected");
     xl = x.length;
     yl = y.length;
     for (i = 0; i < yl; i++) {
         if (elmnt == y[i]) {
-            arrNo.push(i)
+            arrNo.push(i);
         } else {
             y[i].classList.remove("select-arrow-active");
         }

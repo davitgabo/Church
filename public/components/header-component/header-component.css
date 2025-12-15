@@ -2,12 +2,12 @@
     min-height: 7rem;
     width: 100%;
     align-items: center;
-    background-color: #FFFFFF;
-    border-bottom: 1px solid #E1E1E1
+    background-color: #ffffff;
+    border-bottom: 1px solid #e1e1e1;
 }
 
 .nav__item {
-    font-family: 'BPG Arial';
+    font-family: "BPG Arial";
     font-feature-settings: normal;
     color: #000000;
     font-weight: 600;
@@ -25,7 +25,7 @@
 }
 
 .nav__logo__title div {
-    font-family: 'BPG Classic';
+    font-family: "BPG Classic";
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 700;
@@ -36,7 +36,7 @@
 }
 
 .nav__language__select {
-    font-family: 'BPG Arial Caps';
+    font-family: "BPG Arial Caps";
     font-size: 0.6875rem;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .nav__language__select option {
-    font-family: 'BPG Arial Caps';
+    font-family: "BPG Arial Caps";
     font-size: 0.6875rem;
 }
 
@@ -54,13 +54,13 @@
 }
 
 .nav__item-container {
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .custom-select {
     position: relative;
     font-size: 0.6875rem;
-    font-family: 'BPG Arial Caps';
+    font-family: "BPG Arial Caps";
     width: 4rem;
 }
 
@@ -84,7 +84,8 @@
     top: 0.75rem;
 }
 
-.select-items div,.select-selected {
+.select-items div,
+.select-selected {
     color: #000000;
     padding: 8px 16px;
     cursor: pointer;
@@ -104,7 +105,8 @@
     display: none;
 }
 
-.select-items div:hover, .same-as-selected {
+.select-items div:hover,
+.same-as-selected {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -180,4 +182,3 @@
         text-align: center;
     }
 }
-

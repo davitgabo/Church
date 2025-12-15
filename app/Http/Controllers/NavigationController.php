@@ -40,20 +40,23 @@ class NavigationController extends Controller
         }
 
         //check for allowed url
-        if (in_array($page,['home','about','news','contact','gallery','donate','payment','video'])) {
+        if (in_array($page,['home','about','news','contact','gallery','donate','payment','video','all-news'])) {
                 $tableData = Content::where('page',$page)->orwhere('page','all')->get();
                 foreach ($tableData as $row) {
+                    
                     $key = $row->section;
+                    $news_title = 'news_title_'.$lang;
                     $contents[$key][] = [
                         'id'=>$row->id,
                         'text' => $row->$text,
-                        'news_title' => $row->{'news_title'.$lang},
+                        'news_title' => $row->$news_title,
                         'uri' => $row->uri,
                         'visibility' => $row->visibility,
-                        'video_id' => $row->video_id
+                        'video_id' => $row->video_id,
+                        'is_slider' => $row->is_slider
                     ];
                 }
-
+                
                 if ($id){
                     $sliderRecord = Content::find($id);
                     if($sliderRecord->video_id){
@@ -62,6 +65,7 @@ class NavigationController extends Controller
                         $title = 'news_title_'.$lang;
                         $slider['title'] = $sliderRecord->$title;
                     }
+                    $slider['uri'] = $sliderRecord->uri;
                     $slider['text'] = $sliderRecord->$text;
                     $slider['video_id'] = $sliderRecord->video_id;
                 }

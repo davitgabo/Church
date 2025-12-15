@@ -3,7 +3,8 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     overflow: hidden;
     height: 100vh;
@@ -21,53 +22,66 @@ a:hover {
 }
 
 @font-face {
-    font-family: 'BPG Classic Medium';
-    src: url('assets/fonts/bpg-classic/bpg-classic-medium-webfont.eot');
-    src: url('assets/fonts/bpg-classic/bpg-classic-medium-webfont.eot?#iefix') format('embedded-opentype'),
-    url('assets/fonts/bpg-classic/bpg-classic-medium-webfont.woff2') format('woff2'),
-    url('assets/fonts/bpg-classic/bpg-classic-medium-webfont.woff') format('woff'),
-    url('assets/fonts/bpg-classic/bpg-classic-medium-webfont.ttf') format('truetype'),
-    url('assets/fonts/bpg-classic/bpg-classic-medium-webfont.svg#bpg_classic_mediumregular') format('svg');
+    font-family: "BPG Classic Medium";
+    src: url("assets/fonts/bpg-classic/bpg-classic-medium-webfont.eot");
+    src: url("assets/fonts/bpg-classic/bpg-classic-medium-webfont.eot?#iefix")
+            format("embedded-opentype"),
+        url("assets/fonts/bpg-classic/bpg-classic-medium-webfont.woff2")
+            format("woff2"),
+        url("assets/fonts/bpg-classic/bpg-classic-medium-webfont.woff")
+            format("woff"),
+        url("assets/fonts/bpg-classic/bpg-classic-medium-webfont.ttf")
+            format("truetype"),
+        url("assets/fonts/bpg-classic/bpg-classic-medium-webfont.svg#bpg_classic_mediumregular")
+            format("svg");
     font-weight: 900;
 }
 
 @font-face {
-    font-family: 'BPG Arial Caps';
-    src: url('assets/fonts/bpg-arial-caps/bpg-arial-caps-webfont.eot');
-    src: url('assets/fonts/bpg-arial-caps/bpg-arial-caps-webfont.eot?#iefix') format('embedded-opentype'),
-    url('assets/fonts/bpg-arial-caps/bpg-arial-caps-webfont.woff2') format('woff2'),
-    url('assets/fonts/bpg-arial-caps/bpg-arial-caps-webfont.woff') format('woff'),
-    url('assets/fonts/bpg-arial-caps/bpg-arial-caps-webfont.ttf') format('truetype'),
-    url('assets/fonts/bpg-arial-caps/bpg-arial-caps-webfont.svg#bpg_arial_capsregular') format('svg');
+    font-family: "BPG Arial Caps";
+    src: url("assets/fonts/bpg-arial-caps/bpg-arial-caps-webfont.eot");
+    src: url("assets/fonts/bpg-arial-caps/bpg-arial-caps-webfont.eot?#iefix")
+            format("embedded-opentype"),
+        url("assets/fonts/bpg-arial-caps/bpg-arial-caps-webfont.woff2")
+            format("woff2"),
+        url("assets/fonts/bpg-arial-caps/bpg-arial-caps-webfont.woff")
+            format("woff"),
+        url("assets/fonts/bpg-arial-caps/bpg-arial-caps-webfont.ttf")
+            format("truetype"),
+        url("assets/fonts/bpg-arial-caps/bpg-arial-caps-webfont.svg#bpg_arial_capsregular")
+            format("svg");
 }
 
 @font-face {
-    font-family: 'BPG Arial';
-    src: url('assets/fonts/bpg-arial/bpg-arial-webfont.eot');
-    src: url('assets/fonts/bpg-arial/bpg-arial-webfont.eot?#iefix') format('embedded-opentype'),
-    url('assets/fonts/bpg-arial/bpg-arial-webfont.woff2') format('woff2'),
-    url('assets/fonts/bpg-arial/bpg-arial-webfont.woff') format('woff'),
-    url('assets/fonts/bpg-arial/bpg-arial-webfont.ttf') format('truetype'),
-    url('assets/fonts/bpg-arial/bpg-arial-webfont.svg#bpg_arialregular') format('svg');
+    font-family: "BPG Arial";
+    src: url("assets/fonts/bpg-arial/bpg-arial-webfont.eot");
+    src: url("assets/fonts/bpg-arial/bpg-arial-webfont.eot?#iefix")
+            format("embedded-opentype"),
+        url("assets/fonts/bpg-arial/bpg-arial-webfont.woff2") format("woff2"),
+        url("assets/fonts/bpg-arial/bpg-arial-webfont.woff") format("woff"),
+        url("assets/fonts/bpg-arial/bpg-arial-webfont.ttf") format("truetype"),
+        url("assets/fonts/bpg-arial/bpg-arial-webfont.svg#bpg_arialregular")
+            format("svg");
 }
 
 @font-face {
-    font-family: 'Helvetica Neue';
-    src: url('assets/fonts/neue-helvetica/Helvetica Neue LT GEO 65 Medium.ttf');
+    font-family: "Helvetica Neue";
+    src: url("assets/fonts/neue-helvetica/Helvetica Neue LT GEO 65 Medium.ttf");
 }
 
 @font-face {
-    font-family: 'BPG Classic';
-    src: url('assets/fonts/bpg-classic/bpg_classic_2008.otf');
+    font-family: "BPG Classic";
+    src: url("assets/fonts/bpg-classic/bpg_classic_2008.otf");
 }
 
 @font-face {
-    font-family: 'Helvetica Neue Roman';
-    src: url('assets/fonts/neue-helvetica/Helvetica Neue LT GEO 55 Roman.ttf');
+    font-family: "Helvetica Neue Roman";
+    src: url("assets/fonts/neue-helvetica/Helvetica Neue LT GEO 55 Roman.ttf");
 }
 
 @media screen and (max-width: 1200px) {
-    html, body {
+    html,
+    body {
         overflow: auto;
         overflow-x: hidden;
         height: 100%;
@@ -75,10 +89,10 @@ a:hover {
 }
 
 @media screen and (max-height: 1000px) {
-    html, body {
+    html,
+    body {
         overflow: auto;
         overflow-x: hidden;
         height: 100%;
     }
 }
-
