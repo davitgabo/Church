@@ -296,7 +296,7 @@
         flex-direction: row;
         left: 50%;
         transform: translateX(-50%);
-        bottom: 2rem;
+        top: 2rem;
         height: auto;
     }
 

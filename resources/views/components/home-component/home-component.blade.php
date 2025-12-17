@@ -1,8 +1,7 @@
 <div class="home">
-    <div class="row h-100">
+    <div class="row h-100 flex-column-reverse flex-xl-row">
         <div class="col-xl-5 col-12">
             <div class="home__text-section container-lg">
-            
                 <div class="home__text-section__text-slider">
                     <div id="carouselText" class="carousel slide carousel-fade" data-pause="false" data-ride="carousel">
                         <div class="carousel-inner">
