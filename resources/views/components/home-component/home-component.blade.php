@@ -3,7 +3,7 @@
         <div class="col-xl-5 col-12">
             <div class="home__text-section container-lg">
                 <div class="home__text-section__text-slider">
-                    <div id="carouselText" class="carousel slide carousel-fade" data-pause="false" data-ride="carousel">
+                    <div id="carouselText" class="carousel slide carousel-fade" data-pause="true" data-ride="carousel">
                         <div class="carousel-inner">
                             @foreach($contents['slider'] as $slider)
                                 @if($slider['is_slider'])
@@ -18,7 +18,10 @@
                                                         {{$slider['news_title']}}
                                                         
                                                     </div>
-                                                    {{$slider['text']}}
+                                                    <div class="home__text-section__text-slider__text-desc">
+                                                        {{$slider['text']}}
+                                                    </div>
+                                                    
                                                 </div>
                                 @endif  
                             @endforeach

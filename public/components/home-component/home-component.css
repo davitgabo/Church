@@ -30,9 +30,16 @@
 .home__text-section__text-slider__text {
     font-family: BPG Classic Medium;
     font-size: 1.125rem;
-    height: 12rem;
+    height: 16rem;
+}
+
+.home__text-section__text-slider__text-desc {
+    font-family: BPG Classic Medium;
+    font-size: 1.125rem;
     overflow: hidden;
-    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
 }
 
 .home__text-section {
@@ -175,11 +182,11 @@
     left: 2rem;
     top: 2rem;
     font-family: BPG Classic Medium;
-    font-size: 2rem;
-    padding: 0.625rem 2rem 0.3rem 2rem;
+    font-size: 1.4rem;
+    padding: 0.625rem 1rem 0.3rem 1rem;
     border: 1px solid #000000;
     border-radius: 1.375rem;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .home__text-section__donate__part-one {
