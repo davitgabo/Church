@@ -1,6 +1,6 @@
 <a href="{{'news/'.$newsItem->id}}">
     <div class="news-container__item d-flex flex-xl-row flex-column gap-xl-5 position-relative">
-        <div class="news-container__item__img align-self-center align-self-xl-start">
+        <div class="news-container__item__img align-self-center align-self-sm-start align-self-xl-start">
             <img src="{{ URL::asset('/assets/images/'.$newsItem->uri)}}" alt="">
         </div>
         <div class="news-container__item__text p-2 p-sm-0">    

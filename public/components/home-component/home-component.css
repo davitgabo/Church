@@ -315,6 +315,16 @@
         height: 15rem;
     }
 
+    .home__text-section__text-slider__text {
+        height: 20rem !important;
+    }
+
+    .home__text-section__text-slider__text-desc {
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+    }
+
     .home__text-section__donate__part-one {
         font-size: 2rem;
     }
