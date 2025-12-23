@@ -1,6 +1,12 @@
 <div class="container">
+    <div class="news-page-tag">
+        {{$lang == 'ge' ? 'სიახლე' : ($lang == 'en' ? 'News' : 'Новость')}}
+    </div>
     <div class="video__title">
         {{$slider['title']}}
+    </div>
+    <div class="video__date">
+        {{ $slider['created_at'] ? $slider['created_at']->format('d/m/Y') : '' }}
     </div>
     <div class="video__iframe d-flex justify-content-center">
         @if($slider['video_id'])

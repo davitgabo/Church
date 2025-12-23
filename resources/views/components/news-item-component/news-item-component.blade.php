@@ -7,7 +7,7 @@
             <div class="news-container__item__text__date mt-3 mt-xl-0">
                 {{ $newsItem->created_at?->format('d/m/Y') }}
             </div>
-            <div class="news-container__item__text__title">
+            <div class="news-container__item__text__title" style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">
                 {{ $newsItem['news_title_'.$lang] }}
             </div>
             <div class="news-container__item__text__desc">

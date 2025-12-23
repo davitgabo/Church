@@ -3,26 +3,29 @@
         <div class="col-xl-5 col-12">
             <div class="home__text-section container-lg">
                 <div class="home__text-section__text-slider">
-                    <div id="carouselText" class="carousel slide carousel-fade" data-pause="true" data-ride="carousel">
+                    <div id="carouselText" class="carousel slide carousel-fade" data-ride="carousel">
                         <div class="carousel-inner">
                             @foreach($contents['slider'] as $slider)
                                 @if($slider['is_slider'])
                                     @if ($loop->first)
-                                        <div class="carousel-item home__text-section__text-slider__text active"
-                                            data-bs-interval="10000">
+                                        <div class="carousel-item home__text-section__text-slider__text active" data-bs-interval="10000">
                                     @else
-                                                <div class="carousel-item home__text-section__text-slider__text"
-                                                    data-bs-interval="10000">
+                                        <div class="carousel-item home__text-section__text-slider__text" data-bs-interval="10000">
                                     @endif
-                                                    <div class="home__text-section__title">
-                                                        {{$slider['news_title']}}
-                                                        
-                                                    </div>
-                                                    <div class="home__text-section__text-slider__text-desc">
-                                                        {{$slider['text']}}
-                                                    </div>
-                                                    
-                                                </div>
+                                        <a href="{{'news/'.$slider['id']}}">
+                                            <div class="home__text-section__title">
+                                                {{$slider['news_title']}}
+                                            </div>
+                                            <div class="home__text-section__text-slider__text-desc">
+                                                {{$slider['text']}}
+                                            </div>
+                                            <div class="news-container__item__text__read-more d-flex align-items-center mt-5">
+                                                <span>{{$lang == 'ge' ? 'წაკითხვა' : ($lang == 'en' ? 'Read More' : 'Читать Далее')}}</span>
+                                                <img src="{{ URL::asset('/assets/icons/arrow_long_right.png')}}" class="float-end arrow-icon"
+                                                    alt="Arrow pointing right">
+                                            </div>
+                                        </a>
+                                    </div>
                                 @endif  
                             @endforeach
                         </div>
@@ -70,17 +73,17 @@
                             @else
                                 <div class="carousel-item carousel-item-count" data-bs-interval="10000">
                             @endif
-                                    <div class="carousel-item__img-container position-relative">
-                                        <div class="news-tag position-absolute">
-                                        {{$lang == 'ge' ? 'სიახლე' : ($lang == 'en' ? 'News' : 'Новость')}}
-                                        </div>
-                                        <img class="h-100" src="/assets/images/{{$slider['uri']}}" alt="">
-                                        @if($slider['video_id'])
-                                            <a class="video__url" href="/{{$lang}}/news/{{$slider['id']}}">
+                                    <a href="/{{$lang}}/news/{{$slider['id']}}">
+                                        <div class="carousel-item__img-container position-relative">
+                                            <div class="news-tag position-absolute">
+                                                {{$lang == 'ge' ? 'სიახლე' : ($lang == 'en' ? 'News' : 'Новость')}}
+                                            </div>
+                                            <img class="h-100 slider-image" src="/assets/images/{{$slider['uri']}}" alt="">
+                                            @if($slider['video_id'])
                                                 <img class="video-icon" src="/assets/icons/outline-green-triangle.png" alt="">
-                                            </a>
-                                        @endif
-                                    </div>
+                                            @endif
+                                        </div>
+                                    </a>
                                 </div>
                             @endif 
                         @endforeach
