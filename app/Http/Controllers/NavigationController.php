@@ -43,20 +43,22 @@ class NavigationController extends Controller
         if (in_array($page,['home','about','news','contact','gallery','donate','payment','video','all-news'])) {
                 $tableData = Content::where('page',$page)->orwhere('page','all')->get();
                 foreach ($tableData as $row) {
-                    
+
                     $key = $row->section;
                     $news_title = 'news_title_'.$lang;
+                    $subheader = 'subheader_'.$lang;
                     $contents[$key][] = [
                         'id'=>$row->id,
                         'text' => $row->$text,
                         'news_title' => $row->$news_title,
+                        'subheader' => $row->$subheader,
                         'uri' => $row->uri,
                         'visibility' => $row->visibility,
                         'video_id' => $row->video_id,
                         'is_slider' => $row->is_slider
                     ];
                 }
-                
+
                 if ($id){
                     $sliderRecord = Content::find($id);
                     if($sliderRecord->video_id){
@@ -64,6 +66,7 @@ class NavigationController extends Controller
                     } else {
                         $title = 'news_title_'.$lang;
                         $slider['title'] = $sliderRecord->$title;
+                        $slider['subheader'] = $sliderRecord->$subheader;
                     }
                     $slider['uri'] = $sliderRecord->uri;
                     $slider['text'] = $sliderRecord->$text;
@@ -102,6 +105,9 @@ class NavigationController extends Controller
                     'news_title_ge' => $row->news_title_ge,
                     'news_title_ru' => $row->news_title_ru,
                     'news_title_en' => $row->news_title_en,
+                    'subheader_ge' => $row->subheader_ge,
+                    'subheader_en' => $row->subheader_en,
+                    'subheader_ru' => $row->subheader_ru,
                     'uri' => $row->uri,
                     'video_id' => $row->video_id,
                     'is_slider' => $row->is_slider,
