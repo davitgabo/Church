@@ -35,6 +35,9 @@ class ContentController extends Controller
                 'text_en' => 'required|string',
                 'text_ge' => 'required|string',
                 'text_ru' => 'required|string',
+                'subheader_ge' => 'nullable|string',
+                'subheader_en' => 'nullable|string',
+                'subheader_ru' => 'nullable|string',
                 'news_title_en' => 'nullable|string',
                 'news_title_ge' => 'nullable|string',
                 'news_title_ru' => 'nullable|string',
@@ -44,6 +47,9 @@ class ContentController extends Controller
             $content->text = $request->input('text_en');
             $content->text_ge = $request->input('text_ge');
             $content->text_ru = $request->input('text_ru');
+            $content->subheader_ge = $request->input('subheader_ge');
+            $content->subheader_en = $request->input('subheader_en');
+            $content->subheader_ru = $request->input('subheader_ru');
             $content->news_title_en = $request->input('news_title_en');
             $content->news_title_ge = $request->input('news_title_ge');
             $content->news_title_ru = $request->input('news_title_ru');
@@ -111,6 +117,9 @@ class ContentController extends Controller
             'text_ge' => 'required|string',
             'text_en' => 'required|string',
             'text_ru' => 'required|string',
+            'subheader_ge' => 'nullable|string',
+            'subheader_en' => 'nullable|string',
+            'subheader_ru' => 'nullable|string',
             'news_title_en' => 'nullable|string',
             'news_title_ge' => 'nullable|string',
             'news_title_ru' => 'nullable|string',
@@ -129,6 +138,9 @@ class ContentController extends Controller
         $slider->text = strip_tags($validatedData['text_en']);
         $slider->text_ge = strip_tags($validatedData['text_ge']);
         $slider->text_ru = strip_tags($validatedData['text_ru']);
+        $slider->subheader_en = strip_tags($validatedData['subheader_en']);
+        $slider->subheader_ge = strip_tags($validatedData['subheader_ge']);
+        $slider->subheader_ru = strip_tags($validatedData['subheader_ru']);
         $slider->news_title_en = strip_tags($validatedData['news_title_en']);
         $slider->news_title_ge = strip_tags($validatedData['news_title_ge']);
         $slider->news_title_ru = strip_tags($validatedData['news_title_ru']);
