@@ -11,7 +11,7 @@
                 {{ $newsItem['news_title_'.$lang] }}
             </div>
             <div class="news-container__item__text__desc">
-                {{ $newsItem->description }}
+                {{ $newsItem['subheader_'.$lang] }}
             </div>
             <div class="news-container__item__text__read-more position-absolute bottom-0">
                 <span>{{$lang == 'ge' ? 'წაკითხვა' : ($lang == 'en' ? 'Read More' : 'Читать Далее')}}</span><img

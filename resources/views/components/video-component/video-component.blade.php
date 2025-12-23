@@ -20,6 +20,16 @@
         @endif
     </div>
     <div class="video__desc">
-        {{$slider['text']}}
+        @if($slider['video_id'])
+            {{$slider['text']}}
+        @elseif($slider['uri'])
+            {{$slider['subheader']}}
+        @endif
     </div>
+    @if(!$slider['video_id'])
+        <div class="video__text">
+            {{$slider['text']}}
+        </div>
+    @endif
+
 </div>

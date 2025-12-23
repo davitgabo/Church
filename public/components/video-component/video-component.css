@@ -2,6 +2,7 @@
     font-family: BPG Classic Medium;
     font-size: 2rem;
     margin-top: 2rem;
+    word-break: break-word;
 }
 
 .news-page-tag {
@@ -34,6 +35,12 @@
 .video__desc {
     font-family: BPG Classic Medium;
     font-size: 1.3rem;
+    margin: 1rem 0;
+}
+
+.video__text {
+    font-family: BPG Classic Medium;
+    font-size: 1rem;
     margin: 1rem 0;
 }
 

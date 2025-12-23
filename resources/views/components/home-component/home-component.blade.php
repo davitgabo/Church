@@ -17,7 +17,7 @@
                                                 {{$slider['news_title']}}
                                             </div>
                                             <div class="home__text-section__text-slider__text-desc">
-                                                {{$slider['text']}}
+                                                {{$slider['subheader']}}
                                             </div>
                                             <div class="news-container__item__text__read-more d-flex align-items-center mt-5">
                                                 <span>{{$lang == 'ge' ? 'წაკითხვა' : ($lang == 'en' ? 'Read More' : 'Читать Далее')}}</span>
