@@ -30,6 +30,15 @@
             <input class="form-control" type="text" name="news_title_ru" placeholder="სიახლის რუსული სათაური">
         </div>
         <div class="my-3">
+            <input class="form-control" name="subheader_ge" placeholder="სიახლის ქართული ქვესათაური"></input>
+        </div>
+        <div class="my-3">
+            <input class="form-control" name="subheader_en" placeholder="სიახლის ინგლისური ქვესათაური"></input>
+        </div>
+        <div class="my-3">
+            <input class="form-control" name="subheader_ru" placeholder="სიახლის რუსული ქვესათაური"></input>
+        </div>
+        <div class="my-3">
             <input class="form-control" type="text" name="text_ge" placeholder="სიახლის ქართული ტექსტი">
         </div>
         <div class="my-3">

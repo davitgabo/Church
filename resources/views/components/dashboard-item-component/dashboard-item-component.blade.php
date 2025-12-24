@@ -42,15 +42,15 @@
                 <div class="form__input my-2">
                     <span>სათაური RU:</span> <input class="w-50 form-control" type="text" name="news_title_ru" readonly onfocus="this.blur()" value="{{$item['news_title_ru']}}">
                 </div>
-                <div class="form__textarea">
-                        <span>ქვესათაური GE:</span> <textarea class="w-50 form-control" name="subheader_ge" cols="20" rows="5" readonly onfocus="this.blur()">{{$item['subheader_ge']}}</textarea>
-                    </div>
-                    <div class="form__textarea my-2">
-                        <span>ქვესათაური EN:</span> <textarea class="w-50 form-control" name="subheader_en" cols="20" rows="5" readonly onfocus="this.blur()">{{$item['subheader_en']}}</textarea>
-                    </div>
-                    <div class="form__textarea my-2">
-                        <span>ქვესათაური RU:</span> <textarea class="w-50 form-control" name="subheader_ru" cols="20" rows="5" readonly onfocus="this.blur()">{{$item['subheader_ru']}}</textarea>
-                    </div>
+                <div class="form__input my-2">
+                    <span>ქვესათაური GE:</span> <input class="w-50 form-control" name="subheader_ge" readonly onfocus="this.blur()" value="{{$item['subheader_ge']}}"></input>
+                </div>
+                <div class="form__input my-2">
+                    <span>ქვესათაური EN:</span> <input class="w-50 form-control" name="subheader_en" readonly onfocus="this.blur()" value="{{$item['subheader_en']}}"></input>
+                </div>
+                <div class="form__input my-2">
+                    <span>ქვესათაური RU:</span> <input class="w-50 form-control" name="subheader_ru" readonly onfocus="this.blur()" value="{{$item['subheader_ru']}}"></input>
+                </div>
                 <div class="form__input my-3">
                     <span>სლაიდერზე გამოჩენა:</span> <input
                         type="checkbox"
