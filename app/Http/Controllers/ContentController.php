@@ -54,6 +54,11 @@ class ContentController extends Controller
             $content->news_title_ge = $request->input('news_title_ge');
             $content->news_title_ru = $request->input('news_title_ru');
             $content->is_slider = $request->input('is_slider');
+            if ($request->has('is_slider')){
+                $content->section = 'slider';
+            } else {
+                $content->section = 'news';
+            }
         }
 
         if ($request->has('video_url')){
@@ -145,7 +150,7 @@ class ContentController extends Controller
         $slider->news_title_ge = strip_tags($validatedData['news_title_ge']);
         $slider->news_title_ru = strip_tags($validatedData['news_title_ru']);
         $slider->is_slider = $validatedData['is_slider'] ?? false;
-        $slider->section = 'slider';
+        $slider->section = $validatedData['is_slider'] ? 'slider' : 'news';
         $slider->page = 'home';
         $slider->description = 'სლაიდერის ტექსტი';
         $slider->uri = time().$image->getClientOriginalName();

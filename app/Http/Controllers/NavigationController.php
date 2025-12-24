@@ -73,8 +73,8 @@ class NavigationController extends Controller
                     $slider['video_id'] = $sliderRecord->video_id;
                     $slider['created_at'] = $sliderRecord->created_at;
                 }
-                $homeNews = Content::where('section','slider')->orderByDesc('created_at')->paginate(3);
-                $news = Content::where('section','slider')->orderByDesc('created_at')->paginate(5);
+                $homeNews = Content::whereIn('section',['news','slider'])->orderByDesc('created_at')->paginate(3);
+                $news = Content::whereIn('section',['news','slider'])->orderByDesc('created_at')->paginate(5);
                 return view('welcome',[
                     'component'=> $page,
                     'contents' => $contents,
