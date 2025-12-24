@@ -17,8 +17,8 @@ class Content extends Model
 
     public function isDeletable($section): bool
     {
-        $qty = Content::where('section', 'slider')->count();
-        return $qty > 1 && $section == 'slider';
+        $qty = Content::whereIn('section', 'slider')->count();
+        return ($qty > 1 && $section == 'slider') || $section == 'news';
     }
 
     public function isStorable(): bool
