@@ -6,7 +6,6 @@
                     <div id="carouselText" class="carousel slide carousel-fade" data-ride="carousel">
                         <div class="carousel-inner">
                             @foreach($contents['slider'] as $slider)
-                                @if($slider['is_slider'])
                                     @if ($loop->first)
                                         <div class="carousel-item home__text-section__text-slider__text active" data-bs-interval="10000">
                                     @else
@@ -26,20 +25,17 @@
                                             </div>
                                         </a>
                                     </div>
-                                @endif  
                             @endforeach
                         </div>
                     </div>
                     <div class="home__slider-indicators">
                             @if(count($contents['slider'])>1)
                                 @foreach($contents['slider'] as $value)
-                                    @if($value['is_slider'])
                                         @if($loop->first)
                                             <div class="home__slider-indicator home__slider-indicator__active" onclick="slideTo('{{$loop->index}}')"></div>
                                         @else
                                             <div class="home__slider-indicator" onclick="slideTo('{{$loop->index}}')"></div>
                                         @endif
-                                    @endif 
                                 @endforeach
                             @endif
                     </div>
@@ -66,8 +62,6 @@
                      data-ride="carousel">
                     <div class="carousel-inner h-100">
                         @foreach($contents['slider'] as $slider)
-                            @if($slider['is_slider'])
-                            
                             @if ($loop->first)
                                 <div class="carousel-item carousel-item-count active" data-bs-interval="10000">
                             @else
@@ -85,7 +79,6 @@
                                         </div>
                                     </a>
                                 </div>
-                            @endif 
                         @endforeach
                     </div>
 
@@ -114,7 +107,7 @@
                         @endforeach
                     </div>
                     <div class="col-0 col-sm-1"></div>
-                    
+
                 </div>
             </div>
             <div class="col-xl-1"></div>
