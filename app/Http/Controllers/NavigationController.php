@@ -30,6 +30,11 @@ class NavigationController extends Controller
                 $contents['nav_logo_title'][0]='ზუგდიდის ივერიის ყოვლაწმინდა ღვთისმშობლის';
                 $contents['nav_logo_title'][1]='სახელობის საკათედრო ტაძარი';
                 break;
+            case 'gr':
+                $text = 'text_gr';
+                $contents['nav_logo_title'][0]='Καθεδρικός Ναός Ζουγκντίντι';
+                $contents['nav_logo_title'][1]='της Παναγίας Ιβηρίας';
+                break;
             default:
                 return redirect('/ge/home');
         }
@@ -102,12 +107,15 @@ class NavigationController extends Controller
                     'text_ge' => $row->text_ge,
                     'text'=> $row->text,
                     'text_ru' => $row->text_ru,
+                    'text_gr' => $row->text_gr,
                     'news_title_ge' => $row->news_title_ge,
                     'news_title_ru' => $row->news_title_ru,
                     'news_title_en' => $row->news_title_en,
+                    'news_title_gr' => $row->news_title_gr,
                     'subheader_ge' => $row->subheader_ge,
                     'subheader_en' => $row->subheader_en,
                     'subheader_ru' => $row->subheader_ru,
+                    'subheader_gr' => $row->subheader_gr,
                     'uri' => $row->uri,
                     'video_id' => $row->video_id,
                     'is_slider' => $row->is_slider,

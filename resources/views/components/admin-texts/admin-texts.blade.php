@@ -1,10 +1,4 @@
-<div class="dashboard__sub-section">
-    <h3 class="dashboard__sub-section__heading"> ნავიგაცია </h3>
-    @foreach($contents['all'] as $item)
-        <x-dashboard-item-component.dashboard-item-component :$item />
-    @endforeach
-</div>
-<div class="dashboard__sub-section">
+<div class="dashboard__sub-section" id="section-home">
     <h3 class="dashboard__sub-section__heading"> მთავარი გვერდი </h3>
     @foreach($contents['home'] as $item)
         <x-dashboard-item-component.dashboard-item-component :$item />
@@ -30,6 +24,9 @@
             <input class="form-control" type="text" name="news_title_ru" placeholder="სიახლის რუსული სათაური">
         </div>
         <div class="my-3">
+            <input class="form-control" type="text" name="news_title_gr" placeholder="სიახლის ბერძნული სათაური">
+        </div>
+        <div class="my-3">
             <input class="form-control" name="subheader_ge" placeholder="სიახლის ქართული ქვესათაური"></input>
         </div>
         <div class="my-3">
@@ -39,6 +36,9 @@
             <input class="form-control" name="subheader_ru" placeholder="სიახლის რუსული ქვესათაური"></input>
         </div>
         <div class="my-3">
+            <input class="form-control" name="subheader_gr" placeholder="სიახლის ბერძნული ქვესათაური"></input>
+        </div>
+        <div class="my-3">
             <input class="form-control" type="text" name="text_ge" placeholder="სიახლის ქართული ტექსტი">
         </div>
         <div class="my-3">
@@ -46,6 +46,9 @@
         </div>
         <div class="my-3">
             <input class="form-control" type="text" name="text_ru" placeholder="სიახლის რუსული ტექსტი">
+        </div>
+        <div class="my-3">
+            <input class="form-control" type="text" name="text_gr" placeholder="სიახლის ბერძნული ტექსტი">
         </div>
         <div class="my-3">
             <input class="form-check-input" id="videoUrl" type="checkbox" onclick="addVideoUrl()">
@@ -60,27 +63,38 @@
         <button type="submit" class="btn btn-primary">დამატება</button>
     </form>
 </div>
-<div class="dashboard__sub-section">
+<hr class="section-separator">
+<div class="dashboard__sub-section" id="section-about">
     <h3 class="dashboard__sub-section__heading"> ტაძრის შესახებ </h3>
     @foreach($contents['about'] as $item)
         <x-dashboard-item-component.dashboard-item-component :$item />
     @endforeach
 </div>
-<div class="dashboard__sub-section">
+<hr class="section-separator">
+<div class="dashboard__sub-section" id="section-contact">
     <h3 class="dashboard__sub-section__heading"> კონტაქტის გვერდი </h3>
     @foreach($contents['contact'] as $item)
         <x-dashboard-item-component.dashboard-item-component :$item />
     @endforeach
 </div>
-<div class="dashboard__sub-section">
+<hr class="section-separator">
+<div class="dashboard__sub-section" id="section-donate">
     <h3 class="dashboard__sub-section__heading"> დონაციის გვერდი </h3>
     @foreach($contents['donate'] as $item)
         <x-dashboard-item-component.dashboard-item-component :$item />
     @endforeach
 </div>
-<div class="dashboard__sub-section">
+<hr class="section-separator">
+<div class="dashboard__sub-section" id="section-payment">
     <h3 class="dashboard__sub-section__heading"> გადახდის გვერდი </h3>
     @foreach($contents['payment'] as $item)
+        <x-dashboard-item-component.dashboard-item-component :$item />
+    @endforeach
+</div>
+<hr class="section-separator">
+<div class="dashboard__sub-section" id="section-navigation">
+    <h3 class="dashboard__sub-section__heading"> ნავიგაცია </h3>
+    @foreach($contents['all'] as $item)
         <x-dashboard-item-component.dashboard-item-component :$item />
     @endforeach
 </div>

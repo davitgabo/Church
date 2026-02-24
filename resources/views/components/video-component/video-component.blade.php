@@ -1,6 +1,6 @@
 <div class="container">
     <div class="news-page-tag">
-        {{$lang == 'ge' ? 'სიახლე' : ($lang == 'en' ? 'News' : 'Новость')}}
+        {{$lang == 'ge' ? 'სიახლე' : ($lang == 'en' ? 'News' : ($lang == 'ru' ? 'Новость' : 'Νέα'))}}
     </div>
     <div class="video__title">
         {{$slider['title']}}

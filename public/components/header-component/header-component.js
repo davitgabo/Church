@@ -32,6 +32,7 @@ for (i = 0; i < l; i++) {
                 ქარ: "ge",
                 ENG: "en",
                 РУС: "ru",
+                ΕΛΛ: "gr",
             };
 
             const currentLang = this.innerHTML.trim();
@@ -39,7 +40,7 @@ for (i = 0; i < l; i++) {
 
             if (targetLang) {
                 window.location = url.replace(
-                    /\/(ge|en|ru)\//,
+                    /\/(ge|en|ru|gr)\//,
                     `/${targetLang}/`
                 );
             }

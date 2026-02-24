@@ -21,6 +21,9 @@
                     <div class="form__textarea my-2">
                         <span>RU:</span> <textarea class="w-50 form-control" name="text_ru" cols="20" rows="5" readonly onfocus="this.blur()">{{$item['text_ru']}}</textarea>
                     </div>
+                    <div class="form__textarea my-2">
+                        <span>GR:</span> <textarea class="w-50 form-control" name="text_gr" cols="20" rows="5" readonly onfocus="this.blur()">{{$item['text_gr']}}</textarea>
+                    </div>
                 @else
                     <div class="form__input">
                         <span>GE:</span> <input class="w-50 form-control" type="text" name="text_ge" readonly onfocus="this.blur()" value="{{$item['text_ge']}}">
@@ -30,6 +33,9 @@
                     </div>
                     <div class="form__input my-2">
                         <span>RU:</span> <input class="w-50 form-control" type="text" name="text_ru" readonly onfocus="this.blur()" value="{{$item['text_ru']}}">
+                    </div>
+                    <div class="form__input my-2">
+                        <span>GR:</span> <input class="w-50 form-control" type="text" name="text_gr" readonly onfocus="this.blur()" value="{{$item['text_gr']}}">
                     </div>
                @endif
             @if($item['title'] == 'სლაიდერის ტექსტი')
@@ -43,6 +49,9 @@
                     <span>სათაური RU:</span> <input class="w-50 form-control" type="text" name="news_title_ru" readonly onfocus="this.blur()" value="{{$item['news_title_ru']}}">
                 </div>
                 <div class="form__input my-2">
+                    <span>სათაური GR:</span> <input class="w-50 form-control" type="text" name="news_title_gr" readonly onfocus="this.blur()" value="{{$item['news_title_gr']}}">
+                </div>
+                <div class="form__input my-2">
                     <span>ქვესათაური GE:</span> <input class="w-50 form-control" name="subheader_ge" readonly onfocus="this.blur()" value="{{$item['subheader_ge']}}"></input>
                 </div>
                 <div class="form__input my-2">
@@ -50,6 +59,9 @@
                 </div>
                 <div class="form__input my-2">
                     <span>ქვესათაური RU:</span> <input class="w-50 form-control" name="subheader_ru" readonly onfocus="this.blur()" value="{{$item['subheader_ru']}}"></input>
+                </div>
+                <div class="form__input my-2">
+                    <span>ქვესათაური GR:</span> <input class="w-50 form-control" name="subheader_gr" readonly onfocus="this.blur()" value="{{$item['subheader_gr']}}"></input>
                 </div>
                 <div class="form__input my-3">
                     <span>სლაიდერზე გამოჩენა:</span> <input

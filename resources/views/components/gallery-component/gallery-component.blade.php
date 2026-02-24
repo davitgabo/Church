@@ -8,7 +8,7 @@
     <div class="gallery__img-container container">
         <div id="mygallery">
             @foreach($images as $image)
-            <a href="/assets/images/{{$image->name}}" data-caption="{{($lang == 'ge') ? $image->desc_ge : $image->desc_en}}">
+            <a href="/assets/images/{{$image->name}}" data-caption="{{($lang == 'ge') ? $image->desc_ge : (($lang == 'en') ? $image->desc_en : (($lang == 'ru') ? $image->desc_ru : $image->desc_gr))}}">
                 <img class="gallery__img" src="/assets/images/{{$image->name}}"/>
             </a>
             @endforeach

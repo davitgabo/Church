@@ -8,11 +8,11 @@
 
                 <div class="make-donation__info d-none-xl">
                     <div class="mb-2 d-flex align-items-center make-donation__info__acc">
-                        <span class="span-width">{{ ($lang=='ge') ? "ბანკის ანგარიში" : 'Bank Account'}}:</span> <span class="mx-2" id="bankAccNo"> {{$contents['iban'][0]['text']}} </span> <span><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">{{ ($lang=='ge') ? "კოპირება" : 'copy'}}</span></span>
+                        <span class="span-width">{{ ($lang=='ge') ? "ბანკის ანგარიში" : (($lang=='ru') ? 'Банковский счет' : (($lang=='gr') ? 'Τραπεζικός Λογαριασμός' : 'Bank Account'))}}:</span> <span class="mx-2" id="bankAccNo"> {{$contents['iban'][0]['text']}} </span> <span><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">{{ ($lang=='ge') ? "კოპირება" : (($lang=='ru') ? 'копировать' : (($lang=='gr') ? 'αντιγραφή' : 'copy'))}}</span></span>
                     </div>
                     <hr>
                     <div class="mb-4 d-flex align-items-center make-donation__info__acc">
-                        <span class="span-width">{{ ($lang=='ge') ? "საგადახდო კოდი" : 'Payment Title'}}:</span> <span class="mx-2" id="paymentTitle">{{$payment}}</span> <span><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">{{ ($lang=='ge') ? "კოპირება" : 'copy'}}</span></span>
+                        <span class="span-width">{{ ($lang=='ge') ? "საგადახდო კოდი" : (($lang=='ru') ? 'Платежный код' : (($lang=='gr') ? 'Κωδικός Πληρωμής' : 'Payment Title'))}}:</span> <span class="mx-2" id="paymentTitle">{{$payment}}</span> <span><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">{{ ($lang=='ge') ? "კოპირება" : (($lang=='ru') ? 'копировать' : (($lang=='gr') ? 'αντιγραφή' : 'copy'))}}</span></span>
                     </div>
                     <div class="make-donation__info__note">
                         {{$contents['payment_warning'][0]['text']}}: {{$payment}}
@@ -24,36 +24,36 @@
                         @csrf
                         <input type="hidden" name="payment_title" value="{{$payment}}">
                         <div class="col-6 mt-4">
-                            <input type="number" class="make-donation__form-section__form__input" name="amount" required placeholder="{{ ($lang=='ge') ? "თანხა" : 'Amount'}}">
+                            <input type="number" class="make-donation__form-section__form__input" name="amount" required placeholder="{{ ($lang=='ge') ? "თანხა" : (($lang=='ru') ? 'Сумма' : (($lang=='gr') ? 'Ποσό' : 'Amount'))}}">
                         </div>
                         <div class="col-12 mt-4">
                             <div>
                                 <input id="showDonation" type="checkbox" class="form-check-input" name="show_donation">
-                                <label for="showDonation">{{ ($lang=='ge') ? "გახადე საჯარო" : 'My donation is public'}}</label>
+                                <label for="showDonation">{{ ($lang=='ge') ? "გახადე საჯარო" : (($lang=='ru') ? 'Моё пожертвование публичное' : (($lang=='gr') ? 'Η δωρεά μου είναι δημόσια' : 'My donation is public'))}}</label>
                             </div>
                             <div>
                                 <input id="showAmount" type="checkbox" class="form-check-input" name="show_amount">
-                                <label for="showAmount">{{ ($lang=='ge') ? "ჩანდეს თანხა" : 'Show amount'}}</label>
+                                <label for="showAmount">{{ ($lang=='ge') ? "ჩანდეს თანხა" : (($lang=='ru') ? 'Показать сумму' : (($lang=='gr') ? 'Εμφάνιση ποσού' : 'Show amount'))}}</label>
                             </div>
                         </div>
                         <div class="col-6 mt-4">
-                            <input type="text" class="make-donation__form-section__form__input" required name="first_name" placeholder="{{ ($lang=='ge') ? "სახელი" : 'First Name'}}">
+                            <input type="text" class="make-donation__form-section__form__input" required name="first_name" placeholder="{{ ($lang=='ge') ? "სახელი" : (($lang=='ru') ? 'Имя' : (($lang=='gr') ? 'Όνομα' : 'First Name'))}}">
                         </div>
                         <div class="col-12 mt-2">
                             <input class="form-check-input" id="showName" name="show_name" type="checkbox">
-                            <label for="showName">{{ ($lang=='ge') ? "ჩანდეს ჩემი სახელი" : 'Show my name in donations'}}</label>
+                            <label for="showName">{{ ($lang=='ge') ? "ჩანდეს ჩემი სახელი" : (($lang=='ru') ? 'Показать моё имя в пожертвованиях' : (($lang=='gr') ? 'Εμφάνιση ονόματός μου στις δωρεές' : 'Show my name in donations'))}}</label>
                         </div>
 
                         <div class="col-6 mt-4">
-                            <input type="text" class="make-donation__form-section__form__input" required name="last_name" placeholder="{{ ($lang=='ge') ? "გვარი" : 'Last Name'}}">
+                            <input type="text" class="make-donation__form-section__form__input" required name="last_name" placeholder="{{ ($lang=='ge') ? "გვარი" : (($lang=='ru') ? 'Фамилия' : (($lang=='gr') ? 'Επώνυμο' : 'Last Name'))}}">
                         </div>
                         <div class="col-12 mt-4">
-                            <textarea id="" cols="30" rows="5" class="make-donation__form-section__form__input" name="comment" placeholder="{{ ($lang=='ge') ? "კომენტარი" : 'Comment'}}"></textarea>
+                            <textarea id="" cols="30" rows="5" class="make-donation__form-section__form__input" name="comment" placeholder="{{ ($lang=='ge') ? "კომენტარი" : (($lang=='ru') ? 'Комментарий' : (($lang=='gr') ? 'Σχόλιο' : 'Comment'))}}"></textarea>
                             <input class="mt-2" id="showComment" name="show_comment" type="checkbox" class="form-check-input">
-                            <label class="mt-2" for="showComment">{{ ($lang=='ge') ? "აჩვენე ჩემი კომენტარი შემოწირულობებში" : 'Show my comment in donations'}}</label>
+                            <label class="mt-2" for="showComment">{{ ($lang=='ge') ? "აჩვენე ჩემი კომენტარი შემოწირულობებში" : (($lang=='ru') ? 'Показать мой комментарий в пожертвованиях' : (($lang=='gr') ? 'Εμφάνιση σχολίου μου στις δωρεές' : 'Show my comment in donations'))}}</label>
                         </div>
                         <div class="col-12">
-                            <button class="make-donation__form-section__form__submit-button mt-3 w-100" id="submitBtn" type="button" onclick="submitForm()"> {{ ($lang=='ge') ? "შემოწირვა" : 'DONATE'}} </button>
+                            <button class="make-donation__form-section__form__submit-button mt-3 w-100" id="submitBtn" type="button" onclick="submitForm()"> {{ ($lang=='ge') ? "შემოწირვა" : (($lang=='ru') ? 'ПОЖЕРТВОВАТЬ' : (($lang=='gr') ? 'ΔΩΡΕΑ' : 'DONATE'))}} </button>
                         </div>
                     </form>
                 </div>
@@ -62,11 +62,11 @@
         <div class="col-xl-6">
             <div class="make-donation__info d-none-lg">
                 <div class="mb-2 d-flex align-items-center make-donation__info__acc">
-                    <span class="span-width">{{ ($lang=='ge') ? "ბანკის ანგარიში" : 'Bank Account'}}:</span> <span class="mx-2" id="bankAccNo"> {{$contents['iban'][0]['text']}} </span> <span><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">{{ ($lang=='ge') ? "კოპირება" : 'copy'}}</span></span>
+                    <span class="span-width">{{ ($lang=='ge') ? "ბანკის ანგარიში" : (($lang=='ru') ? 'Банковский счет' : (($lang=='gr') ? 'Τραπεζικός Λογαριασμός' : 'Bank Account'))}}:</span> <span class="mx-2" id="bankAccNo"> {{$contents['iban'][0]['text']}} </span> <span><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">{{ ($lang=='ge') ? "კოპირება" : (($lang=='ru') ? 'копировать' : (($lang=='gr') ? 'αντιγραφή' : 'copy'))}}</span></span>
                 </div>
                 <hr>
                 <div class="mb-4 d-flex align-items-center make-donation__info__acc">
-                    <span class="span-width">{{ ($lang=='ge') ? "საგადახდო კოდი" : 'Payment Title'}}:</span> <span class="mx-2" id="paymentTitle">{{$payment}}</span> <span><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">{{ ($lang=='ge') ? "კოპირება" : 'copy'}}</span></span>
+                    <span class="span-width">{{ ($lang=='ge') ? "საგადახდო კოდი" : (($lang=='ru') ? 'Платежный код' : (($lang=='gr') ? 'Κωδικός Πληρωμής' : 'Payment Title'))}}:</span> <span class="mx-2" id="paymentTitle">{{$payment}}</span> <span><img src="{{ URL::asset('/assets/icons/copy.png')}}"> <span class="copy">{{ ($lang=='ge') ? "კოპირება" : (($lang=='ru') ? 'копировать' : (($lang=='gr') ? 'αντιγραφή' : 'copy'))}}</span></span>
                 </div>
                 <div class="make-donation__info__note">
                     {{$contents['payment_warning'][0]['text']}}: {{$payment}}

@@ -14,7 +14,7 @@
                 {{ $newsItem['subheader_'.$lang] }}
             </div>
             <div class="news-container__item__text__read-more position-absolute bottom-0">
-                <span>{{$lang == 'ge' ? 'წაკითხვა' : ($lang == 'en' ? 'Read More' : 'Читать Далее')}}</span><img
+                <span>{{$lang == 'ge' ? 'წაკითხვა' : ($lang == 'en' ? 'Read More' : ($lang == 'ru' ? 'Читать Далее' : 'Διαβάστε Περισσότερα'))}}</span><img
                     src="{{ URL::asset('/assets/icons/arrow_long_right.png')}}"
                     alt="Arrow pointing right">
             </div>

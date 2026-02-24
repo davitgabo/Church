@@ -4,7 +4,7 @@
             <div class="col-12 col-xl-10">
                 <div class="news-title-container p-2 p-sm-5 p-xl-0">
                     <div class="news-title-container__title-all-news">
-                        {{$lang == 'ge' ? 'სიახლეები' : ($lang == 'en' ? 'News' : 'Новости')}}
+                        {{$lang == 'ge' ? 'სიახლეები' : ($lang == 'en' ? 'News' : ($lang == 'ru' ? 'Новости' : 'Νέα'))}}
                     </div>
                 </div>
                 <div class="news-container row">

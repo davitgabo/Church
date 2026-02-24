@@ -20,6 +20,9 @@
                         <div class="my-2 d-flex">
                             <span class="mr-2">RU:</span> <div class="dashboard__sub-section__edit-form__text">{{$item->text_ru}}</div>
                         </div>
+                        <div class="my-2 d-flex">
+                            <span class="mr-2">GR:</span> <div class="dashboard__sub-section__edit-form__text">{{$item->text_gr}}</div>
+                        </div>
                         <button type="submit" class="btn btn-success">შეცვლა</button>
                     </form>
                 </div>
@@ -61,7 +64,10 @@
                             <span class="mr-2">EN:</span> <textarea class="form-control" name="desc_en">{{$image->desc_en}}</textarea>
                         </div>
                         <div class="my-2 d-flex">
-                            <span class="mr-2">RU:</span> <textarea class="form-control" name="desc_en">{{$image->desc_ru}}</textarea>
+                            <span class="mr-2">RU:</span> <textarea class="form-control" name="desc_ru">{{$image->desc_ru}}</textarea>
+                        </div>
+                        <div class="my-2 d-flex">
+                            <span class="mr-2">GR:</span> <textarea class="form-control" name="desc_gr">{{$image->desc_gr}}</textarea>
                         </div>
                         <input hidden type="file" name="image" class="form-control-file" onchange="readURL(this, 'galleryImageRe_' + {{$loop->index}});" id="changeImage_{{$loop->index}}">
                     </form>
@@ -95,6 +101,9 @@
         </div>
         <div  class="my-3">
             <input class="form-control" type="text" name="desc_ru" placeholder="სურათის რუსული აღწერა">
+        </div>
+        <div  class="my-3">
+            <input class="form-control" type="text" name="desc_gr" placeholder="სურათის ბერძნული აღწერა">
         </div>
         <button type="submit" class="btn btn-primary">დამატება</button>
     </form>

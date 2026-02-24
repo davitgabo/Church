@@ -11,6 +11,10 @@
                         <div class="donate__card__text ml-2">
                             @if($lang == 'ge')
                                 <span class="underline">შემოწირე</span> ბარათით
+                            @elseif($lang == 'ru')
+                                <span class="underline">Пожертвовать</span> картой
+                            @elseif($lang == 'gr')
+                                <span class="underline">Δωρίστε</span> με Κάρτα
                             @else
                                 <span class="underline">Donate</span> with Card
                             @endif
@@ -24,6 +28,10 @@
                         <div class="donate__card__text ml-2">
                             @if($lang == 'ge')
                                 <span class="underline">გადმორიცხე</span> ბანკით
+                            @elseif($lang == 'ru')
+                                <span class="underline">Перевести</span> через Банк
+                            @elseif($lang == 'gr')
+                                <span class="underline">Μεταφορά</span> από Τράπεζα
                             @else
                                 <span class="underline">Transfer</span> from Bank
                             @endif
@@ -49,6 +57,10 @@
             <div class="donate__progress-bar__amount">
                 @if($lang == 'ge')
                     <span>{{ number_format($donated) }} ₾ </span> <span>ჩარიცხულია </span> <span>{{ number_format((float)$contents['amount'][0]['text']) }} ₾ დან</span>
+                @elseif($lang == 'ru')
+                    <span>{{ number_format($donated) }} ₾ </span> <span>Собрано из </span> <span>{{ number_format((float)$contents['amount'][0]['text']) }} ₾</span>
+                @elseif($lang == 'gr')
+                    <span>{{ number_format($donated) }} ₾ </span> <span>Συγκεντρώθηκαν από </span> <span>{{ number_format((float)$contents['amount'][0]['text']) }} ₾</span>
                 @else
                     <span>{{ number_format($donated) }} ₾ </span> <span>Raised of </span> <span>{{ number_format((float)$contents['amount'][0]['text']) }} ₾</span>
                 @endif
@@ -77,7 +89,7 @@
                             </div>
                             @else
                                 <div class="hiddenData">
-                                    {{ ($lang=='ge') ? 'დაფარული' : 'hidden'}}
+                                    {{ ($lang=='ge') ? 'დაფარული' : (($lang=='ru') ? 'скрыто' : (($lang=='gr') ? 'κρυφό' : 'hidden'))}}
                                 </div>
                             @endif
                             @if($donation->comment_visibility)
@@ -86,7 +98,7 @@
                                 </div>
                             @else
                                 <div class="hiddenData">
-                                    {{ ($lang=='ge') ? 'დაფარული' : 'hidden'}}
+                                    {{ ($lang=='ge') ? 'დაფარული' : (($lang=='ru') ? 'скрыто' : (($lang=='gr') ? 'κρυφό' : 'hidden'))}}
                                 </div>
                             @endif
                             <div>
@@ -99,7 +111,7 @@
                                 </div>
                             @else
                                 <div class="hiddenData">
-                                    {{ ($lang=='ge') ? 'დაფარული' : 'hidden'}}
+                                    {{ ($lang=='ge') ? 'დაფარული' : (($lang=='ru') ? 'скрыто' : (($lang=='gr') ? 'κρυφό' : 'hidden'))}}
                                 </div>
                             @endif
                     </div>
@@ -111,8 +123,8 @@
             <div id="pagination"></div>
             <div id="showAllButton" class="donate__last-donations__list__show-all my-2 m-auto">
                 <button onclick="showAll()">
-                    <span class="underline">{{ ($lang=='ge') ? 'ნახე' : 'See'}}</span>
-                    {{ ($lang=='ge') ? 'ყველა' : 'More'}}
+                    <span class="underline">{{ ($lang=='ge') ? 'ნახე' : (($lang=='ru') ? 'Смотреть' : (($lang=='gr') ? 'Δείτε' : 'See'))}}</span>
+                    {{ ($lang=='ge') ? 'ყველა' : (($lang=='ru') ? 'Больше' : (($lang=='gr') ? 'Περισσότερα' : 'More'))}}
                 </button>
             </div>
         </div>

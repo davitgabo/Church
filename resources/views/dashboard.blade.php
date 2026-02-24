@@ -20,6 +20,28 @@
     <div class="dashboard">
         <div class="dashboard__menu">
             <div class="dashboard__menu__item p-1 {{ ($component == 'dashboard') ? 'active' : '' }}"> <a href="/admin/dashboard"> ტექსტების რედაქტირება</a> </div>
+            @if($component == 'dashboard')
+            <div class="dashboard__submenu">
+                <div class="dashboard__submenu__item" onclick="scrollToSection('section-home')">
+                    <span>→</span> მთავარი გვერდი
+                </div>
+                <div class="dashboard__submenu__item" onclick="scrollToSection('section-about')">
+                    <span>→</span> ტაძრის შესახებ
+                </div>
+                <div class="dashboard__submenu__item" onclick="scrollToSection('section-contact')">
+                    <span>→</span> კონტაქტის გვერდი
+                </div>
+                <div class="dashboard__submenu__item" onclick="scrollToSection('section-donate')">
+                    <span>→</span> დონაციის გვერდი
+                </div>
+                <div class="dashboard__submenu__item" onclick="scrollToSection('section-payment')">
+                    <span>→</span> გადახდის გვერდი
+                </div>
+                <div class="dashboard__submenu__item" onclick="scrollToSection('section-navigation')">
+                    <span>→</span> ნავიგაცია
+                </div>
+            </div>
+            @endif
             <div class="dashboard__menu__item p-1 {{ ($component == 'images') ? 'active' : '' }}"> <a href="/admin/images"> ფოტოების რედაქტირება</a></div>
             <div class="dashboard__menu__item p-1 {{ ($component == 'donations') ? 'active' : '' }}"> <a href="/admin/donations"> დონაციები</a></div>
             <div class="dashboard__menu__item mt-3 p-1">

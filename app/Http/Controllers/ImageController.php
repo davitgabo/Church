@@ -14,6 +14,8 @@ class ImageController extends Controller
         $inputs = $request->validate([
             'desc_ge'=>'nullable|string|max:1800',
             'desc_en'=>'nullable|string|max:1800',
+            'desc_ru'=>'nullable|string|max:1800',
+            'desc_gr'=>'nullable|string|max:1800',
             'image'=>'required|image|max:2560'
         ]);
 
@@ -21,6 +23,8 @@ class ImageController extends Controller
         $picture = $request->file('image');
         $image->desc_en = strip_tags($inputs['desc_en']);
         $image->desc_ge = strip_tags($inputs['desc_ge']);
+        $image->desc_ru = strip_tags($inputs['desc_ru']);
+        $image->desc_gr = strip_tags($inputs['desc_gr']);
         $image->name = time().$picture->getClientOriginalName();
             if ( $image->save() ){
                 $picture->move(public_path().'/assets/images',$image->name);
@@ -53,6 +57,8 @@ class ImageController extends Controller
     {
         $inputs = $request->validate(['desc_en'=>'nullable|string|max:1800',
                                       'desc_ge'=>'nullable|string|max:1800',
+                                      'desc_ru'=>'nullable|string|max:1800',
+                                      'desc_gr'=>'nullable|string|max:1800',
                                       'image'=>'image']);
         $image = Image::find($id);
         if (!$image) {
@@ -61,6 +67,8 @@ class ImageController extends Controller
         }
         $image->desc_en = strip_tags($inputs['desc_en']);
         $image->desc_ge = strip_tags($inputs['desc_ge']);
+        $image->desc_ru = strip_tags($inputs['desc_ru']);
+        $image->desc_gr = strip_tags($inputs['desc_gr']);
 
         if( $request->hasFile('image') ){
             $picture = $request->file('image');

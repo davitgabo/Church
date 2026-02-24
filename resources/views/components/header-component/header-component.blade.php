@@ -61,6 +61,7 @@
                         <option value="en" @selected($lang == 'en')>ENG</option>
                         <option value="ge" @selected($lang == 'ge')>ქარ</option>
                         <option value="ru" @selected($lang == 'ru')>РУС</option>
+                        <option value="gr" @selected($lang == 'gr')>ΕΛΛ</option>
                     </select>
                 </div>
             </div>

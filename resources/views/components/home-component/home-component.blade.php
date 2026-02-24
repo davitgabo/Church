@@ -19,7 +19,7 @@
                                                 {{$slider['subheader']}}
                                             </div>
                                             <div class="news-container__item__text__read-more d-flex align-items-center mt-5">
-                                                <span>{{$lang == 'ge' ? 'წაკითხვა' : ($lang == 'en' ? 'Read More' : 'Читать Далее')}}</span>
+                                                <span>{{$lang == 'ge' ? 'წაკითხვა' : ($lang == 'en' ? 'Read More' : ($lang == 'ru' ? 'Читать Далее' : 'Διαβάστε Περισσότερα'))}}</span>
                                                 <img src="{{ URL::asset('/assets/icons/arrow_long_right.png')}}" class="float-end arrow-icon"
                                                     alt="Arrow pointing right">
                                             </div>
@@ -70,7 +70,7 @@
                                     <a href="/{{$lang}}/news/{{$slider['id']}}">
                                         <div class="carousel-item__img-container position-relative">
                                             <div class="news-tag position-absolute">
-                                                {{$lang == 'ge' ? 'სიახლე' : ($lang == 'en' ? 'News' : 'Новость')}}
+                                                {{$lang == 'ge' ? 'სიახლე' : ($lang == 'en' ? 'News' : ($lang == 'ru' ? 'Новость' : 'Νέα'))}}
                                             </div>
                                             <img class="h-100 slider-image" src="/assets/images/{{$slider['uri']}}" alt="">
                                             @if($slider['video_id'])
@@ -93,10 +93,10 @@
             <div class="col-12 col-xl-10">
                 <div class="news-title-container p-2 p-sm-5 p-xl-0">
                     <div class="news-title-container__title-news">
-                    {{$lang == 'ge' ? 'სიახლეები' : ($lang == 'en' ? 'News' : 'Новости')}}
+                    {{$lang == 'ge' ? 'სიახლეები' : ($lang == 'en' ? 'News' : ($lang == 'ru' ? 'Новости' : 'Νέα'))}}
                     </div>
                     <div class="news-title-container__all-news">
-                        <a href="/{{$lang}}/all-news">{{$lang == 'ge' ? 'ყველა სიახლე' : ($lang == 'en' ? 'All News' : 'Все Новости')}}</a>
+                        <a href="/{{$lang}}/all-news">{{$lang == 'ge' ? 'ყველა სიახლე' : ($lang == 'en' ? 'All News' : ($lang == 'ru' ? 'Все Новости' : 'Όλα τα Νέα'))}}</a>
                     </div>
                 </div>
                 <div class="news-container row">
