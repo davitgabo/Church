@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('images', function (Blueprint $table) {
+            $table->string('desc_ru')->after('desc_ge')->nullable();
             $table->string('desc_gr')->after('desc_ru')->nullable();
         });
     }
