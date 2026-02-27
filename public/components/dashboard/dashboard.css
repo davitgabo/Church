@@ -15,8 +15,21 @@
 }
 
 .dashboard__menu__item.active {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #f7f7f7;
+    color: #000000;
+}
+
+.dashboard__menu__item.active .dashboard__submenu {
+    background-color: #f7f7f7;
+}
+
+.dashboard__menu__item.active .dashboard__submenu__item {
+    color: #555;
+}
+
+.dashboard__menu__item.active .dashboard__submenu__item:hover {
+    background-color: #f0f0f0;
+    color: #000;
 }
 
 .dashboard__submenu {
@@ -214,7 +227,7 @@ input:focus + .slider {
 
 .item-separator {
     border: none;
-    border-top: 1px solid #ddd;
+    border-top: 2px solid #aaa;
     margin: 1.5rem 0;
 }
 

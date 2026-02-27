@@ -2,7 +2,9 @@
     <h3 class="dashboard__sub-section__heading"> მთავარი გვერდი </h3>
     @foreach($contents['home'] as $item)
         <x-dashboard-item-component.dashboard-item-component :$item />
-
+        @if($item['title'] == 'სლაიდერის ტექსტი' && !$loop->last)
+            <hr class="item-separator">
+        @endif
     @endforeach
     <form class="w-50 dashboard__sub-section__add-form" action="/store" method="post" enctype="multipart/form-data">
         <h5>სიახლეების დამატება</h5>
