@@ -19,31 +19,69 @@
     <body>
     <div class="dashboard">
         <div class="dashboard__menu">
-            <div class="dashboard__menu__item p-1 {{ ($component == 'dashboard') ? 'active' : '' }}"> <a href="/admin/dashboard"> ტექსტების რედაქტირება</a> </div>
-            @if($component == 'dashboard')
-            <div class="dashboard__submenu">
-                <div class="dashboard__submenu__item" onclick="scrollToSection('section-home')">
-                    <span>→</span> მთავარი გვერდი
+            <div class="dashboard__menu__item p-1 {{ ($component == 'dashboard') ? 'active' : '' }}">
+                <div class="dashboard__menu__item-header" onclick="toggleSubmenu(this)">
+                    <a href="/admin/dashboard"> ტექსტების რედაქტირება</a>
+                    <span class="dropdown-arrow {{ ($component == 'dashboard') ? 'expanded' : '' }}">▼</span>
                 </div>
-                <div class="dashboard__submenu__item" onclick="scrollToSection('section-about')">
-                    <span>→</span> ტაძრის შესახებ
-                </div>
-                <div class="dashboard__submenu__item" onclick="scrollToSection('section-contact')">
-                    <span>→</span> კონტაქტის გვერდი
-                </div>
-                <div class="dashboard__submenu__item" onclick="scrollToSection('section-donate')">
-                    <span>→</span> დონაციის გვერდი
-                </div>
-                <div class="dashboard__submenu__item" onclick="scrollToSection('section-payment')">
-                    <span>→</span> გადახდის გვერდი
-                </div>
-                <div class="dashboard__submenu__item" onclick="scrollToSection('section-navigation')">
-                    <span>→</span> ნავიგაცია
+                <div class="dashboard__submenu" style="display: {{ ($component == 'dashboard') ? 'block' : 'none' }};">
+                    <div class="dashboard__submenu__item" onclick="scrollToSection('section-home')">
+                        <span>→</span> მთავარი გვერდი
+                    </div>
+                    <div class="dashboard__submenu__item" onclick="scrollToSection('section-about')">
+                        <span>→</span> ტაძრის შესახებ
+                    </div>
+                    <div class="dashboard__submenu__item" onclick="scrollToSection('section-contact')">
+                        <span>→</span> კონტაქტის გვერდი
+                    </div>
+                    <div class="dashboard__submenu__item" onclick="scrollToSection('section-donate')">
+                        <span>→</span> დონაციის გვერდი
+                    </div>
+                    <div class="dashboard__submenu__item" onclick="scrollToSection('section-payment')">
+                        <span>→</span> გადახდის გვერდი
+                    </div>
+                    <div class="dashboard__submenu__item" onclick="scrollToSection('section-navigation')">
+                        <span>→</span> ნავიგაცია
+                    </div>
                 </div>
             </div>
-            @endif
-            <div class="dashboard__menu__item p-1 {{ ($component == 'images') ? 'active' : '' }}"> <a href="/admin/images"> ფოტოების რედაქტირება</a></div>
-            <div class="dashboard__menu__item p-1 {{ ($component == 'donations') ? 'active' : '' }}"> <a href="/admin/donations"> დონაციები</a></div>
+            <div class="dashboard__menu__item p-1 {{ ($component == 'images') ? 'active' : '' }}">
+                <div class="dashboard__menu__item-header" onclick="toggleSubmenu(this)">
+                    <a href="/admin/images"> ფოტოების რედაქტირება</a>
+                    <span class="dropdown-arrow {{ ($component == 'images') ? 'expanded' : '' }}">▼</span>
+                </div>
+                <div class="dashboard__submenu" style="display: {{ ($component == 'images') ? 'block' : 'none' }};">
+                    <div class="dashboard__submenu__item" onclick="scrollToSection('section-images-home')">
+                        <span>→</span> მთავარი გვერდი
+                    </div>
+                    <div class="dashboard__submenu__item" onclick="scrollToSection('section-images-about')">
+                        <span>→</span> ჩვენს შესახებ
+                    </div>
+                    <div class="dashboard__submenu__item" onclick="scrollToSection('section-images-gallery')">
+                        <span>→</span> გალერეა
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard__menu__item p-1 {{ ($component == 'donations') ? 'active' : '' }}">
+                <div class="dashboard__menu__item-header" onclick="toggleSubmenu(this)">
+                    <a href="/admin/donations"> დონაციები</a>
+                    <span class="dropdown-arrow {{ ($component == 'donations') ? 'expanded' : '' }}">▼</span>
+                </div>
+                <div class="dashboard__submenu" style="display: {{ ($component == 'donations') ? 'block' : 'none' }};">
+                    <div class="dashboard__submenu__item" onclick="scrollToSection('section-donations-visibility')">
+                        <span>→</span> დონაციების გვერდის გამოჩენა
+                    </div>
+                    <div class="dashboard__submenu__item" onclick="scrollToSection('section-donations-pending')">
+                        <span>→</span> გადაწყვეტის მოლოდინში
+                    </div>
+                    <div class="dashboard__submenu__item" onclick="scrollToSection('section-donations-approved')">
+                        <span>→</span> დადასტურებული
+                    </div>
+                    <div class="dashboard__submenu__item" onclick="scrollToSection('section-donations-rejected')">
+                        <span>→</span> უარყოფილი
+                    </div>
+                </div>
+            </div>
             <div class="dashboard__menu__item mt-3 p-1">
                 <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#passwordModal">
                     პაროლის შეცვლა

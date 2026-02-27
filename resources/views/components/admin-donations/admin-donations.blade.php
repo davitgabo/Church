@@ -1,5 +1,5 @@
 <div class="donation-section">
-    <div class="my-3">
+    <div class="my-3" id="section-donations-visibility">
         <form action="/donations/visibility" method="post">
             @csrf
             @method('PUT')
@@ -23,7 +23,7 @@
             </div>
         </form>
     </div>
-    <div class="donation-sub-section my-3">
+    <div class="donation-sub-section my-3" id="section-donations-pending">
         <h3>გადაწყვეტის მოლოდინში</h3>
         @foreach($donations as $donation)
             @if($donation->status == 'pending')
@@ -41,11 +41,13 @@
                         <button type="submit" class="btn btn-danger m-2" value="0" name="approved"> უარყოფა </button>
                     </form>
                 </div>
-
+                @if(!$loop->last)
+                    <hr class="item-separator">
+                @endif
             @endif
         @endforeach
     </div>
-    <div class="donation-sub-section my-3">
+    <div class="donation-sub-section my-3" id="section-donations-approved">
         <h3>დადასტურებული</h3>
         @foreach($donations as $donation)
             @if($donation->status == 'approved')
@@ -62,12 +64,14 @@
                         <button type="submit" class="btn btn-danger m-2" value="0" name="approved"> უარყოფა </button>
                     </form>
                 </div>
-
+                @if(!$loop->last)
+                    <hr class="item-separator">
+                @endif
             @endif
         @endforeach
     </div>
 
-    <div class="donation-sub-section my-3">
+    <div class="donation-sub-section my-3" id="section-donations-rejected">
         <h3>უარყოფილი</h3>
         @foreach($donations as $donation)
             @if($donation->status == 'rejected')
@@ -92,7 +96,9 @@
                     </div>
 
                 </div>
-
+                @if(!$loop->last)
+                    <hr class="item-separator">
+                @endif
             @endif
         @endforeach
     </div>

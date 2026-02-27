@@ -1,4 +1,4 @@
-<div class="dashboard__sub-section">
+<div class="dashboard__sub-section" id="section-images-home">
     <h3 class="dashboard__sub-section__heading"> მთავარი გვერდი </h3>
     <div class="row">
         @foreach($sliders as $item)
@@ -26,13 +26,16 @@
                         <button type="submit" class="btn btn-success">შეცვლა</button>
                     </form>
                 </div>
+                @if(!$loop->last)
+                    <hr class="item-separator">
+                @endif
             </div>
         @endforeach
     </div>
 
 </div>
 
-<div class="dashboard__sub-section">
+<div class="dashboard__sub-section" id="section-images-about">
     <h3 class="dashboard__sub-section__heading"> ჩვენს შესახებ </h3>
     <form action="/slider/change/{{$contents['about'][3]['id']}}" method="post" enctype="multipart/form-data">
         @csrf
@@ -45,7 +48,7 @@
     </form>
 </div>
 
-<div class="dashboard__sub-section">
+<div class="dashboard__sub-section" id="section-images-gallery">
     <h3 class="dashboard__sub-section__heading"> გალერეა </h3>
     <div class="row">
         @foreach($images as $image)
@@ -80,6 +83,9 @@
                         <button form="pic_delete_{{$image->id}}" type="submit" class="btn btn-danger ml-2">წაშლა</button>
                     </div>
                 </div>
+                @if(!$loop->last)
+                    <hr class="item-separator">
+                @endif
             </div>
         @endforeach
     </div>

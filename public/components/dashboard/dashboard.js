@@ -98,3 +98,16 @@ function scrollToSection(sectionId) {
         });
     }
 }
+
+function toggleSubmenu(header) {
+    const submenu = header.nextElementSibling;
+    const arrow = header.querySelector('.dropdown-arrow');
+
+    if (submenu.style.display === 'none') {
+        submenu.style.display = 'block';
+        arrow.classList.add('expanded');
+    } else {
+        submenu.style.display = 'none';
+        arrow.classList.remove('expanded');
+    }
+}
