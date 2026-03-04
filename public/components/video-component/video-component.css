@@ -66,3 +66,29 @@
         height: 15rem;
     }
 }
+
+@media (max-width:1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 800px;
+    }
+}
+@media (max-width:1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 750px;
+    }
+}
+@media (max-width:992px) {
+    .container, .container-lg, .container-md, .container-sm {
+        max-width: 650px;
+    }
+}
+@media (max-width:768px) {
+    .container, .container-md, .container-sm {
+        max-width: 600px;
+    }
+}
+@media (max-width:576px) {
+    .container, .container-sm {
+        max-width: 540px;
+    }
+}
