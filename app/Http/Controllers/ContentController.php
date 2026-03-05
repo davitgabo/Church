@@ -223,9 +223,9 @@ class ContentController extends Controller
         $request->validate(['hide' => 'required|bool']);
 
         if ($request->input('hide')) {
-            Content::where('id', '4')->update(['visibility' => 'hide']);
+            Content::where('text', 'Donate')->update(['visibility' => 'hide']);
         } else {
-            Content::where('id','4')->update(['visibility' => 'show']);
+            Content::where('text', 'Donate')->update(['visibility' => 'show']);
         }
 
         return redirect()->back();
