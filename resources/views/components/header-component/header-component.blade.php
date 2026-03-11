@@ -18,7 +18,7 @@
 
                 </div>
             </a>
-            <div class="col-xl-4 col-lg-12">
+            <div class="col-xl-5 col-lg-12">
                 <div class="d-flex align-items-center h-100">
                     <div class="d-flex w-100 nav__item-container">
                         @foreach ($contents['menu'] as $item)
@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <a href="/{{$lang}}/home" class="col-xl-5 nav__logo-container-big">
+            <a href="/{{$lang}}/home" class="col-xl-4 nav__logo-container-big">
                 <div class="nav__logo d-flex align-items-center">
                     <div class="nav__logo__title mx-3">
                         <div>
