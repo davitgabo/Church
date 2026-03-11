@@ -11,7 +11,7 @@ class Content extends Model
 
     public static function invisible()
     {
-        $donation = Content::find(4);
+        $donation = Content::where('text', 'Donate')->first();
         return $donation->visibility == 'hide';
     }
 
