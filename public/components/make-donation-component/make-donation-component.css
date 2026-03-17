@@ -11,13 +11,8 @@
     font-family: BPG Arial Caps;
     font-size: 2.25rem;
     line-height: 2.5625rem;
-    width: 50%;
     margin-bottom: 4rem;
     margin-top: 5rem;
-}
-
-.make-donation__form-section__form {
-    width: 50%;
 }
 
 .make-donation__form-section__form label{
@@ -64,10 +59,8 @@
 }
 
 .make-donation__info {
-    margin-top: 13rem;
     background-color: #f9f9f9;
     padding: 1rem;
-    width: 70%;
 }
 
 .d-none-xl {
@@ -115,12 +108,6 @@
 
 .close {
     background: none;
-}
-
-@media screen and (min-width: 1199px) {
-    .make-donation {
-        max-width: 100%;
-    }
 }
 
 @media screen and (max-width: 1199px) {
